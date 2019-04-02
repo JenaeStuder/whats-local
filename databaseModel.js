@@ -46,7 +46,50 @@ var UserSchema = new Schema({
       type: Map,
       of: String
   },
-
+  profilePicture:{
+    data: Buffer,
+    contentType: String
+  },
+  img1:{
+    data: Buffer,
+    contentType: String
+  },
+  img2:{
+    data: Buffer,
+    contentType: String
+  },
+  img3:{
+    data: Buffer,
+    contentType: String
+  },
+  vid1:{
+    data: Buffer,
+    contentType: String
+  },
+  vid2:{
+    data: Buffer,
+    contentType: String
+  },
+  vid3:{
+    data: Buffer,
+    contentType: String
+  },
+  audio1:{
+    data: Buffer,
+    contentType: String
+  },
+  audio2:{
+    data: Buffer,
+    contentType: String
+  },
+  audio3:{
+    data: Buffer,
+    contentType: String
+  },
+  bio:{
+    type: String
+  },
+ 
   // `date` must be of type Date. The default value is the current date
   userCreated: {
     type: Date,
