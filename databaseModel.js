@@ -42,7 +42,7 @@ var UserSchema = new Schema({
       type: String,
       trim: true,
   },
-  socialMediaHandles{
+  socialMediaHandles:{
       type: Map,
       of: String
   },
