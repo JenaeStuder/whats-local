@@ -8,6 +8,6 @@ router.use("/:id")
     .get()
     .post()
     .update()
-    .delete()
+    .delete();
 
 module.exports = router; 
