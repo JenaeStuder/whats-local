@@ -4,8 +4,8 @@ import "./style.css";
 function MediaClips({props}){
     return(
         <div className = "media">
-        
-        {props}
+
+        {props.image}
         </div>
     )
 }
