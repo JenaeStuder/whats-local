@@ -6,7 +6,6 @@ $(() => {
         lastName: $().val().trim(),
         password: $().val().trim(),
         zipCode: $().val().trim(),
-        picture: $('[type=file]').files[0],
         userType: $().val()
         
     }, (e) => {
