@@ -2,8 +2,12 @@ import React from "react";
 import "./style.css";
 import API from "../../utils/API";
 import ProfilePicture from "../ProfilePicture";
-import Bio from "../components/Bio",
+import Bio from "../components/Bio";
 import MediaClips from "../components/MediaClips"
+import Col from "../components/Col";
+import Container from "../components/Container";
+import Row from "../components/Row";
+
 
 class Info extends Component {
     state = {
@@ -36,6 +40,8 @@ class Info extends Component {
     render() {
         return (
             <Container fluid>
+           
+        
                 <Row>
                     <Col size="md-6">
                         <h1>Profile Picture</h1>
