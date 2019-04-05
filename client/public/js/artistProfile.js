@@ -21,5 +21,3 @@ $(() => {
         const file = $('[type=file]').files[0];
     })
 })
-
-
