@@ -44,6 +44,10 @@ $(() => {
     },
     function complete() {
       console.log("Upload is complete");
+      // db update for user to add the media url
+      storageRef.getDownloadURL().then(url => {
+        // code for the database call to make the update
+      })
       
     })  
   });
