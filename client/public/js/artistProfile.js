@@ -1,4 +1,5 @@
-const firebase = require('firebase');
+const firebase = require("firebase");
+const db = require("../../../models");
 
 // Initialize Firebase
 const config = {
@@ -23,15 +24,27 @@ $(() => {
 
     // grabbing the file
     const file = e.target.files[0];
+    //finding the file type
+    const mediaType = file.type.split("/");
+    console.log(mediaType);
     // creating our strage reference
-    const storageRef = firebase.storage().ref("photos/" + file.name);
+    const storageRef = firebase.storage().ref("photos/" + file.name); 
     // upload file
     const task = storageRef.put(file);
     //  update progress bar
-    task.on("state_changed", function progress(snapshot) {
+    task.on("state_changed", 
+    function progress(snapshot) {
       const percentageTransferred =
-        (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      uploader.value = percentageTransferred;
-    });
+      (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      uploader.attr('value', percentageTransferred);
+    },
+    function error(error) {
+      console.log(error);
+      
+    },
+    function complete() {
+      console.log("Upload is complete");
+      
+    })  
   });
 });
