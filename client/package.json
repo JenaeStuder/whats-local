@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "firebase": "^5.9.3",
+>>>>>>> 5eda3af78d708c88e794e6df7569d6e22c140d3f
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8"
