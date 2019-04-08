@@ -1,0 +1,29 @@
+body {
+    background-image: url("https://cdn.pixabay.com/photo/2017/05/05/20/44/paint-2288247_1280.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: "Fredericka the Great", cursive;
+    font-size: 75px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+p {
+    font-family: "Fredericka the Great", cursive;
+    font-weight: bold;
+    font-size: large;
+}
+
+label {
+    font-family: "Playfair Display", serif;
+    background-color: #993366;
+    font-size: 20px;
+    color: #ffffcc;
+    padding: 5px;
+    border-radius: 10px;
+}
+
