@@ -1,0 +1,43 @@
+body {
+  background-color: #ffffcc;
+  background-size: 85vh;
+}
+
+#titleBackground {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url("./images/background-image.jpg");
+  height: 100vh;
+  background-size: 135% 100vh;
+  background-position: right top;
+}
+
+#title-jumbo {
+  background: none;
+  text-align: center;
+  position: relative;
+  top: 10vh;
+  font-family: "Fredericka the Great";
+  margin: 0;
+  padding: 0;
+}
+
+#search-jumbo {
+  background: none;
+  position: relative;
+  top: 15vh;
+}
+
+.form-control {
+  background: #ffffcc;
+  opacity: 0.7;
+}
+
+.btn-div {
+  text-align: center;
+}
+.btn-div .btn {
+  margin: 1rem;
+  border: solid;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=load.css.map */
