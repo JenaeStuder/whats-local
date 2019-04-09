@@ -28,18 +28,23 @@ coverage
 # Bower dependency directory (https://bower.io/)
 bower_components
 
-# node-waf configuration
-.lock-wscript
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
 
-# Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
+# testing
+/coverage
 
-# Dependency directories
-node_modules/
-jspm_packages/
+# production
+/build
 
-# TypeScript v1 declaration files
-typings/
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Optional npm cache directory
 .npm

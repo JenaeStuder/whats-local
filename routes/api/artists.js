@@ -1,3 +1,4 @@
+
 const router = require("express").Router();
 const artistController = require("../../controllers/localController");
 //const future contoller with the db queries
