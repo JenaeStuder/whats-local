@@ -1,16 +1,17 @@
 
 const router = require("express").Router();
+const artistController = require("../../controllers/localController");
 //const future contoller with the db queries
 
 
 router.use("/")
-    .get()
-    .post();
+    .get(localController.findAll)
+    .post(localController.create);
 
 router.use("/:id")
-    .get()
-    .post()
-    .update()
-    .delete();
+    .get(localController.findById)
+    .post(localController.create)
+    .put(localController.update)
+    .delete(localController.remove);
 
 module.exports = router;
