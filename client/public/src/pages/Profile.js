@@ -8,7 +8,7 @@ import Col from "../components/Col";
 import Container from "../components/Container";
 import Row from "../components/Row";
 
-
+componentDidMount(
 class Info extends Component {
     state = {
         firstName: "",
@@ -81,7 +81,7 @@ class Info extends Component {
                 </Col>
                 <Col size="md-4">
                     <div>
-                        <h1>Media 2</h1>
+                        <h1>Media 3</h1>
                         {this.state.mediaClips}
                     </div>
                 </Col>
@@ -97,4 +97,5 @@ class Info extends Component {
     }
 
 }
+)
 export default Info;
