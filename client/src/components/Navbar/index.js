@@ -2,22 +2,20 @@ import React from "react";
 
 function Navbar() {
   return (
-    <div className="jumbotron jumbotron-fluid" id="search-jumbo">
-      <div className="container">
-        <div className="input-group">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Search your area..."
-          />
-          <span className="input-group-btn">
-            <button className="btn btn-light" type="button">
-              <i className="fa fa-search fa-fw" />
-            </button>
-          </span>
-        </div>
-      </div>
-    </div>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a className="navbar-brand" href="#">
+        <i class="fas fa-home" />
+      </a>
+      <a className="navbar-brand" href="#">
+        <i class="fas fa-search" />
+      </a>
+      <a className="navbar-brand" href="#">
+        (<i class="fas fa-users" />)
+      </a>
+      <a className="navbar-brand" href="#">
+        <i class="fas fa-heart" />
+      </a>
+    </nav>
   );
 }
 
