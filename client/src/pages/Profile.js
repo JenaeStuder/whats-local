@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import "./style.css";
 import API from "../../utils/API";
 import ProfilePicture from "../ProfilePicture";
@@ -8,8 +8,8 @@ import Col from "../components/Col";
 import Container from "../components/Container";
 import Row from "../components/Row";
 
-componentDidMount(
-class Info extends Component {
+
+class Profile extends Component {
     state = {
         firstName: "",
         lastName: "",
@@ -21,11 +21,11 @@ class Info extends Component {
 
     };
     componentDidMount() {
-        this.loadInfo();
+        this.loadProfile();
     }
 
-    loadInfo = () => {
-        API.getInfo().then(res => this.setState({
+    loadProfile = () => {
+        API.getProfile().then(res => this.setState({
             firstName: res.data,
             lastName: "",
             socialMediaHandles: "",
@@ -97,5 +97,5 @@ class Info extends Component {
     }
 
 }
-)
-export default Info;
+
+export default Profile;
