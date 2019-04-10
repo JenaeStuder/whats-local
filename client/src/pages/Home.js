@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import "./load.css";
-import TitleBackground from "./components/TitleBackground";
+import "../load.css";
+import Carousel from "../components/Carousel";
+
 // import Login from "./components/Login";
 
 class Home extends Component {
   render() {
     return (
       <div className="App">
-        {/* <Login /> */}
-        <TitleBackground />
+        <Carousel />
       </div>
     );
   }
