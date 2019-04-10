@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./load.css";
-import Carousel from "./components/Carousel";
+import "../load.css";
+import Carousel from "../components/Carousel";
 
 // import Login from "./components/Login";
 
