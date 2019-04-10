@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 import API from "../../utils/API";
-import ProfilePicture from "../ProfilePicture";
+import ProfilePicture from "../components/ProfilePicture";
 import Bio from "../components/Bio";
 import MediaClips from "../components/MediaClips"
 import Col from "../components/Col";
