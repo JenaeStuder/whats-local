@@ -49,9 +49,9 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  addStorageItem: function(file, id) {
+  addStorageItem: function(req, res) {
     // upload file
-    const task = storageRef.put(file, id);
+    const task = storageRef.put(req.file, req.id);
     // grab the media item URL 
     const mediaURL = task.on('state_changed', 
     null, 
@@ -62,10 +62,12 @@ module.exports = {
       const url = task.getDownloadURL().then(data => {
         // call to database is made to insert the URL reference for the artist
         db.Users
-          .findOneAndUpdate({_id: id}, {$push:{media:{path:data}}})
-          .then(dbModel => {console.log(dbModel);
+          .findOneAndUpdate({_id: req.id}, {$push:{media:{path:data}}})
+          .then(dbModel => {
+              console.log(dbModel)
+              res.json(dbModel)})
+          .catch(err => res.status(422).json(err))  
           })
-      })
-    } )
-  }
+    })
+  },  
 };
