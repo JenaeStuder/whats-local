@@ -1,13 +1,38 @@
 body {
-  background-color: #ffffcc;
-  background-size: 85vh;
+  background-color: lightgray;
 }
 
 #titleBackground {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url("./images/background-image.jpg");
+  /* background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url("./images/background-image.jpg"); */
   height: 100vh;
-  background-size: 135% 100vh;
-  background-position: right top;
+  /* background-size: 135% 100vh; */
+  /* background-position: right top; */
+  position: absolute;
+  z-index: 2;
+}
+
+.carousel .carousel-inner {
+  height: 100vh;
+}
+.carousel .d-block {
+  height: 100vh;
+}
+.carousel .paint {
+  width: 150%;
+  float: right;
+  opacity: 0.7;
+}
+.carousel .gradient {
+  opacity: 0.8;
+}
+.carousel .drawing {
+  opacity: 0.95;
+}
+.carousel .orange {
+  opacity: 0.75;
+}
+.carousel .plant {
+  opacity: 0.75;
 }
 
 #title-jumbo {
@@ -38,6 +63,7 @@ body {
   margin: 1rem;
   border: solid;
   font-weight: bold;
+  background: rgba(255, 255, 255, 0.25);
 }
 
 /*# sourceMappingURL=load.css.map */
