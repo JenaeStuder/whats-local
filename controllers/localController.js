@@ -51,7 +51,7 @@ module.exports = {
   },
   addStorageItem: function(file, id) {
     // upload file
-    const task = storageRef.put(file);
+    const task = storageRef.put(file, id);
     // grab the media item URL 
     const mediaURL = task.on('state_changed', 
     null, 
@@ -61,6 +61,10 @@ module.exports = {
     function mediaUrl() {
       const url = task.getDownloadURL().then(data => {
         // call to database is made to insert the URL reference for the artist
+        db.Users
+          .findOneAndUpdate({_id: id}, {$push:{media:{path:data}}})
+          .then(dbModel => {console.log(dbModel);
+          })
       })
     } )
   }
