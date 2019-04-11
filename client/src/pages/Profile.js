@@ -35,95 +35,93 @@ class Profile extends Component {
       .catch(err => console.log(err));
   };
 
-    render() {
-        return (
-            <Container fluid>
-           
-        
-                <Row>
-                    <Col size="md-6">
-                    <ProfilePicture>
-                        <h1>Profile Picture</h1>
-                        <img>
-                            {this.state.profilePicture}</img>
-                            </ProfilePicture>
-                    </Col>
-                    <Col size="md-6">
-                        <Row>
-                            <h1>Name</h1>
-                            <h1> {this.state.firstName}
-                                {this.state.lastName}
-                            </h1>
-                        </Row>
-                        <Row>
-                            {this.state.socialMediaHandles}
-                        </Row>
-                        <Row>
-                            <Bio>
-                            <h1>Bio</h1>
-                            <div>
-                                {this.state.bio}
-                            </div>
-                            </Bio>
-                        </Row>
-                    </Col>
-                </Row>
+  render() {
+    return (
+      <Container fluid>
+
+
+        <Row>
+          <Col size="md-6">
+            <ProfilePicture>
+              <h1>Profile Picture</h1>
+              <img>
+                {this.state.profilePicture}</img>
+            </ProfilePicture>
+          </Col>
+          <Col size="md-6">
             <Row>
-                <Col size="md-4">
-                <MediaClips>
-                    <div>
-                        <h1>Media 1</h1>
-                        {this.state.mediaClips}
-                    </div>
-                    </MediaClips>
-                </Col>
-                <Col size="md-4">
-                <MediaClips>
-                    <div>
-                        <h1>Media 2</h1>
-                        {this.state.mediaClips}
-                    </div>
-                    </MediaClips>
-                </Col>
-                <Col size="md-4">
-                <MediaClips>
-                    <div>
-                        <h1>Media 3</h1>
-                        {this.state.mediaClips}
-                    </div>
-                    </MediaClips>
-                </Col>
-
-
+              <h1>Name</h1>
+              <h1> {this.state.firstName}
+                {this.state.lastName}
+              </h1>
             </Row>
-            <Row>{this.state.socialMediaHandles}</Row>
             <Row>
-              <h1>Bio</h1>
-              <div>{this.state.bio}</div>
+              {this.state.socialMediaHandles}
+            </Row>
+            <Row>
+              <Bio>
+                <h1>Bio</h1>
+                <div>
+                  {this.state.bio}
+                </div>
+              </Bio>
             </Row>
           </Col>
         </Row>
         <Row>
           <Col size="md-4">
-            <div>
-              <h1>Media 1</h1>
-              {this.state.mediaClips}
-            </div>
+            <MediaClips>
+              <div>
+                <h1>Media 1</h1>
+                {this.state.mediaClips}
+              </div>
+            </MediaClips>
           </Col>
           <Col size="md-4">
-            <div>
-              <h1>Media 2</h1>
-              {this.state.mediaClips}
-            </div>
+            <MediaClips>
+              <div>
+                <h1>Media 2</h1>
+                {this.state.mediaClips}
+              </div>
+            </MediaClips>
           </Col>
           <Col size="md-4">
-            <div>
-              <h1>Media 3</h1>
-              {this.state.mediaClips}
-            </div>
+            <MediaClips>
+              <div>
+                <h1>Media 3</h1>
+                {this.state.mediaClips}
+              </div>
+            </MediaClips>
           </Col>
+
+
         </Row>
-      </Container>
+        <Row>{this.state.socialMediaHandles}</Row>
+        <Row>
+          <h1>Bio</h1>
+          <div>{this.state.bio}</div>
+        </Row>
+      <Row>
+        <Col size="md-4">
+          <div>
+            <h1>Media 1</h1>
+            {this.state.mediaClips}
+          </div>
+        </Col>
+        <Col size="md-4">
+          <div>
+            <h1>Media 2</h1>
+            {this.state.mediaClips}
+          </div>
+        </Col>
+        <Col size="md-4">
+          <div>
+            <h1>Media 3</h1>
+            {this.state.mediaClips}
+          </div>
+        </Col>
+      </Row>
+      </Container >
     );
   }
 }
