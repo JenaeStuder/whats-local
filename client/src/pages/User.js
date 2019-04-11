@@ -43,7 +43,7 @@ class Profile extends Component {
                     </Col>
                     <Col size="md-6">
                         <Row>
-                        <Favorites />
+                        <Favorites favorites ={this.state.favorites} />
                             
                         </Row>
                         <Row>
