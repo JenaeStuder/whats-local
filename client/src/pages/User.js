@@ -3,7 +3,7 @@ import API from "../utils/API";
 import Col from "../components/Col";
 import Container from "../components/Container";
 import Row from "../components/Row";
-
+import Favorites from "../components/favorites";
 
 
 
@@ -12,10 +12,7 @@ class Profile extends Component {
     state = {
         firstName: "",
         lastName: "",
-        socialMediaHandles: "",
-        bio: "",
-        profilePicture: "",
-        mediaClips: ""
+        favorites:""
 
 
     };
