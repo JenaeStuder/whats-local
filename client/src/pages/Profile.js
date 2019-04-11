@@ -6,6 +6,8 @@ import MediaClips from "../components/MediaClips"
 import Col from "../components/Col";
 import Container from "../components/Container";
 import Row from "../components/Row";
+import Navbar from "../components/Navbar";
+import Searchbar from "../components/Searchbar";
 
 
 class Profile extends Component {
@@ -39,7 +41,7 @@ class Profile extends Component {
     render() {
         return (
             <Container fluid>
-           
+           <Searchbar/>
         
                 <Row>
                     <Col size="md-6">
@@ -100,7 +102,7 @@ class Profile extends Component {
 
 
 
-
+            <Navbar/>
             </Container >
         )
     }
