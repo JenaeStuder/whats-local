@@ -34,6 +34,12 @@ body {
 .carousel .plant {
   opacity: 0.75;
 }
+.carousel .neon {
+  width: 165%;
+  opacity: 0.8;
+  float: right;
+  top: 0;
+}
 
 #title-jumbo {
   background: none;
