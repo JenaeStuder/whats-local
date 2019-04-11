@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
+import API from "../utils/API";
 import ProfilePicture from "../components/ProfilePicture";
 import Bio from "../components/Bio";
 import MediaClips from "../components/MediaClips"
