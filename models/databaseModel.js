@@ -1,11 +1,14 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 // Save a reference to the Schema constructor
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
+
+// subdocument schema for the media files 
+const MediaSchema = new Schema({path: {type: String}})
 
 // Using the Schema constructor, create a new UserSchema object
 // This is similar to a Sequelize model
-var UserSchema = new Schema({
+const UserSchema = new Schema({
   // `username` must be of type String
   // `username` will trim leading and trailing whitespace before it's saved
   // `username` is a required field and throws a custom error message if not supplied
@@ -50,42 +53,43 @@ var UserSchema = new Schema({
     data: Buffer,
     contentType: String
   },
-  img1:{
-    data: Buffer,
-    contentType: String
-  },
-  img2:{
-    data: Buffer,
-    contentType: String
-  },
-  img3:{
-    data: Buffer,
-    contentType: String
-  },
-  vid1:{
-    data: Buffer,
-    contentType: String
-  },
-  vid2:{
-    data: Buffer,
-    contentType: String
-  },
-  vid3:{
-    data: Buffer,
-    contentType: String
-  },
-  audio1:{
-    data: Buffer,
-    contentType: String
-  },
-  audio2:{
-    data: Buffer,
-    contentType: String
-  },
-  audio3:{
-    data: Buffer,
-    contentType: String
-  },
+  media:[MediaSchema],
+  // img1:{
+  //   data: Buffer,
+  //   contentType: String
+  // },
+  // img2:{
+  //   data: Buffer,
+  //   contentType: String
+  // },
+  // img3:{
+  //   data: Buffer,
+  //   contentType: String
+  // },
+  // vid1:{
+  //   data: Buffer,
+  //   contentType: String
+  // },
+  // vid2:{
+  //   data: Buffer,
+  //   contentType: String
+  // },
+  // vid3:{
+  //   data: Buffer,
+  //   contentType: String
+  // },
+  // audio1:{
+  //   data: Buffer,
+  //   contentType: String
+  // },
+  // audio2:{
+  //   data: Buffer,
+  //   contentType: String
+  // },
+  // audio3:{
+  //   data: Buffer,
+  //   contentType: String
+  // },
   bio:{
     type: String
   },
@@ -98,7 +102,8 @@ var UserSchema = new Schema({
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var User = mongoose.model("User", UserSchema);
+const User = mongoose.model("User", UserSchema);
+//const Media = mongoose.model("Media", MediaSchema);
 
 // Export the User model
 module.exports = User;

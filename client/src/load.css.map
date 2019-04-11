@@ -1,1 +1,8 @@
-{"version":3,"sourceRoot":"","sources":["load.scss"],"names":[],"mappings":"AAOA;EACE,kBARc;EASd;;;AAGF;EACE;EAQA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE,YA3Cc;EA4Cd;;;AAIF;EACE;;AACA;EACE;EACA;EACA","file":"load.css"}
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": ["load.scss"],
+  "names": [],
+  "mappings": "AAOA;EACE;;;AAGF;AACE;EACA;AACA;AACA;EACA;EACA;;;AAIA;EACE;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;AAEF;EACE;;AAEF;EACE;;AAEF;EACE;;AAEF;EACE;;;AAIJ;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE,YA/Dc;EAgEd;;;AAIF;EACE;;AACA;EACE;EACA;EACA;EACA",
+  "file": "load.css"
+}
