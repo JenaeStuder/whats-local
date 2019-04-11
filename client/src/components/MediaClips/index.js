@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-export function MediaClip(props) {
+function MediaClip(props) {
     return (
         <div className="media">
             <div className="images">
@@ -16,5 +16,6 @@ export function MediaClip(props) {
         </div>
     );
 }
+export default MediaClip;
 
 //image server to save the pictures outsource any file saving
