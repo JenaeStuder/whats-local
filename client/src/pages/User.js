@@ -32,7 +32,7 @@ class Profile extends Component {
     };
 
 
-    render() {
+    render(props) {
         return (
             <Container fluid>
            

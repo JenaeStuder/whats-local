@@ -4,16 +4,24 @@ import "./style.css";
 function MediaClip(props) {
     return (
         <div className="media">
-            <div className="images">
-                <img className="image" src={props.image} /> 
+        {(function(){
+            switch (media){
+
+            case "1":
+                return <img className="media" src={props.media} />;
+                break;
+            case "2":
+            return <video className="media" src={props.media} /> ;
+                break;
+            case "3":
+                return <audio className="media" src={props.media} />;
+                default:
+                return null;
+            }
+        }
+        )()}
             </div>
-            <div className="videos">
-                <video className="video" src={props.video} /> 
-            </div>
-            <div className="audioFiles">
-                <audio className="audio" src={props.audio} />
-            </div>
-        </div>
+        
     );
 }
 export default MediaClip;

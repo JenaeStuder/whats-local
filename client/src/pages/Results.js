@@ -23,7 +23,7 @@ class Results extends Component {
         ).catch(err => console.log(err));
     };
 
-    render() {
+    render(props) {
         return (
             <Container fluid>
             <Searchbar />
