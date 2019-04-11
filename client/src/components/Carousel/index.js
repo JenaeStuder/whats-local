@@ -23,16 +23,22 @@ function Carousel() {
             src={require("../../images/drawing.jpg")}
           />
         </div>
-        <div className="carousel-item gradient">
+        <div className="carousel-item neon">
           <img
             className="d-block w-100"
-            src={require("../../images/gradient.jpg")}
+            src={require("../../images/neon.jpg")}
           />
         </div>
         <div className="carousel-item plant">
           <img
             className="d-block w-100"
             src={require("../../images/plant.jpg")}
+          />
+        </div>
+        <div className="carousel-item gradient">
+          <img
+            className="d-block w-100"
+            src={require("../../images/gradient.jpg")}
           />
         </div>
       </div>
