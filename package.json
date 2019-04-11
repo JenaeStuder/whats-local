@@ -3,12 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "axios": "^0.18.0",
     "concurrently": "^4.1.0",
     "express": "^4.16.4",
+=======
+    "express": "^4.16.3",
+>>>>>>> 75beac96aaa2452c942e65840b20ab357bd242f9
     "firebase": "^5.9.3",
     "if-env": "^1.0.4",
     "mongoose": "^5.3.16",
+    "concurrently": "^4.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
