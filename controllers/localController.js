@@ -69,5 +69,15 @@ module.exports = {
           .catch(err => res.status(422).json(err))  
           })
     })
-  },  
+  }, 
+  removeStorageItem: function(req, res) {
+    db.Users.findById({_id: req.id}, {$pull:{media:{path: req.body}}})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+
+  },
+  savedArtist: function(req, res) {
+    
+  } 
+
 };
