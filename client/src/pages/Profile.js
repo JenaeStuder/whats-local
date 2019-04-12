@@ -8,6 +8,7 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
+import {Update, UpdateItem} from "../components/Upcoming"
 
 
 class Profile extends Component {
@@ -17,7 +18,8 @@ class Profile extends Component {
         socialMediaHandles: "",
         bio: "",
         profilePicture: "",
-        mediaClips: ""
+        mediaClips: "",
+        upcoming:"",
 
 
     };
@@ -45,13 +47,27 @@ class Profile extends Component {
 
                 <Row>
                     <Col size="md-6">
-
+                    <Row>
                         <h1>Profile Picture</h1>
                         <img>
                             <ProfilePicture image=
                                 {this.state.profilePicture}>
                             </ProfilePicture>
                         </img>
+                        </Row>
+                        <Row>
+                        <h1>Artist Updates</h1>
+                        {this.state.update.length ?(
+                            <Update> {this.state.update.map(update =>(
+                                <UpdateItem key={update._id}>
+                                </UpdateItem>
+                            ))}
+                            </Update>
+                            ):(
+                                <h2> {this.state.firstName} doesn't have any updates, check back soon.</h2>
+                            )}
+                        
+                        </Row>
                     </Col>
                     <Col size="md-6">
                         <Row>
