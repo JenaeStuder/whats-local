@@ -27,5 +27,4 @@
   "eslintConfig": {
     "extends": "react-app"
   }
-
 }

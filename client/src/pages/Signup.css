@@ -1,0 +1,35 @@
+body {
+    background: linear-gradient(#08164c,#993366);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 100%;
+    height: fit-content;
+}
+
+h1 {
+    font-family: "Fredericka the Great", cursive;
+    font-size: 75px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: white;
+}
+
+p {
+    font-family: "Fredericka the Great", cursive;
+    font-weight: bold;
+    font-size: large;
+    color: #993366
+}
+
+label {
+    font-family: "Playfair Display", serif;
+    background-color: #993366;
+    font-size: 20px;
+    color: #ffffcc;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+form {
+    padding: 20px;
+}
