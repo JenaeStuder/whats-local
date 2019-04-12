@@ -8,7 +8,7 @@ import Results from "./pages/Results";
 import Search from "./pages/Search";
 import Signup from "./pages/SignUp"
 import User from "./pages/User";
-import Navbar from './components/Navbar'
+
 
 // import Login from "./components/Login";
 
@@ -16,7 +16,6 @@ function App() {
   return (
     <Router>
       <div>
-        <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/profile" component={Profile} />
