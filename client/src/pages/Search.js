@@ -1,12 +1,13 @@
 import React from "react";
+import SearchJumbo from "../SearchJumbo";
 
 function Search() {
   return (
     <div>
-      <h1>Search Page</h1>
-      <p>
-        This page will be used to search for artists by name or genre.
-      </p>
+      <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-4">Search by</h1>
+      </div>
+      <SearchJumbo />
     </div>
   );
 }
