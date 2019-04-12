@@ -5,6 +5,8 @@ const Schema = mongoose.Schema;
 
 // subdocument schema for the media files 
 const MediaSchema = new Schema({path: {type: String}})
+// subdocument schema for the saved artist of the user
+const SavedArtist = new Schema({artists: {type: String}})
 
 // Using the Schema constructor, create a new UserSchema object
 // This is similar to a Sequelize model
@@ -54,6 +56,7 @@ const UserSchema = new Schema({
     contentType: String
   },
   media:[MediaSchema],
+  favoriteArtits:[SavedArtist],
   // img1:{
   //   data: Buffer,
   //   contentType: String

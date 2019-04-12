@@ -16,5 +16,6 @@ router.use("/:id")
 // routes for the media files
 router.use("/media/:id")
     .put(localController.addStorageItem)
+    .delete(localController.removeStorageItem)
 
 module.exports = router;
