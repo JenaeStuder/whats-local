@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import "./style.css";
 
 function Update({ children }) {
@@ -9,9 +9,6 @@ function Update({ children }) {
   );
 }
 
-function UpdateItem({ children }) {
-  return <li className="list-group-item">{children}</li>;
-}
-
 export default Update;
-export default UpdateItem;
+
+

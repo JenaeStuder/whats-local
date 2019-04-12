@@ -1,11 +1,13 @@
 import React from "react";
 import "./style.css";
 
-function MediaClip(props) {
+function MediaClip(props)
+
+{
     return (
         <div className="media">
         {(function(){
-            switch (media){
+            switch (props.media){
 
             case "1":
                 return <img className="media" src={props.media} />;

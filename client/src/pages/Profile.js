@@ -8,7 +8,8 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
-import {Update, UpdateItem} from "../components/Upcoming"
+import Update from "../components/Upcoming";
+import UpdateItem  from "../components/UpdateItem"
 
 
 class Profile extends Component {
