@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import ProfilePicture from "../components/ProfilePicture";
 import Bio from "../components/Bio";
-import MediaClips from "../components/MediaClips"
+import MediaClips from "../components/MediaClips";
 import Col from "../components/Col";
 import Container from "../components/Container";
 import Row from "../components/Row";
@@ -11,8 +11,9 @@ import Searchbar from "../components/Searchbar";
 import Update from "../components/Upcoming";
 import UpdateItem  from "../components/UpdateItem"
 
-
 class Profile extends Component {
+
+
     state = {
         firstName: "",
         lastName: "",
@@ -27,6 +28,7 @@ class Profile extends Component {
     componentDidMount() {
         this.loadProfile();
     }
+
 
     loadProfile = () => {
         API.getProfile().then(res => this.setState({
@@ -118,16 +120,44 @@ class Profile extends Component {
                     </Col>
 
 
+            </Row>
+            <Row>{this.state.socialMediaHandles}</Row>
+            <Row>
+              <h1>Bio</h1>
+              <div>{this.state.bio}</div>
+            </Row>
+          </Col>
+        </Row>
+        <Row>
+          <Col size="md-4">
+            <div>
+              <h1>Media 1</h1>
+              {this.state.mediaClips}
+            </div>
+          </Col>
+          <Col size="md-4">
+            <div>
+              <h1>Media 2</h1>
+              {this.state.mediaClips}
+            </div>
+          </Col>
+          <Col size="md-4">
+            <div>
+              <h1>Media 3</h1>
+              {this.state.mediaClips}
+            </div>
+          </Col>
+       
                 </Row>
-
-
 
                 <Navbar />
             </Container >
+
         
     
     </div>
          ) }
+
 }
 
 export default Profile;
