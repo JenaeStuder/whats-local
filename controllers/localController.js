@@ -1,4 +1,4 @@
-const db = require('../models')
+const db = require("../models");
 
 // connection setup for the storage service that will containt the media files. 
 // Initialize Firebase
