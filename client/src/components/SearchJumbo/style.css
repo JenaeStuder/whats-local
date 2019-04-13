@@ -1,0 +1,19 @@
+.jumbotron {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: "Playfair Display", serif;
+    text-shadow: -2px -2px 1px black, -2px -2px 1px black, -2px -2px 1px black, -2px -2px 1px black;
+}
+
+.card {
+    background-color: transparent;
+    border: transparent;
+}
+
+.display-4 {
+    font-family: "Fredericka the Great", cursive;
+}
