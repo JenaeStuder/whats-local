@@ -6,9 +6,9 @@ import Main from "./pages/Main";
 import Profile from "./pages/Profile";
 import Results from "./pages/Results";
 import Search from "./pages/Search";
-import Signup from "./pages/Signup";
+import Signup from "./pages/SignUp"
 import User from "./pages/User";
-import Navbar from './components/Navbar'
+
 
 // import Login from "./components/Login";
 
@@ -16,7 +16,6 @@ function App() {
   return (
     <Router>
       <div>
-        <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/profile" component={Profile} />
@@ -25,7 +24,6 @@ function App() {
           <Route exact path="/main" component={Main} />
           <Route exact path="/results" component={Results} />
           <Route exact path="/search" component={Search} />
-          <Route exact path="/signup" component={Signup} />
           <Route exact path="/user" component={User} />
          
         </Switch>
