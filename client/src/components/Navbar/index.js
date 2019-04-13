@@ -1,20 +1,24 @@
 import React from "react";
+import "./style.css";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a className="navbar-brand" href="#">
+    <nav className="navbar navbar-dark bg-dark">
+      <a className="nav-item nav-link navbar-brand" href="#">
         <i class="fas fa-home" />
       </a>
-      <a className="navbar-brand" href="#">
+      <a className="nav-item nav-link navbar-brand" href="#">
         <i class="fas fa-search" />
       </a>
-      <a className="navbar-brand" href="#">
-        (<i class="fas fa-users" />)
+      <a className="nav-item nav-link navbar-brand" href="#">
+        <i class="fas fa-users" />
       </a>
-      <a className="navbar-brand" href="#">
-        <i class="fas fa-heart" />
-      </a>
+        <a className="nav-item nav-link navbar-brand" href="#">
+            <i class="fas fa-heart" />
+        </a>
+        <a className="nav-item nav-link navbar-brand" href="#">
+            <i class="fas fa-edit"></i>
+        </a>
     </nav>
   );
 }
