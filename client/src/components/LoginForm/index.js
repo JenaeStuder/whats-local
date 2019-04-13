@@ -25,7 +25,7 @@ function LoginForm(props) {
                 type="password"
             />
             <Button
-                className="btn btn-warning btn-lg btn-block"
+                className="btn btn-info btn-lg btn-block"
                 id="login"
                 type="submit"
                 //onClick=""

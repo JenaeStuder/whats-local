@@ -31,9 +31,9 @@ class SearchJumbo extends Component {
     <div>
         <Card>
             <Card.Body>
-      <div class="jumbotron" style={{backgroundImage : `url(https://images.pexels.com/photos/1916824/pexels-photo-1916824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`}}>
+      <div class="jumbotron jumbo-image" style={{backgroundImage : `url(https://images.pexels.com/photos/1916824/pexels-photo-1916824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`}}>
         <SearchBtn
-          className="btn btn-lg"
+          className="btn btn-lg search-jumbo-button"
           id="artistBtn button"
           type="submit"
           onClick={this.handleShow}
@@ -44,7 +44,7 @@ class SearchJumbo extends Component {
 
       <div class="jumbotron" style={{backgroundImage : `url(https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`}}>
         <SearchBtn
-          className="btn btn-lg"
+          className="btn btn-lg search-jumbo-button"
           id="cityBtn button"
           type="submit"
           onClick={this.handleShow}
@@ -55,7 +55,7 @@ class SearchJumbo extends Component {
 
       <div class="jumbotron" style={{backgroundImage : `url(https://images.pexels.com/photos/959314/pexels-photo-959314.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`}}>
         <SearchBtn
-          className="btn btn-lg"
+          className="btn btn-lg search-jumbo-button"
           id="categorybtn button"
           type="submit"
           onClick={this.handleShow}

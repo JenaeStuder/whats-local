@@ -48,9 +48,9 @@ class Login extends Component {
             <Container style={{ marginTop: 20, height: "100vh"}}>
                     <Row>
                         <Col size="md-6">
-                            <h1>what's</h1>
-                            <h1>local?</h1>
-                            <p>Login</p>
+                            <h1 id="title">what's</h1>
+                            <h1 id="title">local?</h1>
+                            <p id="subtitle">Login</p>
                             <Card>
                             <LoginForm/>
                             </Card>

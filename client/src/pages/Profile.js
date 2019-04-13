@@ -9,7 +9,7 @@ import Row from "../components/Row";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
 import Update from "../components/Upcoming";
-import UpdateItem  from "../components/UpdateItem"
+import UpdateItem from "../components/UpdateItem"
 
 class Profile extends Component {
 

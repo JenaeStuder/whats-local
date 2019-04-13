@@ -24,7 +24,7 @@ import "./Search.css";
 function Search() {
   return (
     <div>
-      <div class="jumbotron jumbotron-fluid">
+      <div class="jumbotron jumbotron-fluid search-jumbo">
         <h1 class="display-4">Search by</h1>
       </div>
       <SearchJumbo />
