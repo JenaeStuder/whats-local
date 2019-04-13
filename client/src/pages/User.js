@@ -34,6 +34,7 @@ class Profile extends Component {
 
     render(props) {
         return (
+            <div className="user">
             <Container fluid>
            
             <Searchbar />
@@ -73,6 +74,7 @@ class Profile extends Component {
             <Navbar />
 
             </Container >
+            </div>
         )
     }
 
