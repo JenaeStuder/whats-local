@@ -1,10 +1,11 @@
-.jumbotron {
+.jumbo-image {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    text-align: center;
 }
 
-h1 {
+.button-title {
     font-family: "Playfair Display", serif;
     text-shadow: -2px -2px 1px black, -2px -2px 1px black, -2px -2px 1px black, -2px -2px 1px black;
 }
@@ -16,4 +17,8 @@ h1 {
 
 .display-4 {
     font-family: "Fredericka the Great", cursive;
+}
+
+.search-jumbo-button {
+    float: none;
 }
