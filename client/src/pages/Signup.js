@@ -1,3 +1,4 @@
+
 import React, {Component} from "react";
 import SignUpForm from "../components/SignUpForm";
 //import Container from "../components/Container";
@@ -140,3 +141,4 @@ class SignUp extends Component {
 
 
 export default SignUp;
+
