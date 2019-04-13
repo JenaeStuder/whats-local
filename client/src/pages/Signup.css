@@ -1,7 +1,8 @@
 body {
-    background: linear-gradient(#08164c,#993366);
-    background-repeat: no-repeat;
-    background-size: cover;
+    /*background-image : linear-gradient(#08164c,#993366);*/
+    background-image: url(../images/vertical-waves.png);
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
     min-width: 100%;
     height: fit-content;
 }
