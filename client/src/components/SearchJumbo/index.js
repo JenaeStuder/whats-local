@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, {Component} from "react";
 import SearchBtn from "../SearchBtns";
 import Modal from "react-bootstrap/Modal";
@@ -37,32 +38,65 @@ class SearchJumbo extends Component {
           id="artistBtn button"
           type="submit"
           onClick={this.handleShow}
+=======
+import React from "react";
+import SearchBtn from "../SearchBtns";
+
+function SearchJumbo() {
+  return (
+    <div>
+      <div class="jumbotron">
+        <SearchBtn
+          className="btn btn-lg"
+          id="artistBtn"
+          type="submit"
+          //onClick=""
+>>>>>>> a18170bb39771eecffdfb00859b00f14da0246bd
           title="artist"
           // backgroundImage="https"
         />
       </div>
 
+<<<<<<< HEAD
       <div class="jumbotron" style={{backgroundImage : `url(https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`}}>
         <SearchBtn
           className="btn btn-lg"
           id="cityBtn button"
           type="submit"
           onClick={this.handleShow}
+=======
+      <div class="jumbotron">
+        <SearchBtn
+          className="btn btn-lg"
+          id="cityBtn"
+          type="submit"
+          //onClick=""
+>>>>>>> a18170bb39771eecffdfb00859b00f14da0246bd
           title="city"
           // backgroundImage="https"
         />
       </div>
 
+<<<<<<< HEAD
       <div class="jumbotron" style={{backgroundImage : `url(https://images.pexels.com/photos/959314/pexels-photo-959314.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`}}>
         <SearchBtn
           className="btn btn-lg"
           id="categorybtn button"
           type="submit"
           onClick={this.handleShow}
+=======
+      <div class="jumbotron">
+        <SearchBtn
+          className="btn btn-lg"
+          id="categorybtn"
+          type="submit"
+          //onClick=""
+>>>>>>> a18170bb39771eecffdfb00859b00f14da0246bd
           title="category"
           // backgroundImage="https"
         />
       </div>
+<<<<<<< HEAD
       </Card.Body>
       </Card>
       <Modal show={this.state.show} onHide={this.handleClose}>
@@ -85,3 +119,10 @@ class SearchJumbo extends Component {
 }
 
 export default SearchJumbo;
+=======
+    </div>
+  );
+}
+
+export default SearchJumbo;
+>>>>>>> a18170bb39771eecffdfb00859b00f14da0246bd

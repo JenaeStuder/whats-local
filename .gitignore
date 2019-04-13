@@ -1,4 +1,7 @@
-
+node_modules
+package-lock.json
+.DS_Store
+yarn.lock
 
 # Logs
 logs
@@ -73,3 +76,5 @@ bower_components
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+package-lock.json
