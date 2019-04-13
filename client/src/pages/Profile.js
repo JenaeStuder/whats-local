@@ -35,7 +35,8 @@ class Profile extends Component {
             socialMediaHandles: "",
             bio: "",
             profilePicture: "",
-            mediaClips: ""
+            mediaClips: "",
+            upcoming:""
         })
         ).catch(err => console.log(err));
     };
@@ -43,6 +44,7 @@ class Profile extends Component {
 
     render(props) {
         return (
+            <div className ="Profile">
             <Container fluid>
                 <Searchbar />
 
@@ -122,9 +124,10 @@ class Profile extends Component {
 
                 <Navbar />
             </Container >
-        )
-    }
-
+        
+    
+    </div>
+         ) }
 }
 
 export default Profile;
