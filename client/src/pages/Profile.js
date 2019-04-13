@@ -146,8 +146,8 @@ class Profile extends Component {
                 </div>
               </Bio>
             </Row>
-          </Col>
-        </Row>
+          {/* </Col> */}
+        {/* </Row> */}
         <Row>
           <Col size="md-4">
             <MediaClips>

@@ -1,5 +1,4 @@
 import React from "react";
-<<<<<<< HEAD
 import SearchJumbo from "../components/SearchJumbo";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
@@ -21,9 +20,6 @@ import "./Search.css";
 //   export default Search;
 //   render(<Search />);
 
-=======
-import SearchJumbo from "../SearchJumbo";
->>>>>>> a18170bb39771eecffdfb00859b00f14da0246bd
 
 function Search() {
   return (
