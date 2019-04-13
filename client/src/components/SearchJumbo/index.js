@@ -1,3 +1,4 @@
+
 import React, {Component} from "react";
 import SearchBtn from "../SearchBtns";
 import Modal from "react-bootstrap/Modal";
@@ -42,6 +43,7 @@ class SearchJumbo extends Component {
         />
       </div>
 
+
       <div class="jumbotron jumbo-image" style={{backgroundImage : `url(https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`}}>
         <SearchBtn
           className="btn btn-lg search-jumbo-button"
@@ -53,6 +55,7 @@ class SearchJumbo extends Component {
         />
       </div>
 
+
       <div class="jumbotron jumbo-image" style={{backgroundImage : `url(https://images.pexels.com/photos/959314/pexels-photo-959314.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`}}>
         <SearchBtn
           className="btn btn-lg search-jumbo-button"
@@ -63,6 +66,7 @@ class SearchJumbo extends Component {
           // backgroundImage="https"
         />
       </div>
+
       </Card.Body>
       </Card>
       <Modal show={this.state.show} onHide={this.handleClose}>
@@ -82,6 +86,7 @@ class SearchJumbo extends Component {
     </div>
   );
     }
+
 }
 
 export default SearchJumbo;

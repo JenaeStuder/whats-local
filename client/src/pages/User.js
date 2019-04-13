@@ -3,12 +3,14 @@ import React, { Component } from "react";
 import Col from "../components/Col";
 import Container from "../components/Container";
 import Row from "../components/Row";
+
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Favorites from "../components/Favorites";
 import waves from "../images/vertical-waves.png";
 import "./User.css";
 //import Favorites from "../components/favorites";
+
 
 
 
