@@ -126,8 +126,8 @@ class Profile extends Component {
               <h1>Bio</h1>
               <div>{this.state.bio}</div>
             </Row>
-          </Col>
-        </Row>
+          {/* </Col> */}
+        {/* </Row> */}
         <Row>
           <Col size="md-4">
             <div>

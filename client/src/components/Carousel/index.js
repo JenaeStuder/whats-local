@@ -26,7 +26,7 @@ function Carousel() {
         <div className="carousel-item neon">
           <img
             className="d-block w-100"
-            src={require("../../images/neon.jpg")}
+            // src={require("../../images/neon.jpg")}
           />
         </div>
         <div className="carousel-item plant">
