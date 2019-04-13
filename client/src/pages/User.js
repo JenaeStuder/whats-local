@@ -18,24 +18,24 @@ class Profile extends Component {
 
 
     };
-    componentDidMount() {
-        this.loadProfile();
-    }
+    // componentDidMount() {
+    //     this.loadProfile();
+    // }
 
-    loadProfile = () => {
-        API.getProfile().then(res => this.setState({
-            firstName: res.data,
-            lastName: "",
-            favorites:"",
-        })
-        ).catch(err => console.log(err));
-    };
+    // loadProfile = () => {
+    //     API.getProfile().then(res => this.setState({
+    //         firstName: res.data,
+    //         lastName: "",
+    //         favorites:"",
+    //     })
+    //     ).catch(err => console.log(err));
+    // };
 
 
     render(props) {
         return (
             <div className="user">
-            <Container fluid>
+            {/* <Container fluid> */}
            
             <Searchbar />
                 <Row>
@@ -73,7 +73,7 @@ class Profile extends Component {
 
             <Navbar />
 
-            </Container >
+            {/* </Container > */}
             </div>
         )
     }

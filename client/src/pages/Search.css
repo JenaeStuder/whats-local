@@ -3,5 +3,7 @@ button {
 }
 
 .jumbotron {
-    background-color: #993366;
+    /* background-color: transparent; */
+    /* border: 2px solid darkslategrey; */
+    
 }

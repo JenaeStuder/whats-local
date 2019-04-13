@@ -19,12 +19,12 @@ p {
     font-family: "Fredericka the Great", cursive;
     font-weight: bold;
     font-size: large;
-    color: #993366
+    /* color: #993366 */
 }
 
 label {
     font-family: "Playfair Display", serif;
-    background-color: #993366;
+    /* background-color: #993366; */
     font-size: 20px;
     color: #ffffcc;
     padding: 5px;

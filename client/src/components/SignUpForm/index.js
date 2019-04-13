@@ -53,7 +53,7 @@ function SignUpForm(props) {
                 options = {["Artist", "Consumer"]}
             />
             <Button
-                className="btn btn-warning btn-lg btn-block"
+                className="btn btn-info btn-lg btn-block"
                 id="login"
                 type="submit"
                 //onClick=""

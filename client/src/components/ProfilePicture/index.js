@@ -4,7 +4,7 @@ import "./style.css";
 function ProfilePicture(props){
     return(
         <div className="profilePic">
-        <img className="pic" src={props.image}/>
+        {props.image?<img className="pic" src={props.image}/>: null}
         </div>
     )
 }

@@ -5,7 +5,6 @@ import Col from "../Col";
 import Card from "react-bootstrap/Card";
 import "./style.css";
 
-<<<<<<< HEAD
 
 function Favorites(props) {
 
@@ -37,15 +36,6 @@ function Favorites(props) {
     );
 
 
-=======
-function Favorites(props){
-    return(
-        <div className="favorites">
-        {props.favorites}
-        </div>
-    )
-    
->>>>>>> a18170bb39771eecffdfb00859b00f14da0246bd
 }
 
 export default Favorites;
