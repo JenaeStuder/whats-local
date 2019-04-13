@@ -3,9 +3,13 @@ import API from "../utils/API";
 import Col from "../components/Col";
 import Container from "../components/Container";
 import Row from "../components/Row";
+<<<<<<< HEAD
+// import Favorites from "../components/favorites";
+=======
 import Favorites from "../components/Favorites";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
+>>>>>>> e2ad8e78fcba8a1e150ee3453418057d4cb911e3
 
 
 
