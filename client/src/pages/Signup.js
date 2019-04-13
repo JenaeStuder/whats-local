@@ -52,9 +52,9 @@ class SignUp extends Component {
             <Container style={{ marginTop: 20, height: "100vh"}}>
                     <Row>
                         <Col size="md-6">
-                            <h1>what's</h1>
-                            <h1>local?</h1>
-                            <p>Sign Up</p>
+                            <h1 id="title">what's</h1>
+                            <h1 id="title">local?</h1>
+                            <p id="subtitle">Sign Up</p>
                             <Card>
                             <SignUpForm/>
                             </Card>

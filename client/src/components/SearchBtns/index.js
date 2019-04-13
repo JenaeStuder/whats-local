@@ -5,7 +5,11 @@ const SearchBtn = props => {
   return (
     <button
       className={props.className}
-      onClick={props.action}
+
+      onClick={props.onClick}
+
+      
+
       style={{ backgroundImage: `url(${props.backgroundImage})` }}
     >
       <h1>{props.title}</h1>
