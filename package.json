@@ -34,6 +34,7 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+<<<<<<< HEAD
   },
   "browserslist": [
     ">0.2%",
@@ -43,5 +44,7 @@
   ],
   "devDependencies": {
     "nodemon": "^1.18.11"
+=======
+>>>>>>> e2ad8e78fcba8a1e150ee3453418057d4cb911e3
   }
 }
