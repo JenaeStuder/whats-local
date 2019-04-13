@@ -3,7 +3,9 @@ import API from "../utils/API";
 import Col from "../components/Col";
 import Container from "../components/Container";
 import Row from "../components/Row";
-import Favorites from "../components/favorites";
+import Favorites from "../components/Favorites";
+import Navbar from "../components/Navbar";
+import Searchbar from "../components/Searchbar";
 
 
 
@@ -30,21 +32,20 @@ class Profile extends Component {
     };
 
 
-    render() {
+    render(props) {
         return (
+            <div className="user">
             <Container fluid>
            
-        
+            <Searchbar />
                 <Row>
                     <Col size="md-6">
-                    
+                   
                     </Col>
                     <Col size="md-6">
                         <Row>
-                            <h1>Name</h1>
-                            <h1> {this.state.firstName}
-                                {this.state.lastName}
-                            </h1>
+                        <Favorites favorites ={this.state.favorites} />
+                            
                         </Row>
                         <Row>
                             
@@ -70,9 +71,10 @@ class Profile extends Component {
             </Row>
 
 
-
+            <Navbar />
 
             </Container >
+            </div>
         )
     }
 
