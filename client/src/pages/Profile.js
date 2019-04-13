@@ -47,7 +47,7 @@ class Profile extends Component {
     render(props) {
         return (
             <div className ="Profile">
-            <Container fluid>
+            
                 <Searchbar />
 
                 <Row>
@@ -121,37 +121,7 @@ class Profile extends Component {
 
 
             </Row>
-            <Row>{this.state.socialMediaHandles}</Row>
-            <Row>
-              <h1>Bio</h1>
-              <div>{this.state.bio}</div>
-            </Row>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-4">
-            <div>
-              <h1>Media 1</h1>
-              {this.state.mediaClips}
-            </div>
-          </Col>
-          <Col size="md-4">
-            <div>
-              <h1>Media 2</h1>
-              {this.state.mediaClips}
-            </div>
-          </Col>
-          <Col size="md-4">
-            <div>
-              <h1>Media 3</h1>
-              {this.state.mediaClips}
-            </div>
-          </Col>
-       
-                </Row>
 
-                <Navbar />
-            </Container >
 
         
     
