@@ -14,7 +14,8 @@ class Profile extends Component {
     state = {
         firstName: "",
         lastName: "",
-        favorites:""
+        favorites:"",
+        loading: true,
 
 
     };
@@ -27,6 +28,7 @@ class Profile extends Component {
     //         firstName: res.data,
     //         lastName: "",
     //         favorites:"",
+    //         loading: false,
     //     })
     //     ).catch(err => console.log(err));
     // };
@@ -35,14 +37,15 @@ class Profile extends Component {
     render(props) {
         return (
             <div className="user">
-            {/* <Container fluid> */}
+            
            
             <Searchbar />
+
                 <Row>
                     <Col size="md-6">
                    
                     </Col>
-                    <Col size="md-6">
+                    {this.state.loading? <Col size="md-6">
                         <Row>
                         <Favorites favorites ={this.state.favorites} />
                             
@@ -53,7 +56,7 @@ class Profile extends Component {
                         <Row>
                             
                         </Row>
-                    </Col>
+                    </Col>: null}
                 </Row>
             <Row>
                 <Col size="md-4">
@@ -73,7 +76,7 @@ class Profile extends Component {
 
             <Navbar />
 
-            {/* </Container > */}
+            
             </div>
         )
     }

@@ -51,7 +51,7 @@ class Profile extends Component {
 
                 <Searchbar />
 
-               {this.state.loading? <Row>
+                {this.state.loading ? <Row>
                     <Col size="md-6">
                         <Row>
                             <h3>Profile Picture</h3>
@@ -70,69 +70,69 @@ class Profile extends Component {
                                 </Update>
                             )
                                 : (
-                                    <h2> {this.state.firstName} doesn't have any updates, check back soon.</h2>
+                                    <h3> {this.state.firstName} doesn't have any updates, check back soon.</h3>
                                 )}
 
                         </Row>
-                        </Col>
-                        <Col size="md-6">
-                            <Row>
-                                <h3>Name</h3>
-                                <h1>
-                                    {this.state.firstName}
-                                    {this.state.lastName}
-                                </h1>
-                            </Row>
-                            <Row>
-                                {this.state.socialMediaHandles}
-                            </Row>
-                            <Row>
-                                <div>
-                                    <h3>Bio</h3>
-                                    <Bio bio={this.state.bio}>
-                                    </Bio>
-                                </div>
-                            </Row>
-                        </Col>
-                </Row>: null}
-
-                   {this.state.loading? <Row>
-                        <Col size="md-4">
+                    </Col>
+                    <Col size="md-6">
+                        <Row>
+                            <h3>Name</h3>
+                            <h3>
+                                {this.state.firstName}
+                                {this.state.lastName}
+                            </h3>
+                        </Row>
+                        <Row>
+                            {this.state.socialMediaHandles}
+                        </Row>
+                        <Row>
                             <div>
-                                <h3>Media 1</h3>
-                                <MediaClips media={this.state.mediaClips}>
-
-                                </MediaClips>
+                                <h3>Bio</h3>
+                                <Bio bio={this.state.bio}>
+                                </Bio>
                             </div>
-                        </Col>
-                        <Col size="md-4">
-                            <div>
-                                <h3>Media 2</h3>
-                                <MediaClips media={this.state.mediaClips}>
+                        </Row>
+                    </Col>
+                </Row> : null}
 
-                                </MediaClips>
-                            </div>
-                        </Col>
-                        <Col size="md-4">
-                            <div>
-                                <h3>Media 3</h3>
-                                <MediaClips media={this.state.mediaClips}>
+                {this.state.loading ? <Row>
+                    <Col size="md-4">
+                        <div>
+                            <h3>Media 1</h3>
+                            <MediaClips media={this.state.mediaClips}>
 
-                                </MediaClips>
-                            </div>
-                        </Col>
-                    </Row>: null}
+                            </MediaClips>
+                        </div>
+                    </Col>
+                    <Col size="md-4">
+                        <div>
+                            <h3>Media 2</h3>
+                            <MediaClips media={this.state.mediaClips}>
 
-                    <Navbar />
+                            </MediaClips>
+                        </div>
+                    </Col>
+                    <Col size="md-4">
+                        <div>
+                            <h3>Media 3</h3>
+                            <MediaClips media={this.state.mediaClips}>
 
-                    </div>
-                    );
-                   }
-                  
-                   }
+                            </MediaClips>
+                        </div>
+                    </Col>
+                </Row> : null}
+
+                <Navbar />
+
+            </div>
+        );
+    }
+
+}
 
 
 
 
 
-                export default Profile;
+export default Profile;
