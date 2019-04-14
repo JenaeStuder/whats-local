@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import React, { Component } from "react";
-=======
-import React, {Component} from "react";
->>>>>>> 7bdf330e0b8a22b3f38b2dfc5e003976707cdedc
 import SignUpForm from "../components/SignUpForm";
 //import Container from "../components/Container";
 //import Row from "../components/Row";
@@ -48,38 +44,21 @@ class SignUp extends Component {
 
   render() {
     return (
-<<<<<<< HEAD
       <div>
-        <Container style={{ marginTop: 20, height: "100vh" }}>
-          <Row>
-            <Col size="md-6">
-              <h1>what's</h1>
-              <h1>local?</h1>
-              <p>Sign Up</p>
-              <Card>
-                <SignUpForm />
-              </Card>
-            </Col>
-          </Row>
-        </Container>
-        {/* <Container>
-=======
+        <Row>
+          <Col size="md-6">
+            <div class="jumbotron jumbotron-fluid">
+              <h1 id="title">what's</h1>
+              <h1 id="title">local?</h1>
+            </div>
+            <p id="subtitle">Sign Up</p>
+            <Card>
+              <SignUpForm />
+            </Card>
+          </Col>
+        </Row>
 
-        <div>
-            <Container style={{ marginTop: 20, height: "100vh"}}>
-                    <Row>
-                        <Col size="md-6">
-                            <h1 id="title">what's</h1>
-                            <h1 id="title">local?</h1>
-                            <p id="subtitle">Sign Up</p>
-                            <Card>
-                            <SignUpForm/>
-                            </Card>
-                        </Col>  
-                    </Row>
-            </Container>
-            {/* <Container>
->>>>>>> 7bdf330e0b8a22b3f38b2dfc5e003976707cdedc
+        {/* <Container>
                 <Row>
                     {/* <Col className="image">
                 

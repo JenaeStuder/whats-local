@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Col from "../components/Col";
 import Container from "../components/Container";
 import Row from "../components/Row";
-
+import Searchbar from "../components/Searchbar";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Favorites from "../components/Favorites";
@@ -20,7 +20,7 @@ class normalUser extends Component {
 
         firstName: "Vincent",
         lastName: "van Gogh",
-        favorites: " "
+        favorites: " ",
         loading: true,
 
 

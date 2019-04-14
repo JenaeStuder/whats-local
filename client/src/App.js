@@ -6,9 +6,9 @@ import Main from "./pages/Main";
 import Profile from "./pages/Profile";
 import Results from "./pages/Results";
 import Search from "./pages/Search";
-import SignUp from "./pages/SignUp"
+import SignUp from "./pages/Signup";
 import User from "./pages/User";
-
+import Edit from "./pages/Edit";
 
 // import Login from "./components/Login";
 
@@ -25,7 +25,7 @@ function App() {
           <Route exact path="/results" component={Results} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/user" component={User} />
-         
+          <Route exact path="/edit" component={Edit} />
         </Switch>
       </div>
     </Router>

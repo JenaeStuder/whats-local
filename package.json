@@ -3,17 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-    "concurrently": "^4.1.0",
-    "express": "^4.16.3",
-    "firebase": "^5.9.3",
-    "if-env": "^1.0.4",
-    "mongoose": "^5.3.16",
-    "react": "^16.8.6",
-    "react-bootstrap": "^1.0.0-beta.8",
-=======
-
-
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "concurrently": "^4.1.0",
@@ -26,12 +15,9 @@
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "nodemon": "^1.18.11",
-
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.8",
     "react-dev-utils": "^8.0.0",
-
->>>>>>> 7bdf330e0b8a22b3f38b2dfc5e003976707cdedc
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
@@ -51,7 +37,6 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-
   },
   "browserslist": [
     ">0.2%",
@@ -61,6 +46,5 @@
   ],
   "devDependencies": {
     "nodemon": "^1.18.11"
-
   }
 }
