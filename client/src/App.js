@@ -6,7 +6,7 @@ import Main from "./pages/Main";
 import Profile from "./pages/Profile";
 import Results from "./pages/Results";
 import Search from "./pages/Search";
-import Signup from "./pages/SignUp"
+import Signup from "./pages/Signup"
 import User from "./pages/User";
 
 

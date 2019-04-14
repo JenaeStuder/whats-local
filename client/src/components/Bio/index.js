@@ -4,7 +4,7 @@ import "./style.css";
 function Bio(props) {
     return(
         <div className="bio">
-        {props.bio}
+        {props.bio?<div className="biography"/>: null}
         </div>
     )
 }
