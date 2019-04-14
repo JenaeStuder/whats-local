@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-import React, {Component} from "react";
+import React, { Component } from "react";
 import SignUpForm from "../components/SignUpForm";
 //import Container from "../components/Container";
 //import Row from "../components/Row";
@@ -13,61 +12,57 @@ import Row from "react-bootstrap/Row";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
-import './Signup.css';
+import "./Signup.css";
 
 class SignUp extends Component {
+  state = {
+    fullName: "",
+    username: "",
+    password: "",
+    zipcode: ""
+  };
 
-    state = {
-        fullName: "",
-        username: "",
-        password: "",
-        zipcode: "",
-    }
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
 
-    handleInputChange = event => {
-        const { name, value } = event.target;
-        this.setState({
-          [name]: value
-        });
-    };
+  // handleFormSubmit = event => {
+  //     event.preventDefault();
+  //     if (this.state.title && this.state.author) {
+  //       API.saveBook({
+  //         title: this.state.title,
+  //         author: this.state.author,
+  //         synopsis: this.state.synopsis
+  //       })
+  //         .then(res => this.loadBooks())
+  //         .catch(err => console.log(err));
+  //     }
+  //   };
 
-    // handleFormSubmit = event => {
-    //     event.preventDefault();
-    //     if (this.state.title && this.state.author) {
-    //       API.saveBook({
-    //         title: this.state.title,
-    //         author: this.state.author,
-    //         synopsis: this.state.synopsis
-    //       })
-    //         .then(res => this.loadBooks())
-    //         .catch(err => console.log(err));
-    //     }
-    //   };
-    
-    
-    render() {
-
+  render() {
     return (
-
-        <div>
-            <Container style={{ marginTop: 20, height: "100vh"}}>
-                    <Row>
-                        <Col size="md-6">
-                            <h1>what's</h1>
-                            <h1>local?</h1>
-                            <p>Sign Up</p>
-                            <Card>
-                            <SignUpForm/>
-                            </Card>
-                        </Col>  
-                    </Row>
-            </Container>
-            {/* <Container>
+      <div>
+        <Container style={{ marginTop: 20, height: "100vh" }}>
+          <Row>
+            <Col size="md-6">
+              <h1>what's</h1>
+              <h1>local?</h1>
+              <p>Sign Up</p>
+              <Card>
+                <SignUpForm />
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+        {/* <Container>
                 <Row>
                     {/* <Col className="image">
                 
                     </Col> */}
-                    {/* <Col>
+        {/* <Col>
                     <Jumbotron fluid>
                             <Container>
                                 <h1>what's local?</h1>
@@ -133,27 +128,10 @@ class SignUp extends Component {
                         </Card>
                     </Col>
                 </Row>
-            </Container> */} 
-        </div>
+            </Container> */}
+      </div>
     );
-    }
+  }
 }
-
 
 export default SignUp;
-=======
-import React from "react";
-
-function SignIn() {
-  return (
-    <div>
-      <h1>Sign In Page</h1>
-      <p>
-        HTML with Passport functionality goes here!
-      </p>
-    </div>
-  );
-}
-
-export default SignIn;
->>>>>>> a18170bb39771eecffdfb00859b00f14da0246bd
