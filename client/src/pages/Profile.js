@@ -14,6 +14,10 @@ import UpdateItem from "../components/UpdateItem"
 class Profile extends Component {
 
 
+
+ 
+  
+        
     state = {
         firstName: "",
         lastName: "",
@@ -125,11 +129,13 @@ class Profile extends Component {
 
                 <Navbar />
 
+
             </div>
         );
     }
 
 }
+
 
 
 

@@ -7,26 +7,29 @@ body {
     height: fit-content;
 }
 
-h1 {
+#title {
     font-family: "Fredericka the Great", cursive;
     font-size: 75px;
     font-weight: 500;
     margin-bottom: 10px;
-    color: white;
+    color: black;
+    text-align: center;
 }
 
-p {
+#subtitle {
     font-family: "Fredericka the Great", cursive;
     font-weight: bold;
     font-size: large;
-    /* color: #993366 */
+    color: #49a0b5;
+    text-align: center;
+
 }
 
 label {
     font-family: "Playfair Display", serif;
-    /* background-color: #993366; */
+
     font-size: 20px;
-    color: #ffffcc;
+    color: #49a0b5;
     padding: 5px;
     border-radius: 10px;
 }
