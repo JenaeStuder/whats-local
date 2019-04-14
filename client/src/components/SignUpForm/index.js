@@ -11,11 +11,11 @@ function SignUpForm(props) {
     return (
         <form className="signup">
             <Input 
-                id="name"
-                labeltext="Full Name:"
-                name="name"
-                placeholder="Full Name"
-                type="text"
+                id="email"
+                labeltext="Email:"
+                name="email"
+                placeholder="Email"
+                type="email"
             />
             <Input 
                 id="username"
@@ -25,10 +25,31 @@ function SignUpForm(props) {
                 type="text"
             />
             <Input 
+                id="firstName"
+                labeltext="First Name:"
+                name="firstName"
+                placeholder="First Name"
+                type="text"
+            />
+            <Input 
+                id="lastName"
+                labeltext="Last Name:"
+                name="lastName"
+                placeholder="Last Name"
+                type="text"
+            />
+            <Input 
                 id="password"
                 labeltext="Password:"
                 name="password"
                 placeholder="Password"
+                type="password"
+            />
+            <Input 
+                id="confirmPassword"
+                labeltext="Confirm Password:"
+                name="confirmPassword"
+                placeholder="Confirm Password"
                 type="password"
             />
             <Input 
@@ -47,13 +68,14 @@ function SignUpForm(props) {
             <Select
                 id="usertype"
                 name="usertype"
-                title="Select Account Type"
+                labeltext="Are You An Artist?"
+                title="Are You An Artist?"
                 className="form-control"
-                placeholder="Select Account Type"
-                options = {["Artist", "Consumer"]}
+                placeholder="Yes"
+                options = {["Yes", "No"]}
             />
             <Button
-                className="btn btn-warning btn-lg btn-block"
+                className="btn btn-info btn-lg btn-block"
                 id="login"
                 type="submit"
                 //onClick=""
