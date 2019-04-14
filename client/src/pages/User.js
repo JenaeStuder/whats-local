@@ -17,9 +17,12 @@ import "./User.css";
 
 class normalUser extends Component {
     state = {
+
         firstName: "Vincent",
         lastName: "van Gogh",
         favorites: " "
+        loading: true,
+
 
 
     };
@@ -32,6 +35,8 @@ class normalUser extends Component {
     //         firstName: res.data,
     //         lastName: "",
     //         favorites:"",
+    //         loading: false,
+
     //     })
     //     ).catch(err => console.log(err));
     // };
@@ -39,16 +44,21 @@ class normalUser extends Component {
 
     render() {
         return (
-        <div>
-            <Container fluid>
+
+            <div className="user">
+            
+           
+            <Searchbar />
+
 
                 <Row>
                     <Col size="md-12" id="header">
                         <Header />
                         <h1 id="profileName"> {this.state.firstName} {this.state.lastName}</h1>
                     </Col>
-            
-                    {/* <Col size="md-6">
+
+                    {this.state.loading? <Col size="md-6">
+
                         <Row>
                             <h1>Name</h1>
 
@@ -59,25 +69,18 @@ class normalUser extends Component {
                         <Row>
 
                         </Row>
-                    </Col> */}
+
+                    </Col>: null}
+
                 </Row>
-        </Container>
-        <Container fluid>
-                <Row>
-                    <Col size="md-12">
-                        <Favorites/>
-                    </Col>
-                </Row>
-        </Container>
-        <Container fluid>
-                <Row>
+      
                     <Col size="md-12" id="navbar">
                         <Navbar/>
                     </Col>
 
-                </Row>
-        </Container >
-        </div>
+            
+            </div>
+
         )
     }
 

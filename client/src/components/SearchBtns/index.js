@@ -6,9 +6,11 @@ const SearchBtn = props => {
     <button
       className={props.className}
 
+
       onClick={props.onClick}
 
       
+
 
       style={{ backgroundImage: `url(${props.backgroundImage})` }}
     >

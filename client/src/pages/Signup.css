@@ -22,10 +22,12 @@ body {
     font-size: large;
     color: #49a0b5;
     text-align: center;
+
 }
 
 label {
     font-family: "Playfair Display", serif;
+
     font-size: 20px;
     color: #49a0b5;
     padding: 5px;

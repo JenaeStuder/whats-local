@@ -44,7 +44,9 @@ class SearchJumbo extends Component {
       </div>
 
 
+
       <div class="jumbotron jumbo-image" style={{backgroundImage : `url(https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`}}>
+
         <SearchBtn
           className="btn btn-lg search-jumbo-button"
           id="cityBtn button"
@@ -56,7 +58,9 @@ class SearchJumbo extends Component {
       </div>
 
 
+
       <div class="jumbotron jumbo-image" style={{backgroundImage : `url(https://images.pexels.com/photos/959314/pexels-photo-959314.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`}}>
+
         <SearchBtn
           className="btn btn-lg search-jumbo-button"
           id="categorybtn button"
@@ -87,6 +91,5 @@ class SearchJumbo extends Component {
   );
     }
 
-}
 
 export default SearchJumbo;
