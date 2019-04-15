@@ -11,6 +11,14 @@
   z-index: 2;
 }
 
+#titleBackground h1 {
+  font-size: 5em;
+}
+
+/* .carousel {
+  z-index: 1;
+} */
+
 .carousel .carousel-inner {
   height: 100vh;
 }
@@ -57,10 +65,10 @@
   top: 15vh;
 }
 
-/* .form-control {
+#search-jumbo .form-control {
   background: #ffffcc;
-  opacity: 0.7;
-} */
+  opacity: 0.5;
+}
 
 .btn-div {
   text-align: center;
