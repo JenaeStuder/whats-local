@@ -89,7 +89,8 @@ class SearchJumbo extends Component {
         </Modal>
     </div>
   );
-    }
+  }
+}
 
 
 export default SearchJumbo;
