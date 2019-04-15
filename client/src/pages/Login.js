@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import LoginForm from "../components/LoginForm";
 import Container from "../components/Container";
 //import Row from "../components/Row";
@@ -12,57 +12,56 @@ import Row from "react-bootstrap/Row";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
-import './Signup.css';
+import "./Signup.css";
 
 class Login extends Component {
+  state = {
+    username: "",
+    password: ""
+  };
 
-    state = {
-        username: "",
-        password: ""
-    }
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
 
-    handleInputChange = event => {
-        const { name, value } = event.target;
-        this.setState({
-          [name]: value
-        });
-      };
+  //   handleFormSubmit = event => {
+  //     event.preventDefault();
+  //     if (this.state.title && this.state.author) {
+  //       API.saveBook({
+  //         title: this.state.title,
+  //         author: this.state.author,
+  //         synopsis: this.state.synopsis
+  //       })
+  //         .then(res => this.loadBooks())
+  //         .catch(err => console.log(err));
+  //     }
+  //   };
 
-    //   handleFormSubmit = event => {
-    //     event.preventDefault();
-    //     if (this.state.title && this.state.author) {
-    //       API.saveBook({
-    //         title: this.state.title,
-    //         author: this.state.author,
-    //         synopsis: this.state.synopsis
-    //       })
-    //         .then(res => this.loadBooks())
-    //         .catch(err => console.log(err));
-    //     }
-    //   };
-    
-    render() {
+  render() {
     return (
+      <div>
+        <Row>
+          <Col size="md-6">
+            <div class="jumbotron jumbotron-fluid">
+              <h1 id="title">what's</h1>
+              <h1 id="title">local?</h1>
+            </div>
+            <p id="subtitle">Login</p>
+            <Card>
+              <LoginForm />
+            </Card>
+          </Col>
+        </Row>
 
-        <div>
-            <Container style={{ marginTop: 20, height: "100vh"}}>
-                    <Row>
-                        <Col size="md-6">
-                            <h1>what's</h1>
-                            <h1>local?</h1>
-                            <p>Login</p>
-                            <Card>
-                            <LoginForm/>
-                            </Card>
-                        </Col>  
-                    </Row>
-            </Container>
-            {/* <Container>
+        {/* <Container>
                 <Row>
                     {/* <Col className="image">
                 
                     </Col> */}
-                    {/* <Col>
+        {/* <Col>
                     <Jumbotron fluid>
                             <Container>
                                 <h1>what's local?</h1>
@@ -128,11 +127,10 @@ class Login extends Component {
                         </Card>
                     </Col>
                 </Row>
-            </Container> */} 
-        </div>
+            </Container> */}
+      </div>
     );
- }
+  }
 }
-
 
 export default Login;

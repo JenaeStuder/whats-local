@@ -9,6 +9,7 @@ import Searchbar from "../components/Searchbar";
 class Results extends Component {
     state = {
         results: "",
+        loading: true
 
     };
     componentDidMount() {
@@ -19,15 +20,16 @@ class Results extends Component {
         API.getResults().then(res =>
             this.setState({
                 results: res.data,
+                loading: false
             })
         ).catch(err => console.log(err));
     };
 
     render(props) {
         return (
-            <Container fluid>
+           <div className="Results">
             <Searchbar />
-                <Row>
+                {this.state.loading? <Row>
                     <Col size="md-6">
                         <div>
                             {this.state.results}
@@ -38,11 +40,11 @@ class Results extends Component {
                             {this.state.results}
                         </div>
                     </Col>
-                </Row>
+                </Row>: null}
 
             <Navbar />
-
-            </Container>
+            </div>
+            
         )
     }
 
