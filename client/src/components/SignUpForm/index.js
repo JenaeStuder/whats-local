@@ -75,18 +75,19 @@ function SignUpForm(props) {
         options={["Yes", "No"]}
       />
       <Button
-        className="btn btn-info btn-lg btn-block"
-        id="login"
-        type="submit"
-        //onClick=""
-        title="Login"
-      />
-      <Button
         className="btn btn-dark btn-lg btn-block"
         id="signup"
         type="submit"
         //onClick=""
         title="Signup"
+      />
+      <label >Already have an Account? Login!</label> 
+      <Button
+        className="btn btn-info btn-lg btn-block"
+        id="login"
+        type="submit"
+        //onClick=""
+        title="Login"
       />
       <div class="g-signin2" data-onsuccess="onSignIn" />
     </form>
