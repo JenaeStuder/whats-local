@@ -49,3 +49,7 @@ form {
   background-size: 135% 100vh;
   background-position: right left;
 }
+
+#subtitle {
+  font-family: "Playfair Display", serif;
+}
