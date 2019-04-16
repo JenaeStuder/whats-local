@@ -49,7 +49,7 @@ class Edit extends Component {
         {/* <Container style={{ marginTop: 20, height: "100vh" }}> */}
         <Row>
           <Col size="md-6">
-            <div class="jumbotron jumbotron-fluid">
+            <div class="jumbotron jumbotron-fluid whats-local-jumbo">
               <h1 id="title">what's</h1>
               <h1 id="title">local?</h1>
             </div>

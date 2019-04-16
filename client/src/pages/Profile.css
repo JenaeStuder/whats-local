@@ -1,4 +1,55 @@
+/* font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Abel', sans-serif; */
+
+
 .Profile{
-font-family: 
+    font-family: 'Open Sans Condensed', sans-serif;
 
 }
+
+.ProfileMedia{
+    padding: 10%;
+    align-content: center;
+    
+}
+.ProfileInfo{
+    margin: 5% 5% 5% 10%;
+    padding: 2%;
+
+}
+h6{
+    font-family: 'Abel', sans-serif;
+    color: darkslategrey;
+    font-size: 20px;
+
+}
+h5{
+    font-family: 'Abel', sans-serif;
+    color: darkslategrey;
+    font-size:30px;
+
+}
+#info-border-wrap{
+    
+    max-width: 100%;
+    max-height: 100%;
+    padding: 1rem;
+    position: relative;
+    background: linear-gradient(-10deg,#49a0b5, white);
+    padding: 3px;
+    box-shadow: 10px 10px 5px grey;
+  }
+  .Updates-border-wrap{
+    
+        max-width: 100%;
+        max-height: 100%;
+        padding: 1rem;
+        position: relative;
+        background: linear-gradient(-10deg,#49a0b5, white);
+        padding: 3px;
+        box-shadow: 10px 10px 5px grey;
+      }
+      #updates{
+          color: darkslategrey;
+      }
+  

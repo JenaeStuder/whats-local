@@ -93,9 +93,10 @@ class SearchJumbo extends Component {
             </Button>
           </Modal.Footer>
         </Modal>
-      </div>
-    );
+    </div>
+  );
   }
 }
+
 
 export default SearchJumbo;

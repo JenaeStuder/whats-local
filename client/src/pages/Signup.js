@@ -47,7 +47,7 @@ class SignUp extends Component {
       <div>
         <Row>
           <Col size="md-6">
-            <div class="jumbotron jumbotron-fluid">
+            <div class="jumbotron jumbotron-fluid whats-local-jumbo">
               <h1 id="title">what's</h1>
               <h1 id="title">local?</h1>
             </div>
