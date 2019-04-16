@@ -31,6 +31,7 @@ function LoginForm(props) {
                 //onClick=""
                 title="Login"
             />
+            <label >Don't have an Account? Sign Up!</label> 
             <Button
                 className="btn btn-dark btn-lg btn-block"
                 id="signup"
