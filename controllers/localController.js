@@ -50,8 +50,11 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   addStorageItem: function(req, res) {
+    console.log(req)
+    // creating our strage reference 
+    const storageRef = firebase.storage().ref('media/' + req.file.name);
     // upload file
-    const task = storageRef.put(req.file, req.id);
+    const task = storageRef.put(req.file);
     // grab the media item URL 
     const mediaURL = task.on('state_changed', 
     null, 
@@ -62,7 +65,7 @@ module.exports = {
       const url = task.getDownloadURL().then(data => {
         // call to database is made to insert the URL reference for the artist
         db.Users
-          .findOneAndUpdate({_id: req.id}, {$push:{media:{path:data}}})
+          .findOneAndUpdate({_id: req.params.id}, {$push:{media:{path:data}}})
           .then(dbModel => {
               console.log(dbModel)
               res.json(dbModel)})

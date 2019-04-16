@@ -7,11 +7,11 @@ const localController = require("../../controllers/localController");
 
 router.use("/")
     .get()
-    .post();
+    .post(localController.create);
 
 router.use("/:id")
     .get(localController.findById)
-    .post(localController.create)
+    // .post(localController.create)
     .put(localController.update)
     .delete(localController.remove);
 // routes for the media files
