@@ -58,7 +58,7 @@ function SignUpForm(props) {
         placeholder="Zipcode"
         type="text"
       />
-      <p id="subtitle">Add a profile picture</p>
+      <p id="subtitle">This will be your profile picture :</p>
       <FileUpload
         id="profilepic"
         labeltext="Add Profile Picture:"
@@ -68,7 +68,7 @@ function SignUpForm(props) {
       <Select
         id="usertype"
         name="usertype"
-        labeltext="Are You An Artist?"
+        // labeltext="Are You An Artist?"
         title="Are You An Artist?"
         className="form-control"
         placeholder="Yes"
