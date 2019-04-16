@@ -12,7 +12,6 @@
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.3.16",
-    
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "react": "^16.8.6",
@@ -33,7 +32,6 @@
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
-    
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -44,5 +42,4 @@
     "not ie <= 11",
     "not op_mini all"
   ]
- 
 }
