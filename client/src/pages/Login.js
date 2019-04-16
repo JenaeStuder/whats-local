@@ -49,7 +49,7 @@ class Login extends Component {
               <h1 id="title">what's</h1>
               <h1 id="title">local?</h1>
             </div>
-            <p id="subtitle">Login</p>
+            <p id="subtitle">We missed you</p>
             <Card>
               <LoginForm />
             </Card>
