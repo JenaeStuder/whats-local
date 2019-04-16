@@ -1,39 +1,51 @@
 body {
-    /*background-image : linear-gradient(#08164c,#993366);*/
-    background-image: url(../images/vertical-waves.png);
-    /* background-repeat: no-repeat; */
-    /* background-size: cover; */
-    min-width: 100%;
-    height: fit-content;
+  /*background-image : linear-gradient(#08164c,#993366);*/
+  background-image: url(../images/vertical-waves.png);
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  min-width: 100%;
+  height: fit-content;
 }
 
 #title {
-    font-family: "Fredericka the Great", cursive;
-    font-size: 75px;
-    font-weight: 500;
-    margin-bottom: 10px;
-    color: black;
-    text-align: center;
+  font-family: "Fredericka the Great", cursive;
+  font-size: 75px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: black;
+  text-align: center;
 }
 
 #subtitle {
-    font-family: "Fredericka the Great", cursive;
-    font-weight: bold;
-    font-size: large;
-    color: #49a0b5;
-    text-align: center;
-
+  font-family: "Fredericka the Great", cursive;
+  font-weight: bold;
+  font-size: large;
+  color: #49a0b5;
+  text-align: center;
 }
 
 label {
-    font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", serif;
 
-    font-size: 20px;
-    color: #49a0b5;
-    padding: 5px;
-    border-radius: 10px;
+  font-size: 20px;
+  color: #49a0b5;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 form {
-    padding: 20px;
+  padding: 20px;
+}
+
+.whats-local-jumbo {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.25)
+    ),
+    url("../images/background-image.jpg");
+  background-size: 135% 100vh;
+  background-position: right left;
 }

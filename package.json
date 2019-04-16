@@ -15,6 +15,10 @@
     "nodemon": "^1.18.11",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
+<<<<<<< HEAD
+=======
+    "nodemon": "^1.18.11",
+>>>>>>> 16e392c52c55b94b4e2ff568c9b43ec5ef9e51dd
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.8",
     "react-dev-utils": "^8.0.0",
