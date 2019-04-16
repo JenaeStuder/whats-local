@@ -5,7 +5,7 @@ function MediaClip(props)
 
 {
     return (
-        <div className="media">
+        <div className="media-border-wrap" id= "media">
         {(function(){
             switch (props.media){
 

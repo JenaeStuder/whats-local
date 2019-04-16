@@ -1,8 +1,16 @@
 .jumbo-image {
+<<<<<<< HEAD
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    margin-bottom: 2%;
+=======
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
+>>>>>>> 16e392c52c55b94b4e2ff568c9b43ec5ef9e51dd
 }
 
 .button-title {
