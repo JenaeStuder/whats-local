@@ -6,16 +6,16 @@ import Button from "../Button";
 import "./style.css";
 
 // Using the datalist element we can create autofill suggestions based on the props.breeds array
-function SignUpForm(props) {
+function EditForm(props) {
   return (
     <form className="signup">
-      <Input
+      {/* <Input
         id="email"
         labeltext="Email:"
         name="email"
         placeholder="Email"
         type="email"
-      />
+      /> */}
       <Input
         id="username"
         labeltext="Username:"
@@ -37,7 +37,7 @@ function SignUpForm(props) {
         placeholder="Last Name"
         type="text"
       />
-      <Input
+      {/* <Input
         id="password"
         labeltext="Password:"
         name="password"
@@ -50,7 +50,7 @@ function SignUpForm(props) {
         name="confirmPassword"
         placeholder="Confirm Password"
         type="password"
-      />
+      /> */}
       <Input
         id="zip"
         labeltext="Zipcode:"
@@ -58,7 +58,7 @@ function SignUpForm(props) {
         placeholder="Zipcode"
         type="text"
       />
-      <p id="subtitle">Add a profile picture</p>
+      <p id="subtitle">Change profile picture</p>
       <FileUpload
         id="profilepic"
         labeltext="Add Profile Picture:"
@@ -76,21 +76,14 @@ function SignUpForm(props) {
       />
       <Button
         className="btn btn-info btn-lg btn-block"
-        id="login"
+        id="edit"
         type="submit"
         //onClick=""
-        title="Login"
-      />
-      <Button
-        className="btn btn-dark btn-lg btn-block"
-        id="signup"
-        type="submit"
-        //onClick=""
-        title="Signup"
+        title="Done"
       />
       <div class="g-signin2" data-onsuccess="onSignIn" />
     </form>
   );
 }
 
-export default SignUpForm;
+export default EditForm;

@@ -1,88 +1,89 @@
 import React, { Component } from "react";
-import API from "../utils/API";
+//import API from "../utils/API";
 import Col from "../components/Col";
 import Container from "../components/Container";
 import Row from "../components/Row";
-<<<<<<< HEAD
-// import Favorites from "../components/favorites";
-=======
-import Favorites from "../components/Favorites";
-import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
->>>>>>> e2ad8e78fcba8a1e150ee3453418057d4cb911e3
+import Header from "../components/Header";
+import Navbar from "../components/Navbar";
+import Favorites from "../components/Favorites";
+import waves from "../images/vertical-waves.png";
+import "./User.css";
+//import Favorites from "../components/favorites";
 
 
 
 
-class Profile extends Component {
+
+class normalUser extends Component {
     state = {
-        firstName: "",
-        lastName: "",
-        favorites:""
+
+        firstName: "Vincent",
+        lastName: "van Gogh",
+        favorites: " ",
+        loading: true,
+
 
 
     };
-    componentDidMount() {
-        this.loadProfile();
-    }
+    // componentDidMount() {
+    //     this.loadProfile();
+    // }
 
-    loadProfile = () => {
-        API.getProfile().then(res => this.setState({
-            firstName: res.data,
-            lastName: "",
-            favorites:"",
-        })
-        ).catch(err => console.log(err));
-    };
+    // loadProfile = () => {
+    //     API.getProfile().then(res => this.setState({
+    //         firstName: res.data,
+    //         lastName: "",
+    //         favorites:"",
+    //         loading: false,
+
+    //     })
+    //     ).catch(err => console.log(err));
+    // };
 
 
-    render(props) {
+    render() {
         return (
+
             <div className="user">
-            <Container fluid>
+            
            
             <Searchbar />
+
+
                 <Row>
-                    <Col size="md-6">
-                   
+                    <Col size="md-12" id="header">
+                        <Header />
+                        <h1 id="profileName"> {this.state.firstName} {this.state.lastName}</h1>
                     </Col>
-                    <Col size="md-6">
+
+                    {this.state.loading? <Col size="md-6">
+
                         <Row>
-                        <Favorites favorites ={this.state.favorites} />
-                            
+                            <h1>Name</h1>
+
                         </Row>
                         <Row>
-                            
+
                         </Row>
                         <Row>
-                            
+
                         </Row>
-                    </Col>
+
+                    </Col>: null}
+
                 </Row>
-            <Row>
-                <Col size="md-4">
-                
-                </Col>
-                <Col size="md-4">
-                
-                    
-                </Col>
-                <Col size="md-4">
-                
-                </Col>
+      
+                    <Col size="md-12" id="navbar">
+                        <Navbar/>
+                    </Col>
 
-
-            </Row>
-
-
-            <Navbar />
-
-            </Container >
+            
             </div>
+
         )
     }
 
 }
 
-export default Profile;
-
+export default normalUser;
