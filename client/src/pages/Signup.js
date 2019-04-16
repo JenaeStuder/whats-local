@@ -52,6 +52,7 @@ class SignUp extends Component {
               <h1 id="title">local?</h1>
             </div>
             <p id="subtitle">Join the community !</p>
+            <p id="subtitle">(it's long, but it's worth it)</p>
             <Card>
               <SignUpForm />
             </Card>
