@@ -2,11 +2,11 @@ import React from "react";
 import SearchJumbo from "../components/SearchJumbo";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+import Navbar from "../components/Navbar";
 import "./Search.css";
 
 // class Search extends React.Component {
-    
-  
+
 //     render() {
 //       return (
 //         <>
@@ -20,7 +20,6 @@ import "./Search.css";
 //   export default Search;
 //   render(<Search />);
 
-
 function Search() {
   return (
     <div>
@@ -28,6 +27,7 @@ function Search() {
         <h1 class="display-4">Search by</h1>
       </div>
       <SearchJumbo />
+      <Navbar />
     </div>
   );
 }

@@ -1,23 +1,26 @@
 import React, { Component } from "react";
-import LoginForm from "../components/LoginForm";
-import Container from "../components/Container";
+// import SignUpForm from "../components/SignUpForm";
+//import Container from "../components/Container";
 //import Row from "../components/Row";
 //import Col from "../components/Col";
 //import Jumbotron from "../components/Jumbotron";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
-//import Container from "react-bootstrap/Container";
+import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
+import EditForm from "../components/EditForm";
 import "./Signup.css";
 
-class Login extends Component {
+class Edit extends Component {
   state = {
+    fullName: "",
     username: "",
-    password: ""
+    password: "",
+    zipcode: ""
   };
 
   handleInputChange = event => {
@@ -27,7 +30,7 @@ class Login extends Component {
     });
   };
 
-  //   handleFormSubmit = event => {
+  // handleFormSubmit = event => {
   //     event.preventDefault();
   //     if (this.state.title && this.state.author) {
   //       API.saveBook({
@@ -43,19 +46,20 @@ class Login extends Component {
   render() {
     return (
       <div>
+        {/* <Container style={{ marginTop: 20, height: "100vh" }}> */}
         <Row>
           <Col size="md-6">
             <div class="jumbotron jumbotron-fluid whats-local-jumbo">
               <h1 id="title">what's</h1>
               <h1 id="title">local?</h1>
             </div>
-            <p id="subtitle">Login</p>
+            <p id="subtitle">Edit Profile</p>
             <Card>
-              <LoginForm />
+              <EditForm />
             </Card>
           </Col>
         </Row>
-
+        {/* </Container> */}
         {/* <Container>
                 <Row>
                     {/* <Col className="image">
@@ -133,4 +137,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Edit;

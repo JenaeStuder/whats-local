@@ -3,16 +3,16 @@ import API from "../utils/API";
 import ProfilePicture from "../components/ProfilePicture";
 import Bio from "../components/Bio";
 import MediaClips from "../components/MediaClips";
-import Col from "../components/Col";
-import Container from "../components/Container";
-import Row from "../components/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
 import Update from "../components/Upcoming";
 import UpdateItem from "../components/UpdateItem"
+import "./Profile.css"
 
 class Profile extends Component {
-
 
     state = {
         firstName: "",
@@ -129,5 +129,10 @@ class Profile extends Component {
          ) }
 
 }
+
+
+
+
+
 
 export default Profile;
