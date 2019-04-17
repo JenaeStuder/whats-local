@@ -1,16 +1,13 @@
-import React from "React";
+import React from "react";
 import "./style.css"
 
-class BackgroundImage extends Component {
+function BackgroundImage(){
 
-    render() {
+    
         return (
-            <Image id="background" source={require('../../images/vertical-waves.png')}>
-                    
-                    {this.props.children}
-                    
-            </Image>
+            <div className="Background" >   
+            </div>    
         )
     }
-}
-export default BackgroundImage
+
+export default BackgroundImage;
