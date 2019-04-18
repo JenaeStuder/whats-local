@@ -2,20 +2,19 @@
 const router = require("express").Router();
 
 const localController = require("../../controllers/localController");
-//const future contoller with the db queries
+console.log(localController);
 
-
-router.use("/")
+router.route("/")
     .get()
     .post(localController.create);
 
-router.use("/:id")
+router.route("/:id")
     .get(localController.findById)
     // .post(localController.create)
     .put(localController.update)
     .delete(localController.remove);
 // routes for the media files
-router.use("/media/:id")
+router.route("/media/:id")
     .put(localController.addStorageItem)
     .delete(localController.removeStorageItem)
 

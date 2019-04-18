@@ -1,11 +1,12 @@
 import axios from "axios";
 
 export default {
-  // Gets all books
+  // submit user/artist
   submitArtist: function(artistData) {
-    return axios.post("/artists", artistData);
+    console.log("api"); 
+    return axios.post("/api/artists", artistData);
   },
-  // Gets the book with the given id
+  // add media uploads
   addMedia: function(media) {
     console.log(media)
     return axios.put("/artists/media/" + media.id, media);

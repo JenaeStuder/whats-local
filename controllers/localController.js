@@ -1,19 +1,15 @@
 const db = require("../models");
+//res.json(dbModel);
+
+// gcp storage 
+const { Storage } = require("@google-cloud/storage");
+const storage = new Storage();
+const bucket = storage.bucket('gs://whatslocal-3cb63/');
+const url = "https://whatslocal-3cb63.storage.googleapis.com/";
+
 
 // connection setup for the storage service that will containt the media files. 
-// Initialize Firebase
-const config = {
-    apiKey: "AIzaSyDXuppBrOzR5S6jEG0-i1YtXNmVWA0mAhI",
-    authDomain: "whatslocal-3cb63.firebaseapp.com",
-    databaseURL: "https://whatslocal-3cb63.firebaseio.com",
-    projectId: "whatslocal-3cb63",
-    storageBucket: "whatslocal-3cb63",
-    messagingSenderId: "451310734611"
-};
-firebase.initializeApp(config);
 
-// creating our strage reference 
-const storageRef = firebase.storage().ref('media/' + file.name);
 
 // Defining methods for the booksController
 module.exports = {
@@ -31,8 +27,8 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-    db.Users
-      .create(req.body)
+    console.log("Hit");
+    db.User.create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -51,26 +47,18 @@ module.exports = {
   },
   addStorageItem: function(req, res) {
     console.log(req)
-    // creating our strage reference 
-    const storageRef = firebase.storage().ref('media/' + req.file.name);
     // upload file
-    const task = storageRef.put(req.file);
-    // grab the media item URL 
-    const mediaURL = task.on('state_changed', 
-    null, 
-    function(){
-      console.log(error); 
-    },
-    function mediaUrl() {
-      const url = task.getDownloadURL().then(data => {
-        // call to database is made to insert the URL reference for the artist
-        db.Users
-          .findOneAndUpdate({_id: req.params.id}, {$push:{media:{path:data}}})
-          .then(dbModel => {
-              console.log(dbModel)
-              res.json(dbModel)})
-          .catch(err => res.status(422).json(err))  
-          })
+    bucket.upload(req.file).then(data => {
+      console.log(data);
+      console.log(url);
+       
+      // call to database is made to insert the URL reference for the artist
+        // db.Users
+        //   .findOneAndUpdate({_id: req.params.id}, {$push:{media:{path:data}}})
+        //   .then(dbModel => {
+        //       console.log(dbModel)
+        //       res.json(dbModel)})
+        //   .catch(err => res.status(422).json(err))  
     })
   }, 
   removeStorageItem: function(req, res) {

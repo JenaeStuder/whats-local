@@ -1,13 +1,13 @@
 const router = require("express").Router();
 // const for future controllers that contain the queries
 
-router.use("/")
+router.route("/")
     .post();
 
-router.use("/:id")
+router.route("/:id")
     .get()
     .post()
-    .update()
+    .put()
     .delete()
 
 module.exports = router; 

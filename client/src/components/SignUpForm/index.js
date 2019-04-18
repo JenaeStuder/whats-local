@@ -8,14 +8,23 @@ import API from '../../utils/API';
 
 // Using the datalist element we can create autofill suggestions based on the props.breeds array
 function SignUpForm(props) {
+  
   function submitFunc(e) {
     e.preventDefault();
-    console.log("hello", document.getElementById("profilepic").files[0]);
+    let file = document.getElementById("profilepic").files[0];
+    console.log(file);
 
-    API.submitArtist().then(data => {
-      let file = document.getElementById("profilepic").files[0]
-      (document.getElementById("profilepic").files.length > 0) && API.addMedia({id:data.id, file:file})
-    })
+    API.submitArtist({
+      email: document.getElementById("email").value,
+      username: document.getElementById("username").value,
+      firstName: document.getElementById("firstName").value,
+      lastName: document.getElementById("lastName").value,
+      password: document.getElementById("password").value,
+      zip: document.getElementById("zip").value
+    }).then(data => {
+      console.log(data, data.data._id, file);
+      (file > 0) && API.addMedia({ id: data.data._id, file: file });
+    });
   }          
   
 
