@@ -1,11 +1,11 @@
-body {
+/* body {
   /*background-image : linear-gradient(#08164c,#993366);*/
-  background-image: url(../images/vertical-waves.png);
+  /* background-image: url(../images/vertical-waves.png); */
   /* background-repeat: no-repeat; */
   /* background-size: cover; */
-  min-width: 100%;
-  height: fit-content;
-}
+  /* min-width: 100%;
+  height: fit-content; 
+ } */ 
 
 #title {
   font-family: "Fredericka the Great", cursive;
@@ -49,3 +49,12 @@ form {
   background-size: 135% 100vh;
   background-position: right left;
 }
+
+
+.Background{
+  background-image: url("../images/vertical-waves.png");
+  min-width: 100vw;
+  min-height: 100vh;
+  
+  }
+
