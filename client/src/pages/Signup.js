@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import { Link, withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+// import { registerUser } from "../../actions/authActions";
+import classnames from "classnames";
 import SignUpForm from "../components/SignUpForm";
-//import Container from "../components/Container";
-//import Row from "../components/Row";
-//import Col from "../components/Col";
-//import Jumbotron from "../components/Jumbotron";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
@@ -15,18 +16,57 @@ import Image from "react-bootstrap/Image";
 import "./Signup.css";
 
 class SignUp extends Component {
-  state = {
-    fullName: "",
-    username: "",
-    password: "",
-    zipcode: ""
+  // state = {
+  //   fullName: "",
+  //   username: "",
+  //   password: "",
+  //   zipcode: ""
+  // };
+
+  constructor() {
+    super();
+    this.state = {
+      userName: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      password2: "",
+      errors: {}
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({
+        errors: nextProps.errors
+      });
+    }
+  }
+
+  onChange = e => {
+    this.setState({ [e.target.id]: e.target.value });
   };
 
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
+  // handleInputChange = event => {
+  //   const { name, value } = event.target;
+  //   this.setState({
+  //     [name]: value
+  //   });
+  // };
+
+  onSubmit = e => {
+    e.preventDefault();
+    const newUser = {
+      userName: this.state.userName,
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      email: this.state.email,
+      password: this.state.password,
+      password2: this.state.password2
+    };
+    console.log(newUser);
+    this.props.registerUser(newUser, this.props.history);
   };
 
   // handleFormSubmit = event => {
@@ -43,6 +83,7 @@ class SignUp extends Component {
   //   };
 
   render() {
+    const { errors } = this.state;
     return (
       <div>
         <Row>
@@ -53,7 +94,140 @@ class SignUp extends Component {
             </div>
             <p id="subtitle">Sign Up</p>
             <Card>
-              <SignUpForm />
+              {/* <SignUpForm></ SignUpForm> */}
+              <form noValidate onSubmit={this.onSubmit} className="signup">
+                <div className="form-group">
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.email}
+                    error={errors.email}
+                    id="email"
+                    placeholder="Email Address"
+                    type="email"
+                    className={classnames("form-control", {
+                      invalid: errors.email
+                    })}
+                  />
+                  <span className="red-text">{errors.email}</span>
+                </div>
+                <div className="form-group">
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.userName}
+                    error={errors.userName}
+                    id="userName"
+                    placeholder="User Name"
+                    type="text"
+                    className={classnames("form-control", {
+                      invalid: errors.userName
+                    })}
+                  />
+                  <span className="red-text">{errors.userName}</span>
+                </div>
+                <div className="form-group">
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.firstName}
+                    error={errors.firstName}
+                    id="firstName"
+                    placeholder="First Name"
+                    type="text"
+                    className={classnames("form-control", {
+                      invalid: errors.firstName
+                    })}
+                  />
+                  <span className="red-text">{errors.firstName}</span>
+                </div>
+                <div className="form-group">
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.lastName}
+                    error={errors.lastName}
+                    id="lastName"
+                    placeholder="Last Name"
+                    type="text"
+                    className={classnames("form-control", {
+                      invalid: errors.lastName
+                    })}
+                  />
+                  <span className="red-text">{errors.lastName}</span>
+                </div>
+                <div className="form-group">
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.password}
+                    error={errors.password}
+                    id="password"
+                    placeholder="Password"
+                    type="password"
+                    className={classnames("form-control", {
+                      invalid: errors.password
+                    })}
+                  />
+                  <span className="red-text">{errors.password}</span>
+                </div>
+                <div className="form-group">
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.password2}
+                    error={errors.password2}
+                    id="password2"
+                    placeholder="Confirm Password"
+                    type="password"
+                    className={classnames("form-control", {
+                      invalid: errors.password2
+                    })}
+                  />
+                  <span className="red-text">{errors.password2}</span>
+                </div>
+                <div className="form-group">
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.zipCode}
+                    error={errors.zipCode}
+                    id="zipCode"
+                    placeholder="Zip Code"
+                    type="text"
+                    className={classnames("form-control", {
+                      invalid: errors.zipCode
+                    })}
+                  />
+                  <span className="red-text">{errors.zipCode}</span>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="userType">Are You an Artist?</label>
+                  <select
+                    onChange={this.onChange}
+                    value={this.state.userType}
+                    error={errors.userType}
+                    id="userType"
+                    placeholder="Choose One..."
+                    // type="select"
+                    className={classnames("form-control", {
+                      invalid: errors.userType
+                    })}
+                  >
+                    <option value="" disabled>Choose One...</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span className="red-text">{errors.userType}</span>
+                </div>
+                <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+                  <button
+                    style={{
+                      width: "150px",
+                      borderRadius: "3px",
+                      letterSpacing: "1.5px",
+                      marginTop: "1rem"
+                    }}
+                    type="submit"
+                    className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                  >
+                    Sign up
+                </button>
+                </div>
+              </form>
             </Card>
           </Col>
         </Row>
