@@ -9,6 +9,7 @@ import Navbar from "../components/Navbar";
 import Favorites from "../components/Favorites";
 import waves from "../images/vertical-waves.png";
 import "./User.css";
+import BackgroundImage from "../components/BackgroundImage";
 //import Favorites from "../components/favorites";
 
 
@@ -44,7 +45,7 @@ class normalUser extends Component {
 
     render() {
         return (
-
+            <div className= "Background">
             <div className="user">
             
            
@@ -78,7 +79,7 @@ class normalUser extends Component {
                         <Navbar/>
                     </Col>
 
-            
+                    </div>
             </div>
 
         )

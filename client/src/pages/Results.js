@@ -5,6 +5,7 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
+import Background from "../components/BackgroundImage"
 
 class Results extends Component {
     state = {
@@ -12,21 +13,22 @@ class Results extends Component {
         loading: true
 
     };
-    componentDidMount() {
-        this.loadResults();
-    }
+    // componentDidMount() {
+    //     this.loadResults();
+    // }
 
-    loadResults = () => {
-        API.getResults().then(res =>
-            this.setState({
-                results: res.data,
-                loading: false
-            })
-        ).catch(err => console.log(err));
-    };
+    // loadResults = () => {
+    //     API.getResults().then(res =>
+    //         this.setState({
+    //             results: res.data,
+    //             loading: false
+    //         })
+    //     ).catch(err => console.log(err));
+    // };
 
     render(props) {
         return (
+            <div className= "Background">
            <div className="Results">
             <Searchbar />
                 {this.state.loading? <Row>
@@ -43,6 +45,7 @@ class Results extends Component {
                 </Row>: null}
 
             <Navbar />
+            </div>
             </div>
             
         )
