@@ -13,6 +13,7 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 import "./Signup.css";
+import BackgroundImage from "../components/BackgroundImage"
 
 class Login extends Component {
   state = {
@@ -42,14 +43,14 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div className="Background">
         <Row>
           <Col size="md-6">
             <div class="jumbotron jumbotron-fluid whats-local-jumbo">
               <h1 id="title">what's</h1>
               <h1 id="title">local?</h1>
             </div>
-            <p id="subtitle">Login</p>
+            <p id="subtitle">We missed you</p>
             <Card>
               <LoginForm />
             </Card>

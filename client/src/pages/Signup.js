@@ -14,6 +14,8 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 import "./Signup.css";
+import BackgroundImage from "../components/BackgroundImage"
+
 
 class SignUp extends Component {
   // state = {
@@ -85,14 +87,15 @@ class SignUp extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div>
+      <div className="Background">
         <Row>
           <Col size="md-6">
             <div class="jumbotron jumbotron-fluid whats-local-jumbo">
               <h1 id="title">what's</h1>
               <h1 id="title">local?</h1>
             </div>
-            <p id="subtitle">Sign Up</p>
+            <p id="subtitle">Join the community !</p>
+            <p id="subtitle">(it's long, but it's worth it)</p>
             <Card>
               {/* <SignUpForm></ SignUpForm> */}
               <form noValidate onSubmit={this.onSubmit} className="signup">

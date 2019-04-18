@@ -14,6 +14,7 @@ import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 import EditForm from "../components/EditForm";
 import "./Signup.css";
+import BackgroundImage from "../components/BackgroundImage"
 
 class Edit extends Component {
   state = {
@@ -45,7 +46,7 @@ class Edit extends Component {
 
   render() {
     return (
-      <div>
+      <div className="Background">
         {/* <Container style={{ marginTop: 20, height: "100vh" }}> */}
         <Row>
           <Col size="md-6">

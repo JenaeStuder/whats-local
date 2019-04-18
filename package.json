@@ -11,7 +11,7 @@
     "if-env": "^1.0.4",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.5.2",
+    "mongoose": "^5.3.16",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "react": "^16.8.6",
@@ -27,7 +27,7 @@
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore ‘client/*’\" \"npm run client\"",
+    "start:dev": "concurrently \"npm run client\"",
     "client": "cd client && npm run start",
     "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
