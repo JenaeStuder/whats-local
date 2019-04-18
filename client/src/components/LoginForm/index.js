@@ -42,6 +42,7 @@ function LoginForm(props) {
       <div class="g-signin2" data-onsuccess="onSignIn" />
     </form>
   );
+
 }
 
 export default LoginForm;
