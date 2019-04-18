@@ -83,7 +83,9 @@ function SignUpForm(props) {
         //onClick=""
         title="Signup"
       />
+
       <label>Already have an Account?</label>
+
       <Button
         className="btn btn-info btn-lg btn-block"
         id="login"
