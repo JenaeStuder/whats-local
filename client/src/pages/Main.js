@@ -13,6 +13,14 @@ import BackgroundImage from "../components/BackgroundImage";
 import Brand from "../components/Brand";
 
 class MainPage extends Component{
+
+    state={
+        loading: "",
+    };
+    // componentDidMount() {
+        //     this.loadProfile();
+
+
     render(){
         return(
             <div className="MainPage">
@@ -26,9 +34,14 @@ class MainPage extends Component{
             </Container>
             <Container>
             <Row className="Spotlight">
+            {this.state.loading ? <Row>
+                <Col md = {12}>
             <ArtistSpotlight/>
-            </Row>
+            </Col>
+            </Row> : null}
+            </Row> 
             <Row className="Feed">
+            {this.state.loading ? <Row>
                 <Col xs={12} md ={6}>
                 <Row>
                     <Create/>
@@ -40,6 +53,7 @@ class MainPage extends Component{
                 <Col xs={12} md={6}>
                 <UserUpdates/>
                 </Col>
+                </Row> : null}
             </Row>
 
 
