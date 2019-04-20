@@ -5,18 +5,18 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Searchbar from "../components/Searchbar";
-// import Create from "../components/Create";
+import Create from "../components/Create";
 import Navbar from "../components/Navbar";
-// import Suggestions from "../components/Suggestions";
+import Suggestions from "../components/Suggestions";
 // import UserUpdates from "../componentsUserUpdates";
-import BackgroundImage from "../components/BackgroundImage";
+//import BackgroundImage from "../components/BackgroundImage";
 import Brand from "../components/Brand";
 
 class MainPage extends Component{
 
-    state={
-        loading: "",
-    };
+    // state={
+    //     loading: "",
+    // };
     // componentDidMount() {
         //     this.loadProfile();
 
