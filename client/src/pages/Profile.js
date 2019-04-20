@@ -23,6 +23,7 @@ class Profile extends Component {
         profilePicture: "",
         mediaClips: "",
         upcoming:"",
+        loading:"",
 
 
     };
@@ -150,4 +151,5 @@ class Profile extends Component {
     }
 
 }
+
 export default Profile;
