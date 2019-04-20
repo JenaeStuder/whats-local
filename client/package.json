@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001/",
-  "secure":false,
   "dependencies": {
+    "@google-cloud/storage": "^2.5.0",
     "axios": "^0.18.0",
     "firebase": "^5.9.3",
     "react": "^16.8.6",

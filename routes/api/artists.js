@@ -2,10 +2,9 @@
 const router = require("express").Router();
 
 const localController = require("../../controllers/localController");
-console.log(localController);
+//console.log(localController);
 
 router.route("/")
-    .get()
     .post(localController.create);
 
 router.route("/:id")
@@ -14,8 +13,11 @@ router.route("/:id")
     .put(localController.update)
     .delete(localController.remove);
 // routes for the media files
-router.route("/media/:id")
+router.route("/media/op")
     .put(localController.addStorageItem)
     .delete(localController.removeStorageItem)
-
+router.route("/profile/pic/:id")
+    .put(localController.updatePic)
 module.exports = router;
+
+//localController.addStorageItem

@@ -7,18 +7,8 @@ const keys = require("../../config/keys");
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 // Load User model
-const User = require("../../models/databaseModel");
+const User = require("../../models/index");
 
-<<<<<<< HEAD
-router.route("/")
-    .post();
-
-router.route("/:id")
-    .get()
-    .post()
-    .put()
-    .delete()
-=======
 // @route POST api/users/register
 // @desc Register user
 // @access Public
@@ -105,6 +95,5 @@ router.post("/login", (req, res) => {
         });
     });
 });
->>>>>>> 18f761f9fbdbebd8a1c27c3ef73bcb6fd2017498
 
 module.exports = router;

@@ -14,14 +14,14 @@ const url = "https://whatslocal-3cb63.storage.googleapis.com/";
 // Defining methods for the booksController
 module.exports = {
   findAll: function(req, res) {
-    db.Users
+    db.User
       .find(req.query)
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
-    db.Users
+    db.User
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -33,24 +33,24 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
-    db.Users
+    db.User
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
-    db.Users
+    db.User
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   addStorageItem: function(req, res) {
-    console.log(req)
+    console.log(req.body.data)
     // upload file
-    bucket.upload(req.file).then(data => {
-      console.log(data);
-      console.log(url);
+    // bucket.upload(JSON.stringify(req.body.file), (err, file) => {
+    //   console.log(`Error: ${err}\nFile: ${file}`); 
+    // })
        
       // call to database is made to insert the URL reference for the artist
         // db.Users
@@ -59,16 +59,23 @@ module.exports = {
         //       console.log(dbModel)
         //       res.json(dbModel)})
         //   .catch(err => res.status(422).json(err))  
-    })
   }, 
   removeStorageItem: function(req, res) {
-    db.Users.findById({_id: req.id}, {$pull:{media:{path: req.body}}})
+    db.User.findById({_id: req.params.id}, {$pull:{media:{path: req.body}}})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
 
   },
-  savedArtist: function(req, res) {
-    
-  } 
+  savedArtist: function(req, res) {  
+  },
+  updatePic: function(req, res) {
+    db.User.findById({_id: req.params.id}, {$set:{profilePicture:{path: req.body}}})
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+  },
+  test: function(req, res){
+    console.log("Handler has been hit!");
+    res.sendStatus(200)
+  }
 
 };

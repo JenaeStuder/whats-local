@@ -4,9 +4,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // subdocument schema for the media files
-const MediaSchema = new Schema({ path: { type: String } });
+//const MediaSchema = new Schema({ path: String});
 // subdocument schema for the saved artist of the user
-const SavedArtist = new Schema({ artists: { type: String } });
+//const SavedArtist = new Schema({ artists: String});
 
 // Using the Schema constructor, create a new UserSchema object
 // This is similar to a Sequelize model
@@ -39,12 +39,9 @@ const UserSchema = new Schema({
     type: Map,
     of: String
   },
-  profilePicture: {
-    data: Buffer,
-    contentType: String
-  },
-  media: [MediaSchema],
-  favoriteArtits: [SavedArtist],
+  profilePicture: {type: String},
+  media: {type: String},
+  favoriteArtits: {type: String},
   bio: {
     type: String
   },

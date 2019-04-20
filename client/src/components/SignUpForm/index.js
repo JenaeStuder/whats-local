@@ -23,7 +23,8 @@ function SignUpForm(props) {
       zip: document.getElementById("zip").value
     }).then(data => {
       console.log(data, data.data._id, file);
-      (file > 0) && API.addMedia({ id: data.data._id, file: file });
+      (file > 0) ?  API.addMedia({ id: data.data._id, file: file }) : console.log("no file uploaded");
+      ;
     });
   }          
   
