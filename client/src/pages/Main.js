@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import ArtistSpotlight from "../components/ArtistSpotlight";
-import "./main.css";
-import Container from "react-bootstrap";
-import Col from "react-bootstrap";
-import Row from "react-bootstrap";
+import "./Main.css";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 import Searchbar from "../components/Searchbar";
-import Create from "../components/Create";
+// import Create from "../components/Create";
 import Navbar from "../components/Navbar";
-import Suggestions from "../components/Suggestions";
-import UserUpdates from "../componentsUserUpdates";
+// import Suggestions from "../components/Suggestions";
+// import UserUpdates from "../componentsUserUpdates";
 import BackgroundImage from "../components/BackgroundImage";
 import Brand from "../components/Brand";
 
@@ -44,14 +44,14 @@ class MainPage extends Component{
             {this.state.loading ? <Row>
                 <Col xs={12} md ={6}>
                 <Row>
-                    <Create/>
+                    {/* <Create/> */}
                 </Row>
                 <Row>
-                    <Suggestions/>
+                    {/* <Suggestions/> */}
                 </Row>
                 </Col>
                 <Col xs={12} md={6}>
-                <UserUpdates/>
+                {/* <UserUpdates/> */}
                 </Col>
                 </Row> : null}
             </Row>

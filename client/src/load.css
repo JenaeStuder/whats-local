@@ -54,9 +54,10 @@
   text-align: center;
   position: relative;
   top: 10vh;
-  font-family: "Fredericka the Great";
-  margin: 0;
-  padding: 0;
+  font-family: "urbanjungle";
+  font-size: 20px;
+  margin: 1px;
+  padding: 2px;
 }
 
 #search-jumbo {
@@ -79,5 +80,14 @@
   font-weight: bold;
   background: rgba(255, 255, 255, 0.25);
 }
+h1{
+  
+  font-family: "urbanjungle";
+
+}
 
 /*# sourceMappingURL=load.css.map */
+@font-face {
+  font-family: urbanjungle;
+  src: url(assets/fonts/urbanjungledemo-webfont.woff);
+}
