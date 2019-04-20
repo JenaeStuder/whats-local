@@ -1,11 +1,21 @@
    
-h4{ 
-    color: white;
+ h4{
+    background: -webkit-linear-gradient(#82d9ee, #49a0b5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    /* color: linear-gradient(-10deg,,); */
     font-family: urbanjungle;
     font-size: 4em;
-    /* height: 17em;
-    width: 17em; */
-    background-color: #49a0b5;
+    padding: 0 0 0 10%;
+ }
+    .Logobtn{
+    height: 80px;
+    width:100px;
+    background-color: rgb( 54, 78, 78, .9);
+    margin: 1%;
+    /* padding:1%; */
+    /* border:1px solid rgb( 54, 78, 78); */
+    border-radius: 10px 30px;
     
 }
 
