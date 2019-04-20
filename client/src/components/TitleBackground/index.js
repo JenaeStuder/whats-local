@@ -1,6 +1,8 @@
 import React from "react";
 import Searchbar from "../Searchbar";
 import Login from "../Login";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function TitleBackground() {
   return (
@@ -8,8 +10,16 @@ function TitleBackground() {
       <Login />
       <div className="jumbotron jumbotron-fluid" id="title-jumbo">
         <div className="container">
-          <h1 className="display-3">what's local?</h1>
+        <Row>
+          <Col xs={12}>
+          <h1 className="display-3">what's local</h1>
+          </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
           <p className="lead">connect | local | art</p>
+          </Col>
+          </Row>
         </div>
       </div>
       <Searchbar />

@@ -20,6 +20,22 @@
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
     />
+
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+
+    <!-- Optional theme -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous"
+    />
     <!-------------- Bootstrap Javascript -------------------->
 
     <!-- <script
@@ -37,7 +53,8 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+    <script src="../src/utils/API.js"></script>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -73,5 +90,32 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+    //Initialize Firebase
+      const config = {
+        apiKey: "AIzaSyDXuppBrOzR5S6jEG0-i1YtXNmVWA0mAhI",
+        authDomain: "whatslocal-3cb63.firebaseapp.com",
+        databaseURL: "https://whatslocal-3cb63.firebaseio.com",
+        projectId: "whatslocal-3cb63",
+        storageBucket: "whatslocal-3cb63",
+        messagingSenderId: "451310734611"
+      };
+      firebase.initializeApp(config);
+      
+      //input ref
+      document.getElementById("profilepic").onchange = function(e){
+        // grabbing the file
+        const file = e.target.files[0];
+        console.log(file);
+        // creating our strage reference 
+        const storageRef = firebase.storage().ref('media/' + file.name);
+        // upload file
+        const task = storageRef.put(file)
+        task.on('state_changed', function progess(snapshot){
+          const percentageTransferred = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log(percentageTransferred + "% done");
+        })
+      }
+      
+  </script>
 </html>
-

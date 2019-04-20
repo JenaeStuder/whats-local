@@ -11,6 +11,14 @@
   z-index: 2;
 }
 
+#titleBackground h1 {
+  font-size: 5em;
+}
+
+/* .carousel {
+  z-index: 1;
+} */
+
 .carousel .carousel-inner {
   height: 100vh;
 }
@@ -46,21 +54,22 @@
   text-align: center;
   position: relative;
   top: 10vh;
-  font-family: "Fredericka the Great";
-  margin: 0;
-  padding: 0;
+  font-family: "urbanjungle";
+  font-size: 20px;
+  margin: 1px;
+  padding: 2px;
 }
 
 #search-jumbo {
   background: none;
-  position: relative;
+  /* position: relative; */
   top: 15vh;
 }
 
-/* .form-control {
+#search-jumbo .form-control {
   background: #ffffcc;
-  opacity: 0.7;
-} */
+  opacity: 0.5;
+}
 
 .btn-div {
   text-align: center;
@@ -71,5 +80,14 @@
   font-weight: bold;
   background: rgba(255, 255, 255, 0.25);
 }
+h1{
+  
+  font-family: "urbanjungle";
+
+}
 
 /*# sourceMappingURL=load.css.map */
+@font-face {
+  font-family: urbanjungle;
+  src: url(assets/fonts/urbanjungledemo-webfont.woff);
+}
