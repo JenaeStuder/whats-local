@@ -18,8 +18,10 @@
     "react-bootstrap": "^1.0.0-beta.8",
     "react-dev-utils": "^8.0.0",
     "react-dom": "^16.8.6",
+    "react-redux": "^7.0.2",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
+    "redux": "^4.0.1",
     "sass": "^1.17.4",
     "validator": "^10.11.0"
   },

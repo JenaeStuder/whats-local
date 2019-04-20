@@ -26,23 +26,23 @@ class Profile extends Component {
 
 
     };
-    componentDidMount() {
-        this.loadProfile();
-    }
+    // componentDidMount() {
+    //     this.loadProfile();
+    // }
 
 
-    loadProfile = () => {
-        API.getProfile().then(res => this.setState({
-            firstName: res.data,
-            lastName: "",
-            socialMediaHandles: "",
-            bio: "",
-            profilePicture: "",
-            mediaClips: "",
-            upcoming:""
-        })
-        ).catch(err => console.log(err));
-    };
+    // loadProfile = () => {
+    //     API.getProfile().then(res => this.setState({
+    //         firstName: res.data,
+    //         lastName: "",
+    //         socialMediaHandles: "",
+    //         bio: "",
+    //         profilePicture: "",
+    //         mediaClips: "",
+    //         upcoming:""
+    //     })
+    //     ).catch(err => console.log(err));
+    // };
 
 
     render(props) {
