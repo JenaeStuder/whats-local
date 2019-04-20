@@ -49,9 +49,12 @@ form {
   background-size: 135% 100vh;
   background-position: right left;
 }
+
+
 .Background{
   background-image: url("../images/vertical-waves.png");
   min-width: 100vw;
   min-height: 100vh;
   
   }
+
