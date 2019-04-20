@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(routes);
 
 //DB Config
-//const db = require("./config/keys").mongoURI;
+const db = require("./config/keys").mongoURI;
 //Connect to MongoDB
 db = process.env.MONGODB_URI || "mongodb+srv://fgross3rd:scsa316@whats-local-gs2uw.mongodb.net/test?retryWrites=true";
 mongoose
