@@ -21,7 +21,9 @@ class Edit extends Component {
     fullName: "",
     username: "",
     password: "",
-    zipcode: ""
+    zipcode: "",
+    profilePicture: "",
+    media: ""
   };
 
   handleInputChange = event => {

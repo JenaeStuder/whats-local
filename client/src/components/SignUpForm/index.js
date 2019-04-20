@@ -4,9 +4,31 @@ import FileUpload from "../FileUpload";
 import Select from "../Select";
 import Button from "../Button";
 import "./style.css";
+import API from '../../utils/API';
 
 // Using the datalist element we can create autofill suggestions based on the props.breeds array
 function SignUpForm(props) {
+  
+  function submitFunc(e) {
+    e.preventDefault();
+    let file = document.getElementById("profilepic").files[0];
+    console.log(file);
+
+    API.submitArtist({
+      email: document.getElementById("email").value,
+      username: document.getElementById("username").value,
+      firstName: document.getElementById("firstName").value,
+      lastName: document.getElementById("lastName").value,
+      password: document.getElementById("password").value,
+      zip: document.getElementById("zip").value
+    }).then(data => {
+      console.log(data, data.data._id, file);
+      (file > 0) ?  API.addMedia({ id: data.data._id, file: file }) : console.log("no file uploaded");
+      ;
+    });
+  }          
+  
+
   return (
     <form className="signup">
       <Input
@@ -87,11 +109,11 @@ function SignUpForm(props) {
       <label>Already have an Account?</label>
 
       <Button
-        className="btn btn-info btn-lg btn-block"
-        id="login"
-        type="submit"
-        //onClick=""
-        title="Login"
+        className="btn btn-dark btn-lg btn-block"
+        id="signup"
+        // type="submit"
+        action={submitFunc}
+        title="Signup"
       />
       <div class="g-signin2" data-onsuccess="onSignIn" />
     </form>
