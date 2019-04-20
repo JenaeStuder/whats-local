@@ -1,15 +1,5 @@
 import axios from "axios";
 
-// Initialize Firebase
-  // const config = {
-  //     apiKey: "AIzaSyDXuppBrOzR5S6jEG0-i1YtXNmVWA0mAhI",
-  //     authDomain: "whatslocal-3cb63.firebaseapp.com",
-  //     databaseURL: "https://whatslocal-3cb63.firebaseio.com",
-  //     projectId: "whatslocal-3cb63",
-  //     storageBucket: "whatslocal-3cb63",
-  //     messagingSenderId: "451310734611"
-  // };
-  // firebase.initializeApp(config);
 
 
 
