@@ -68,7 +68,7 @@ class SignUp extends Component {
       password2: this.state.password2
     };
     console.log(newUser);
-    this.props.registerUser(newUser, this.props.history);
+    // this.props.registerUser(newUser, this.props.history);
   };
 
   // handleFormSubmit = event => {
@@ -92,7 +92,7 @@ class SignUp extends Component {
           <Col size="md-6">
             <div class="jumbotron jumbotron-fluid whats-local-jumbo">
               <h1 id="title">what's</h1>
-              <h1 id="title">local?</h1>
+              <h1 id="title">local</h1>
             </div>
             <p id="subtitle">Join the community !</p>
             <p id="subtitle">(it's long, but it's worth it)</p>
