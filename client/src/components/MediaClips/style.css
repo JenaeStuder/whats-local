@@ -1,0 +1,16 @@
+.media-border-wrap{
+    height: 100%;
+    width: 100%;
+    content: center;
+     max-width: 100%;
+     padding: 1rem;
+     position: relative;
+     background: linear-gradient(-10deg,white, white);
+        padding: 3px;
+        box-shadow: 10px 10px 5px grey;
+      }
+  #media{
+    margin-bottom: 50%;
+    
+  }
+   

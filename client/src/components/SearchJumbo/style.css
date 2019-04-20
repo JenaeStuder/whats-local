@@ -1,0 +1,25 @@
+.jumbo-image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.button-title {
+    font-family: "Playfair Display", serif;
+    text-shadow: -2px -2px 1px black, -2px -2px 1px black, -2px -2px 1px black, -2px -2px 1px black;
+}
+
+.card {
+    background-color: transparent;
+    border: transparent;
+}
+
+.display-4 {
+    font-family: "Fredericka the Great", cursive;
+}
+
+.search-jumbo-button {
+    float: none;
+}

@@ -1,0 +1,84 @@
+$primary-color: #ffffcc;
+$secondary-color: #993366;
+$tertiary-color: #08164c;
+
+$header-font: "Fredericka the Great", cursive;
+$text-font: "Londrina Sketch", cursive;
+
+// body {
+//   background-color: lightgray;
+// }
+
+#titleBackground {
+  /* background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url("./images/background-image.jpg"); */
+  height: 100vh;
+  /* background-size: 135% 100vh; */
+  /* background-position: right top; */
+  position: absolute;
+  z-index: 2;
+}
+
+.carousel {
+  .carousel-inner {
+    height: 100vh;
+  }
+  .d-block {
+    height: 100vh;
+  }
+  .paint {
+    width: 150%;
+    float: right;
+    opacity: 0.7;
+  }
+  .gradient {
+    opacity: 0.8;
+  }
+  .drawing {
+    opacity: 0.95;
+  }
+  .orange {
+    opacity: 0.75;
+  }
+  .plant {
+    opacity: 0.75;
+  }
+  .neon {
+    width: 165%;
+    opacity: 0.8;
+    float: right;
+    top: 0;
+  }
+}
+
+#title-jumbo {
+  background: none;
+  text-align: center;
+  position: relative;
+  top: 10vh;
+  font-family: "Fredericka the Great";
+  margin: 0;
+  padding: 0;
+}
+
+#search-jumbo {
+  background: none;
+  position: relative;
+  top: 15vh;
+}
+
+.form-control {
+  background: $primary-color;
+  opacity: 0.7;
+  // border: double black;
+}
+
+.btn-div {
+  text-align: center;
+  .btn {
+    margin: 1rem;
+    border: solid;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.25);
+  }
+}
+// ridge|inset|outset|initial|inherit;

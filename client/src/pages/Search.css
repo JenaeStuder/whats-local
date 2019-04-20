@@ -1,0 +1,20 @@
+.search-jumbo-button {
+    float: none;
+    text-align: center;
+}
+
+
+.search-jumbo {
+    background-color: #49a0b5;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+

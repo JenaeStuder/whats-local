@@ -1,0 +1,13 @@
+.bio-border-wrap{
+    
+        max-width: 250px;
+        padding: 1rem;
+        position: relative;
+        background: linear-gradient(10deg,#49a0b5, darkslategrey);
+        padding: 3px;
+        box-shadow: 10px 10px 5px grey;
+      }
+
+h3{
+    font-family: "Fredericka the Great", cursive; 
+}
