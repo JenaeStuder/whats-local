@@ -19,7 +19,7 @@ app.use(routes);
 //DB Config
 const db = require("./config/keys").mongoURI;
 //Connect to MongoDB
-db = process.env.MONGODB_URI || "mongodb+srv://fgross3rd:scsa316@whats-local-gs2uw.mongodb.net/test?retryWrites=true";
+// db = process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist";
 mongoose
   .connect(db,{ useNewUrlParser: true })
   .then(() => console.log("MongoDB successfully connected"))
@@ -27,9 +27,11 @@ mongoose
 
 
 // Passport middleware
-//app.use(passport.initialize());
+app.use(passport.initialize());
 // Passport config
-//require("./config/passport")(passport);
+require("./config/passport")(passport);
 
+app.use("/api/users", users);
+const port= process.env.PORT || 5000;
 // process.env.port is Heroku's port if you choose to deploy the app there
 app.listen(PORT, () => console.log(`🌎  ==> API Server now listening on PORT ${PORT} !`));
