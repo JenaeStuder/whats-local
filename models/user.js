@@ -40,7 +40,7 @@ const UserSchema = new Schema({
     of: String
   },
   profilePicture: {type: String},
-  media: {type: String},
+  media: [String],
   favoriteArtits: {type: String},
   bio: {
     type: String
