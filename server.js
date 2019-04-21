@@ -20,7 +20,9 @@ app.use(bodyParser.json());
 //DB Config
 const db = require("./config/keys").mongoURI;
 //Connect to MongoDB
-// db = process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist";
+
+db = process.env.MONGODB_URI || "mongodb://localhost/whatslocal";
+
 mongoose
   .connect(
     db,
