@@ -1,0 +1,19 @@
+#userPic {
+    width: 5em;
+    height: 5em;
+    float: left;
+    margin-right: 1em;
+}
+
+#userSuggestName {
+    float: left;
+    margin-top: 1em;
+}
+
+#suggestedUser {
+    border: transparent;
+}
+
+#suggestionsHeader {
+    text-align: center;
+}
