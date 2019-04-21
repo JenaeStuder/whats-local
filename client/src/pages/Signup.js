@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-// import { registerUser } from "../../actions/authActions";
+import { registerUser } from "../actions/authActions";
 import classnames from "classnames";
 import SignUpForm from "../components/SignUpForm";
 import Form from "react-bootstrap/Form";
@@ -34,6 +34,8 @@ class SignUp extends Component {
       email: "",
       password: "",
       password2: "",
+      zipCode: "",
+      userType: "",
       errors: {}
     };
   }
@@ -65,10 +67,12 @@ class SignUp extends Component {
       lastName: this.state.lastName,
       email: this.state.email,
       password: this.state.password,
-      password2: this.state.password2
+      password2: this.state.password2,
+      zipCode: this.state.zipCode,
+      userType: this.state.userType
     };
     console.log(newUser);
-    // this.props.registerUser(newUser, this.props.history);
+    this.props.registerUser(newUser, this.props.history);
   };
 
   // handleFormSubmit = event => {
@@ -90,7 +94,7 @@ class SignUp extends Component {
       <div className="Background">
         <Row>
           <Col size="md-6">
-            <div class="jumbotron jumbotron-fluid whats-local-jumbo">
+            <div className="jumbotron jumbotron-fluid whats-local-jumbo">
               <h1 id="title">what's</h1>
               <h1 id="title">local</h1>
             </div>
@@ -312,4 +316,12 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default connect(
+  mapStateToProps,
+  { registerUser }
+)(withRouter(SignUp));
