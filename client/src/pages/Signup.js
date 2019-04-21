@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-// import { registerUser } from "../../actions/authActions";
+import { registerUser } from "../actions/authActions";
 import classnames from "classnames";
 import SignUpForm from "../components/SignUpForm";
 import Form from "react-bootstrap/Form";
@@ -68,7 +68,7 @@ class SignUp extends Component {
       password2: this.state.password2
     };
     console.log(newUser);
-    // this.props.registerUser(newUser, this.props.history);
+    this.props.registerUser(newUser, this.props.history);
   };
 
   // handleFormSubmit = event => {
@@ -312,4 +312,12 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default connect(
+  mapStateToProps,
+  { registerUser }
+)(withRouter(SignUp));
