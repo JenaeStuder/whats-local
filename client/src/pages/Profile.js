@@ -23,14 +23,16 @@ class Profile extends Component {
         profilePicture: "",
         mediaClips: "",
         upcoming:"",
+        loading:"",
 
 
     };
-    componentDidMount() {
-        this.loadProfile();
-    }
+    // componentDidMount() {
+    //     this.loadProfile();
+    // }
 
 
+<<<<<<< HEAD
     loadProfile = () => {
         API.getProfile().then(res => this.setState({
             firstName: res.firstName,
@@ -43,6 +45,20 @@ class Profile extends Component {
         })
         ).catch(err => console.log(err));
     };
+=======
+    // loadProfile = () => {
+    //     API.getProfile().then(res => this.setState({
+    //         firstName: res.data,
+    //         lastName: "",
+    //         socialMediaHandles: "",
+    //         bio: "",
+    //         profilePicture: "",
+    //         mediaClips: "",
+    //         upcoming:""
+    //     })
+    //     ).catch(err => console.log(err));
+    // };
+>>>>>>> dfe0cb023768ecd285deb8cb0eb62166596373e0
 
 
     render(props) {
@@ -150,4 +166,5 @@ class Profile extends Component {
     }
 
 }
+
 export default Profile;
