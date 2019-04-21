@@ -15,7 +15,7 @@ app.use(
 app.use(bodyParser.json());
 
 // Routes
-app.use(routes);
+// app.use("/api/users", users);
 
 //DB Config
 const db = require("./config/keys").mongoURI;
@@ -35,6 +35,6 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 app.use("/api/users", users);
-const port= process.env.PORT || 5000;
+const PORT= process.env.PORT ||5000;
 // process.env.port is Heroku's port if you choose to deploy the app there
 app.listen(PORT, () => console.log(`🌎  ==> API Server now listening on PORT ${PORT} !`));

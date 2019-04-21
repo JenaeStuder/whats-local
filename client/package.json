@@ -21,7 +21,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
+    "proxy": "http://localhost:5000",
+    "eslintConfig": {
     "extends": "react-app"
   },
   "browserslist": [
@@ -29,8 +30,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "nodemon": "^1.18.11"
-  }
+  ]
 }

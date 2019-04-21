@@ -34,6 +34,8 @@ class SignUp extends Component {
       email: "",
       password: "",
       password2: "",
+      zipCode: "",
+      userType: "",
       errors: {}
     };
   }
@@ -65,7 +67,9 @@ class SignUp extends Component {
       lastName: this.state.lastName,
       email: this.state.email,
       password: this.state.password,
-      password2: this.state.password2
+      password2: this.state.password2,
+      zipCode: this.state.zipCode,
+      userType: this.state.userType
     };
     console.log(newUser);
     this.props.registerUser(newUser, this.props.history);
@@ -90,7 +94,7 @@ class SignUp extends Component {
       <div className="Background">
         <Row>
           <Col size="md-6">
-            <div class="jumbotron jumbotron-fluid whats-local-jumbo">
+            <div className="jumbotron jumbotron-fluid whats-local-jumbo">
               <h1 id="title">what's</h1>
               <h1 id="title">local</h1>
             </div>
