@@ -5,7 +5,7 @@ const db = require("../models");
 const { Storage } = require("@google-cloud/storage");
 const storage = new Storage();
 const bucket = storage.bucket('gs://whatslocal-3cb63/');
-const url = "https://whatslocal-3cb63.storage.googleapis.com/";
+const url = "https://whatslocal-3cb63.storage.googleapis.com/media";
 
 
 // connection setup for the storage service that will containt the media files. 
@@ -69,13 +69,19 @@ module.exports = {
   savedArtist: function(req, res) {  
   },
   updatePic: function(req, res) {
-    db.User.findById({_id: req.params.id}, {$set:{profilePicture:{path: req.body}}})
-    .then(dbModel => res.json(dbModel))
-    .catch(err => res.status(422).json(err));
+    console.log("update route");
+    
+    
+    db.User.findOneAndUpdate(req.params.id, {profilePicture:req.body.path})
+    .then(dbModel => {
+      console.log(dbModel);
+      
+      res.json(dbModel)})
+    .catch(err => console.log(err)
+    );
   },
   test: function(req, res){
-    console.log("Handler has been hit!");
-    res.sendStatus(200)
+    console.log("Handler has been hit!", req.params.id, req.body.path);
   }
-
+//res.status(422).json(err)
 };

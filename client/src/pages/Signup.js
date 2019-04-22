@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-// import { registerUser } from "../../actions/authActions";
+import { registerUser } from "../actions/authActions";
 import classnames from "classnames";
 import SignUpForm from "../components/SignUpForm";
 import Form from "react-bootstrap/Form";
@@ -18,13 +18,6 @@ import BackgroundImage from "../components/BackgroundImage"
 
 
 class SignUp extends Component {
-  // state = {
-  //   fullName: "",
-  //   username: "",
-  //   password: "",
-  //   zipcode: ""
-  // };
-
   constructor() {
     super();
     this.state = {
@@ -34,6 +27,8 @@ class SignUp extends Component {
       email: "",
       password: "",
       password2: "",
+      zipCode: "",
+      userType: "",
       errors: {}
     };
   }
@@ -50,13 +45,6 @@ class SignUp extends Component {
     this.setState({ [e.target.id]: e.target.value });
   };
 
-  // handleInputChange = event => {
-  //   const { name, value } = event.target;
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // };
-
   onSubmit = e => {
     e.preventDefault();
     const newUser = {
@@ -65,24 +53,13 @@ class SignUp extends Component {
       lastName: this.state.lastName,
       email: this.state.email,
       password: this.state.password,
-      password2: this.state.password2
+      password2: this.state.password2,
+      zipCode: this.state.zipCode,
+      userType: this.state.userType
     };
     console.log(newUser);
-    // this.props.registerUser(newUser, this.props.history);
+    this.props.registerUser(newUser, this.props.history);
   };
-
-  // handleFormSubmit = event => {
-  //     event.preventDefault();
-  //     if (this.state.title && this.state.author) {
-  //       API.saveBook({
-  //         title: this.state.title,
-  //         author: this.state.author,
-  //         synopsis: this.state.synopsis
-  //       })
-  //         .then(res => this.loadBooks())
-  //         .catch(err => console.log(err));
-  //     }
-  //   };
 
   render() {
     const { errors } = this.state;
@@ -90,14 +67,13 @@ class SignUp extends Component {
       <div className="Background">
         <Row>
           <Col size="md-6">
-            <div class="jumbotron jumbotron-fluid whats-local-jumbo">
+            <div className="jumbotron jumbotron-fluid whats-local-jumbo">
               <h1 id="title">what's</h1>
               <h1 id="title">local</h1>
             </div>
             <p id="subtitle">Join the community !</p>
             <p id="subtitle">(it's long, but it's worth it)</p>
             <Card>
-              {/* <SignUpForm></ SignUpForm> */}
               <form noValidate onSubmit={this.onSubmit} className="signup">
                 <div className="form-group">
                   <input
@@ -234,82 +210,17 @@ class SignUp extends Component {
             </Card>
           </Col>
         </Row>
-
-        {/* <Container>
-                <Row>
-                    {/* <Col className="image">
-                
-                    </Col> */}
-        {/* <Col>
-                    <Jumbotron fluid>
-                            <Container>
-                                <h1>what's local?</h1>
-                                <h3>
-                                    Sign Up
-                                </h3>
-                            </Container>
-                    </Jumbotron>
-                    <Card>
-                        <Card.Body>
-                        <Form>
-                            <Form.Row>
-                                <Form.Group as={Col} controlId="formGridEmail">
-                                    <Form.Label>Full Name</Form.Label>
-                                    <Form.Control type="text" placeholder="Full Name" />
-                                </Form.Group>
-
-                                <Form.Group as={Col} controlId="formGridPassword">
-                                    <Form.Label>Password</Form.Label>
-                                    <Form.Control type="password" placeholder="Password" />
-                                </Form.Group>
-                            </Form.Row>
-
-                            <Form.Group controlId="formGridAddress1">
-                                <Form.Label>Address</Form.Label>
-                                <Form.Control placeholder="1234 Main St" />
-                            </Form.Group>
-
-                            <Form.Group controlId="formGridAddress2">
-                                <Form.Label>Address 2</Form.Label>
-                                <Form.Control placeholder="Apartment, studio, or floor" />
-                            </Form.Group>
-
-                            <Form.Row>
-                                <Form.Group as={Col} controlId="formGridCity">
-                                    <Form.Label>City</Form.Label>
-                                    <Form.Control />
-                                </Form.Group>
-
-                                <Form.Group as={Col} controlId="formGridState">
-                                    <Form.Label>State</Form.Label>
-                                    <Form.Control as="select">
-                                        <option>Choose...</option>
-                                        <option>...</option>
-                                    </Form.Control>
-                                </Form.Group>
-
-                                <Form.Group as={Col} controlId="formGridZip">
-                                    <Form.Label>Zip</Form.Label>
-                                    <Form.Control />
-                                </Form.Group>
-                            </Form.Row>
-
-                            <Form.Group id="formGridCheckbox">
-                                <Form.Check type="checkbox" label="Check me out" />
-                            </Form.Group>
-
-                            <Button variant="primary" type="submit">
-                                Submit
-                            </Button>
-                        </Form>
-                        </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
-            </Container> */}
       </div>
     );
   }
 }
 
-export default SignUp;
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default connect(
+  mapStateToProps,
+  { registerUser }
+)(withRouter(SignUp));

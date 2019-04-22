@@ -54,6 +54,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+      crossorigin="anonymous"></script>
     <script src="../src/utils/API.js"></script>
     <meta
       name="viewport"
@@ -101,9 +103,11 @@
         messagingSenderId: "451310734611"
       };
       firebase.initializeApp(config);
-      
-      //input ref
-      document.getElementById("profilepic").onchange = function(e){
+
+      const url = "https://whatslocal-3cb63.storage.googleapis.com/media/";
+      $(() =>{
+        //input ref
+        $("#profilepic").on("change", function(e){
         // grabbing the file
         const file = e.target.files[0];
         console.log(file);
@@ -114,8 +118,30 @@
         task.on('state_changed', function progess(snapshot){
           const percentageTransferred = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           console.log(percentageTransferred + "% done");
+          });
+        task.then(data => {
+          console.log("then hit!");
+          console.log("This too");
+          
+          $.ajax({
+            url:"/api/artists/profile/5cb4832accd71a5e9e7e0a56",
+            method: "PUT",
+            data: {path:url + file.name}
+            }).then(res => {
+            
+            console.log(`profile pic updated`);
+            $.ajax({
+              url:"/api/artists/profile/5cb4832accd71a5e9e7e0a56",
+              method:"GET"
+              }).then(res => {
+              const  newURL = res.profilePicture.replace(/ /g, "%20")
+              console.log(newURL);
+              })
+            }) 
+          })
         })
-      }
+      })
+      
       
   </script>
 </html>

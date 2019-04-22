@@ -56,6 +56,7 @@ class Spotlight extends Component {
 
 
                                         </Col>
+                                        
                                         <Col xs={12} md={6}>
                                             <Row className="InfoSection">
                                                 {/* <h6>Name</h6> */}
