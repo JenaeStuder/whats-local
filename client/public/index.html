@@ -53,7 +53,10 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+      crossorigin="anonymous"></script>
+    <script src="../src/utils/API.js"></script>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -89,4 +92,56 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+    //Initialize Firebase
+      const config = {
+        apiKey: "AIzaSyDXuppBrOzR5S6jEG0-i1YtXNmVWA0mAhI",
+        authDomain: "whatslocal-3cb63.firebaseapp.com",
+        databaseURL: "https://whatslocal-3cb63.firebaseio.com",
+        projectId: "whatslocal-3cb63",
+        storageBucket: "whatslocal-3cb63",
+        messagingSenderId: "451310734611"
+      };
+      firebase.initializeApp(config);
+
+      const url = "https://whatslocal-3cb63.storage.googleapis.com/media/";
+      $(() =>{
+        //input ref
+        $("#profilepic").on("change", function(e){
+        // grabbing the file
+        const file = e.target.files[0];
+        console.log(file);
+        // creating our strage reference 
+        const storageRef = firebase.storage().ref('media/' + file.name);
+        // upload file
+        const task = storageRef.put(file)
+        task.on('state_changed', function progess(snapshot){
+          const percentageTransferred = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log(percentageTransferred + "% done");
+          });
+        task.then(data => {
+          console.log("then hit!");
+          console.log("This too");
+          
+          $.ajax({
+            url:"/api/artists/profile/5cb4832accd71a5e9e7e0a56",
+            method: "PUT",
+            data: {path:url + file.name}
+            }).then(res => {
+            
+            console.log(`profile pic updated`);
+            $.ajax({
+              url:"/api/artists/profile/5cb4832accd71a5e9e7e0a56",
+              method:"GET"
+              }).then(res => {
+              const  newURL = res.profilePicture.replace(/ /g, "%20")
+              console.log(newURL);
+              })
+            }) 
+          })
+        })
+      })
+      
+      
+  </script>
 </html>
