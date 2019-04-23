@@ -33,18 +33,18 @@ class Profile extends Component {
     // }
 
 
-    // loadProfile = () => {
-    //     API.getProfile().then(res => this.setState({
-    //         firstName: res.data,
-    //         lastName: "",
-    //         socialMediaHandles: "",
-    //         bio: "",
-    //         profilePicture: "",
-    //         mediaClips: "",
-    //         upcoming:""
-    //     })
-    //     ).catch(err => console.log(err));
-    // };
+    loadProfile = () => {
+        API.getProfile().then(res => this.setState({
+            firstName: res.firstName,
+            lastName: res.lastName,
+            socialMediaHandles: res.socialMediaHandles,
+            bio: res.bio,
+            profilePicture: res.profilePicture,
+            mediaClips: res.media,
+            upcoming:""
+        })
+        ).catch(err => console.log(err));
+    };
 
 
     render(props) {

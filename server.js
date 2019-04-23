@@ -2,7 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
-const users = require("./routes/api/users");
+// const users = require("./routes/api/users");
+const routes = require("./routes");
 
 const app = express();
 
@@ -21,8 +22,6 @@ app.use(bodyParser.json());
 const db = require("./config/keys").mongoURI;
 //Connect to MongoDB
 
-// db = process.env.MONGODB_URI || "mongodb://localhost/whatslocal";
-
 mongoose
   .connect(
     db,
@@ -36,7 +35,9 @@ app.use(passport.initialize());
 // Passport config
 require("./config/passport")(passport);
 
-app.use("/api/users", users);
-const PORT= process.env.PORT || 5000;
+app.use(routes);
+// app.use("/api/users", users);
+const PORT= process.env.PORT ||3001;
+
 // process.env.port is Heroku's port if you choose to deploy the app there
 app.listen(PORT, () => console.log(`🌎  ==> API Server now listening on PORT ${PORT} !`));
