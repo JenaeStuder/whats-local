@@ -65,8 +65,15 @@
   /* position: relative; */
   top: 15vh;
 }
+#search{
+  width: 50%;
+  /* background-color: #ffffcc; */
+  opacity: 0.5;
+  margin-top:4vh;
+  color: darkslategrey;
+}
 
-#search-jumbo .form-control {
+#search .form-control {
   background: #ffffcc;
   opacity: 0.5;
 }
