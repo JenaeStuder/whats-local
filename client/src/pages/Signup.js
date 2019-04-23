@@ -181,7 +181,6 @@ class SignUp extends Component {
                     error={errors.userType}
                     id="userType"
                     placeholder="Choose One..."
-                    // type="select"
                     className={classnames("form-control", {
                       invalid: errors.userType
                     })}
