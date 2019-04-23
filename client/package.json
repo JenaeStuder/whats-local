@@ -21,7 +21,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+
     "eslintConfig": {
+
     "extends": "react-app"
   },
   "browserslist": [
