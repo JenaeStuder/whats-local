@@ -18,9 +18,12 @@ app.use(bodyParser.json());
 // Routes
 // app.use("/api/users", users);
 
-//DB Config
-const db = require("./config/keys").mongoURI;
+//DB Configconst db = require("./config/keys").mongoURI;
+
 //Connect to MongoDB
+
+db = process.env.MONGODB_URI || "mongodb://localhost/whatslocal";
+
 
 mongoose
   .connect(

@@ -124,14 +124,51 @@
           console.log("This too");
           
           $.ajax({
-            url:"/api/artists/profile/5cb4832accd71a5e9e7e0a56",
+            url:"/api/artists/profile/" + localStorage.getItem('id'),
             method: "PUT",
             data: {path:url + file.name}
             }).then(res => {
             
             console.log(`profile pic updated`);
             $.ajax({
-              url:"/api/artists/profile/5cb4832accd71a5e9e7e0a56",
+              url:"/api/artists/profile/" + localStorage.getItem('id'),
+              method:"GET"
+              }).then(res => {
+              const  newURL = res.profilePicture.replace(/ /g, "%20")
+              console.log(newURL);
+              })
+            }) 
+          })
+        })
+        $("#addedMedia").on("change", function(e) {
+          const file = e.target.files[0];
+          const mediaType = file.type.split("/");
+          console.log(mediaType[0], file);
+
+          // creating our strage reference 
+          const storageRef = firebase.storage().ref('media/' + file.name);
+          // upload file
+          const task = storageRef.put(file)
+          task.on('state_changed', function progess(snapshot){
+            const percentageTransferred = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            console.log(percentageTransferred + "% done");
+            });
+          task.then(data => {
+            console.log("then hit!");
+            console.log("This too");
+          
+          $.ajax({
+            url:"/api/artists/5cbe7510b1bfa579c59651db",
+            method: "PUT",
+            media: {
+              path:url + file.name,
+              mediaType:mediaType[0]
+              }
+            }).then(res => {
+            
+            console.log(`media saved`);
+            $.ajax({
+              url:"/api/artists/profile/5cbe7510b1bfa579c59651db",
               method:"GET"
               }).then(res => {
               const  newURL = res.profilePicture.replace(/ /g, "%20")

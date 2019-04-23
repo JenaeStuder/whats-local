@@ -1,4 +1,5 @@
-const db = require("../models");
+// const db = require("../models");
+const db = mongoose.model("users");
 //res.json(dbModel;
 
 // connection setup for the storage service that will containt the media files. 
@@ -9,32 +10,35 @@ module.exports = {
   findAll: function(req, res) {
     console.log("hit handler for find all");
     
-    db.User
+    db
       .find(req.query)
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
-    db.User
+    db
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
     console.log("Hit");
-    db.User.create(req.body)
+    db.create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
-    db.User
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then(dbModel => res.json(dbModel))
+    db
+      .findOneAndUpdate(req.params.id, req.body)
+      .then(dbModel => {
+        console.log(dbModel);
+        res.json(dbModel)
+      })
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
-    db.User
+    db
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
@@ -56,7 +60,7 @@ module.exports = {
         //   .catch(err => res.status(422).json(err))  
   }, 
   removeStorageItem: function(req, res) {
-    db.User.findById({_id: req.params.id}, {$pull:{media:{path: req.body}}})
+    db.findById({_id: req.params.id}, {$pull:{media:{path: req.body}}})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
 
@@ -67,7 +71,7 @@ module.exports = {
     console.log("update route");
     
     
-    db.User.findOneAndUpdate(req.params.id, {profilePicture:req.body.path})
+    db.findOneAndUpdate(req.params.id, {profilePicture:req.body.path})
     .then(dbModel => {
       console.log(dbModel);
       
