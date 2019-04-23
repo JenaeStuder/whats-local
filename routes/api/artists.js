@@ -5,6 +5,8 @@ const localController = require("../../controllers/localController");
 //console.log(localController);
 
 router.route("/")
+    .get(function(){console.log("full route hit");
+    })
     .post(localController.create);
 
 router.route("/:id")

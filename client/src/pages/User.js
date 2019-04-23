@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 //import API from "../utils/API";
-import Col from "../components/Col";
-import Container from "../components/Container";
-import Row from "../components/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 import Searchbar from "../components/Searchbar";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
