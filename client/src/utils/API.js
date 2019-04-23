@@ -1,13 +1,10 @@
 import axios from "axios";
 
 
-
-
 export default {
-  getProfile: function(req, res) {
-    db.Book.findById(req.params.id)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+  getProfile: function() {
+    console.log("api");
+    return axios.get("/api/artists");
   },
   // submit user/artist
   submitArtist: function(artistData) {
