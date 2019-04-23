@@ -6,3 +6,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+#nav{
+    margin-top: 0;
+}
