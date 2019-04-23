@@ -19,10 +19,10 @@ app.use(bodyParser.json());
 // app.use("/api/users", users);
 
 //DB Config
-// const db = require("./config/keys").mongoURI;
+const db = require("./config/keys").mongoURI;
 //Connect to MongoDB
 
-const db = process.env.MONGODB_URI || "mongodb://localhost/whatslocal";
+// const db = process.env.MONGODB_URI || "mongodb://localhost/whatslocal";
 
 mongoose
   .connect(
