@@ -28,7 +28,7 @@ class SearchJumbo extends Component {
   render() {
     return (
       <div>
-        <Card>
+        <Card id="searchCard">
           <Card.Body>
             <div
               class="jumbotron jumbo-image" id= "jumbotron"

@@ -2,9 +2,19 @@
     width: 200px;
     height: 200px;
 }
-.ProfileMedia {
-    text-align: center;
-}
 .Spotlight {
     margin-bottom: 1em;
+}
+#ProfileMedia{
+    text-align: center;
+}
+.profileInfo {
+    color: black;
+}
+
+#spotlightHeader {
+    text-align: center;
+    font-family: "Fredericka the Great", serif;
+    color: #49a0b5;
+    font-size: 5vh;
 }

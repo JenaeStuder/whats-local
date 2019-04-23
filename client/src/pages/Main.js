@@ -81,6 +81,7 @@ class MainPage extends Component {
                     {/* </Col>
                         </Row> : null}
                     </Row> */}
+                    <Container>
                     <Row>
                         <Col md={8}>
                             <Create />
@@ -89,7 +90,7 @@ class MainPage extends Component {
                             <Suggestions />
                         </Col>
                     </Row>
-
+                    </Container>
                 </Container>
 
 
