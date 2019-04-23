@@ -5,6 +5,8 @@ const localController = require("../../controllers/localController");
 //console.log(localController);
 
 router.route("/")
+    .get(function(){console.log("full route hit");
+    })
     .post(localController.create);
 
 router.route("/:id")
@@ -16,7 +18,8 @@ router.route("/:id")
 router.route("/media/op")
     .put(localController.addStorageItem)
     .delete(localController.removeStorageItem)
-router.route("/profile/pic/:id")
+router.route("/profile/:id")
+    .get(localController.findById)
     .put(localController.updatePic)
 module.exports = router;
 

@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 //import API from "../utils/API";
-import Col from "../components/Col";
-import Container from "../components/Container";
-import Row from "../components/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 import Searchbar from "../components/Searchbar";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Favorites from "../components/Favorites";
 import waves from "../images/vertical-waves.png";
 import "./User.css";
-import BackgroundImage from "../components/BackgroundImage";
+import Brand from "../components/Brand";
 //import Favorites from "../components/favorites";
 
 
@@ -45,11 +45,19 @@ class normalUser extends Component {
 
     render() {
         return (
-            <div className= "Background">
+            <div>
             <div className="user">
             
            
-            <Searchbar />
+            <Row>
+                            <Col xs={4} md={4}>
+                                <Brand />
+                            </Col>
+                            <Col xs={8} md={8} id="search">
+                                <Searchbar />
+                            </Col>
+                            
+                        </Row>
 
 
                 <Row>

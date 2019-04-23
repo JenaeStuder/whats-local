@@ -14,7 +14,7 @@ const UserSchema = new Schema({
   // `username` must be of type String
   // `username` will trim leading and trailing whitespace before it's saved
   // `username` is a required field and throws a custom error message if not supplied
-  username: {
+  userName: {
     type: String,
     trim: true,
     required: "Username is Required"
@@ -40,7 +40,7 @@ const UserSchema = new Schema({
     of: String
   },
   profilePicture: {type: String},
-  media: {type: String},
+  media: [{type:String}],
   favoriteArtits: {type: String},
   bio: {
     type: String
@@ -53,6 +53,4 @@ const UserSchema = new Schema({
   }
 });
 
-const User = mongoose.model("User", UserSchema);
-
-module.exports = User;
+module.exports = User = mongoose.model("users", UserSchema);
