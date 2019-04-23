@@ -15,6 +15,14 @@
   font-size: 5em;
 }
 
+#mainPageSubtitle {
+  margin-bottom: 5em;
+}
+
+#mainPageTitle {
+  padding: 5px;
+  
+}
 /* .carousel {
   z-index: 1;
 } */
@@ -67,7 +75,7 @@
 }
 
 #search-jumbo .form-control {
-  background: #ffffcc;
+  background: white;
   opacity: 0.5;
 }
 
@@ -80,7 +88,7 @@
   font-weight: bold;
   background: rgba(255, 255, 255, 0.25);
 }
-h1{
+.display-3{
   
   font-family: "urbanjungle";
 

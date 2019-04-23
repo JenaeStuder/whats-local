@@ -9,8 +9,14 @@ button {
     
 }
 
-.pic {
+#profileImage {
     position: center;
+    width: 25vh;
+    height: 25vh;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #navbar {

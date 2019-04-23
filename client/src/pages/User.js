@@ -7,13 +7,11 @@ import Searchbar from "../components/Searchbar";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Favorites from "../components/Favorites";
-import waves from "../images/vertical-waves.png";
 import "./User.css";
-import BackgroundImage from "../components/BackgroundImage";
+//import BackgroundImage from "../components/BackgroundImage";
 //import Favorites from "../components/favorites";
-
-
-
+import Create from "../components/Create";
+import Suggestions from "../components/Suggestions";
 
 
 class normalUser extends Component {
@@ -46,18 +44,14 @@ class normalUser extends Component {
     render() {
         return (
             <div className= "Background">
-            <div className="user">
-            
-           
-            <Searchbar />
-
-
-                <Row>
-                    <Col size="md-12" id="header">
-                        <Header />
-                        <h1 id="profileName"> {this.state.firstName} {this.state.lastName}</h1>
-                    </Col>
-
+                <div className="userHeader">
+                        <Row>
+                            <Col size="md-12" id="header">
+                            <Header />
+                            <h1 id="profileName"> {this.state.firstName} {this.state.lastName}</h1>
+                            </Col>
+                        </Row>
+                    {/* <Row>
                     {this.state.loading? <Col size="md-6">
 
                         <Row>
@@ -73,13 +67,27 @@ class normalUser extends Component {
 
                     </Col>: null}
 
+                </Row> */}
+                <Row>
+                    <Col size="md-6">
+                        <Favorites/>
+                    </Col>
+                    <Col size="md-6">
+                        <Create/>
+                    </Col>
                 </Row>
-      
+                <Row>
+                    <Col size="md-6">
+                        <Suggestions/>
+                    </Col>
+                </Row>
+                <Row>
                     <Col size="md-12" id="navbar">
                         <Navbar/>
                     </Col>
+                </Row>
 
-                    </div>
+                </div>
             </div>
 
         )

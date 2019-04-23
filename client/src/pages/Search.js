@@ -24,7 +24,7 @@ function Search() {
   return (
     <div className= "Background">
       <div class="jumbotron jumbotron-fluid search-jumbo">
-        <h1 class="display-4">Search by</h1>
+        <h1 class="display-3">SEARCH BY:</h1>
       </div>
       <SearchJumbo />
       <Navbar />
