@@ -45,6 +45,14 @@ const UserSchema = new Schema({
   bio: {
     type: String
   },
+  zipCode: {
+    type: String,
+    required: true
+  },
+  userType: {
+    type: Boolean,
+    required: true
+  },
 
   // `date` must be of type Date. The default value is the current date
   dateCreated: {
