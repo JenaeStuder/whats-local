@@ -16,6 +16,7 @@ import Brand from "../components/Brand";
 
 
 
+
 class normalUser extends Component {
     state = {
 
@@ -47,7 +48,7 @@ class normalUser extends Component {
         return (
             <div>
             <div className="user">
-            
+            <Container>
            
             <Row>
                             <Col xs={4} md={4}>
@@ -82,7 +83,7 @@ class normalUser extends Component {
                     </Col>: null}
 
                 </Row>
-      
+                </Container>
                     <Col size="md-12" id="navbar">
                         <Navbar/>
                     </Col>

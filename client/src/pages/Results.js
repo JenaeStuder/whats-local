@@ -29,6 +29,7 @@ class Results extends Component {
     render(props) {
         return (
             <div>
+                <Container>
            <div className="Results">
            <Row>
                             <Col xs={4} md={4}>
@@ -50,9 +51,10 @@ class Results extends Component {
                         </div>
                     </Col>
                 </Row>: null}
-
+                </div>
+                </Container>
             <Navbar />
-            </div>
+            
             </div>
             
         )
