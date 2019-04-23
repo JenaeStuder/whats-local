@@ -8,13 +8,14 @@ import Searchbar from "../components/Searchbar";
 import Create from "../components/Create";
 import Navbar from "../components/Navbar";
 import Suggestions from "../components/Suggestions";
+import Button from "../components/Button";
 // import UserUpdates from "../componentsUserUpdates";
 
 import Brand from "../components/Brand";
 
-class MainPage extends Component{
+class MainPage extends Component {
 
-    state={
+    state = {
 
         loading: "true",
 
@@ -23,52 +24,75 @@ class MainPage extends Component{
     //         this.loadProfile();
     // }
 
-    render(){
-        return(
+    render() {
+        return (
             <div className="MainPage">
-            
-            <Container>
-            <Row>
-                            <Col xs={2} md={2}>
-                                <Brand />
+
+                <Container>
+                    <Row>
+                        <Col xs={2} md={2}>
+
+                            <Brand />
+
+                        </Col>
+                        <Col xs={6} md={6} id="search">
+                            <Searchbar />
+                        </Col>
+                        <Col xs={4} id="mainPageNav">
+                            <a className="nav-item nav-link navbar-brand" id="mainPageNavItem" href="#">
+                                <i class="fas fa-heart" />
+                            </a>
+                            <a className="nav-item nav-link navbar-brand" id="mainPageNavItem" href="/edit">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a className="nav-item nav-link navbar-brand" id="mainPageNavItem" href="/user">
+                                <i class="fas fa-users" />
+                            </a>
+                            <a className="nav-item nav-link navbar-brand btn btn-outline-info" id="mainPageLogout" title="Logout" href="login">
+                                Logout
+                            </a>
+                        </Col>
+
+                    </Row>
+                </Container>
+                <Container>
+                    <Row className="Spotlight">
+                        <Col md={12}>
+                            <ArtistSpotlight />
+                        </Col>
+                        {/* {this.state.loading ? <Row>
+                            <Col md={12}>
+                                <ArtistSpotlight />
                             </Col>
-                            <Col xs={6} md={6} id="search">
-                                <Searchbar />
-                            </Col>
-                            <Col xs={4} md={4}>
-                            <Navbar/>
-                            </Col>
-                            
-                        </Row>
-            </Container>
-            <Container>
-            <Row className="Spotlight">
-            {this.state.loading ? <Row>
-                <Col md = {12}>
-            <ArtistSpotlight/>
-            </Col>
-            </Row> : null}
-            </Row> 
-            <Row className="Feed">
-            {this.state.loading ? <Row>
-                <Col xs={12} md ={6}>
-                <Row>
-                    {/* <Create/> */}
-                </Row>
-                <Row>
+                        </Row> : null} */}
+                    </Row>
+                    {/* <Row className="Feed">
+                        {this.state.loading ? <Row>
+                            <Col xs={12} md={6}>
+                                <Row>
+                                    {/* <Create/> */}
+                    {/* </Row>
+                                <Row> */}
                     {/* <Suggestions/> */}
-                </Row>
-                </Col>
-                <Col xs={12} md={6}>
-                {/* <UserUpdates/> */}
-                </Col>
-                </Row> : null}
-            </Row>
+                    {/* </Row>
+                            </Col>
+                            <Col xs={12} md={6}> */}
+                    {/* <UserUpdates/> */}
+                    {/* </Col>
+                        </Row> : null}
+                    </Row> */}
+                    <Row>
+                        <Col md={8}>
+                            <Create />
+                        </Col>
+                        <Col md={4}>
+                            <Suggestions />
+                        </Col>
+                    </Row>
+
+                </Container>
 
 
-            </Container>
-            
-            
             </div>
         )
     }
