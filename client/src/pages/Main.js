@@ -29,13 +29,13 @@ class MainPage extends Component{
             
             <Container>
             <Row>
-                            <Col xs={2} md={2}>
+                            <Col xs={4} md={4}>
                                 <Brand />
                             </Col>
-                            <Col xs={6} md={6} id="search">
+                            <Col xs={6} md={4} id="search">
                                 <Searchbar />
                             </Col>
-                            <Col xs={4} md={4}>
+                            <Col xs={2} md={4}>
                             <Navbar/>
                             </Col>
                             
