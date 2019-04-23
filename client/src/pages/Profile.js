@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { logoutUser } from "../actions/authActions";
 import API from "../utils/API";
 import ProfilePicture from "../components/ProfilePicture";
 import Bio from "../components/Bio";
@@ -30,7 +33,6 @@ class Profile extends Component {
 
     // };
     componentDidMount() {
-        console.log(this.props);
         // this.loadProfile();
     }
 
@@ -49,7 +51,9 @@ class Profile extends Component {
     // };
 
 
-    render(props) {
+    render() {
+        const { user } = this.props.auth;
+        console.log({ user });
         return (
 
             <div className="Profile">
@@ -83,7 +87,7 @@ class Profile extends Component {
                                             <Row>
 
                                                 <h5>
-                                                {/* {this.state.socialMediaHandles} */}
+                                                    {/* {this.state.socialMediaHandles} */}
                                                 </h5>
                                             </Row>
                                             <Row>
@@ -159,4 +163,14 @@ class Profile extends Component {
 
 }
 
-export default Profile;
+Profile.propTypes = {
+    logoutUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired
+  };
+  const mapStateToProps = state => ({
+    auth: state.auth
+  });
+  export default connect(
+    mapStateToProps,
+    { logoutUser }
+  )(Profile);
