@@ -4,7 +4,7 @@
 }
 
 .search-jumbo {
-  background-color: #49a0b5;
+  background-color: transparent;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -12,6 +12,7 @@
 .search-jumbo h1 {
   font-family: "Playfair Display", serif;
   font-weight: bolder;
+  color: white;
 }
 
 .navbar {
@@ -20,4 +21,5 @@
   bottom: 0;
   padding-left: 0;
   padding-right: 0;
+  margin-bottom: 0;
 }

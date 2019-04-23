@@ -14,7 +14,7 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 import "./Signup.css";
-import BackgroundImage from "../components/BackgroundImage"
+import Brand from "../components/Brand";
 
 
 class SignUp extends Component {
@@ -64,13 +64,19 @@ class SignUp extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="Background">
+      <div>
+        <Container>
+        <Row>
+          <Brand/>
+        </Row>
         <Row>
           <Col size="md-6">
-            <div className="jumbotron jumbotron-fluid whats-local-jumbo">
-              <h1 id="title">what's</h1>
-              <h1 id="title">local</h1>
-            </div>
+
+            {/* <div class="jumbotron jumbotron-fluid whats-local-jumbo"> */}
+              <h1 id="title">what's local</h1>
+              {/* <h1 id="title">local</h1> */}
+            {/* </div> */}
+
             <p id="subtitle">Join the community !</p>
             <p id="subtitle">(it's long, but it's worth it)</p>
             <Card>
@@ -186,8 +192,8 @@ class SignUp extends Component {
                     })}
                   >
                     <option value="" disabled>Choose One...</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
+                    <option value={true}>Yes</option>
+                    <option value={false}>No</option>
                   </select>
                   <span className="red-text">{errors.userType}</span>
                 </div>
@@ -209,6 +215,82 @@ class SignUp extends Component {
             </Card>
           </Col>
         </Row>
+
+
+        {/* <Container>
+                <Row>
+                    {/* <Col className="image">
+                
+                    </Col> */}
+        {/* <Col>
+                    <Jumbotron fluid>
+                            <Container>
+                                <h1>what's local?</h1>
+                                <h3>
+                                    Sign Up
+                                </h3>
+                            </Container>
+                    </Jumbotron>
+                    <Card>
+                        <Card.Body>
+                        <Form>
+                            <Form.Row>
+                                <Form.Group as={Col} controlId="formGridEmail">
+                                    <Form.Label>Full Name</Form.Label>
+                                    <Form.Control type="text" placeholder="Full Name" />
+                                </Form.Group>
+
+                                <Form.Group as={Col} controlId="formGridPassword">
+                                    <Form.Label>Password</Form.Label>
+                                    <Form.Control type="password" placeholder="Password" />
+                                </Form.Group>
+                            </Form.Row>
+
+                            <Form.Group controlId="formGridAddress1">
+                                <Form.Label>Address</Form.Label>
+                                <Form.Control placeholder="1234 Main St" />
+                            </Form.Group>
+
+                            <Form.Group controlId="formGridAddress2">
+                                <Form.Label>Address 2</Form.Label>
+                                <Form.Control placeholder="Apartment, studio, or floor" />
+                            </Form.Group>
+
+                            <Form.Row>
+                                <Form.Group as={Col} controlId="formGridCity">
+                                    <Form.Label>City</Form.Label>
+                                    <Form.Control />
+                                </Form.Group>
+
+                                <Form.Group as={Col} controlId="formGridState">
+                                    <Form.Label>State</Form.Label>
+                                    <Form.Control as="select">
+                                        <option>Choose...</option>
+                                        <option>...</option>
+                                    </Form.Control>
+                                </Form.Group>
+
+                                <Form.Group as={Col} controlId="formGridZip">
+                                    <Form.Label>Zip</Form.Label>
+                                    <Form.Control />
+                                </Form.Group>
+                            </Form.Row>
+
+                            <Form.Group id="formGridCheckbox">
+                                <Form.Check type="checkbox" label="Check me out" />
+                            </Form.Group>
+
+                            <Button variant="primary" type="submit">
+                                Submit
+                            </Button>
+                        </Form>
+                        </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
+            </Container> */}
+            </Container>
+
       </div>
     );
   }

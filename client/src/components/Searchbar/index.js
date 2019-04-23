@@ -2,8 +2,11 @@ import React from "react";
 
 function Searchbar() {
   return (
-    <div className="jumbotron jumbotron-fluid" id="search-jumbo">
-      <div className="container">
+    // <div className="jumbotron jumbotron-fluidsearch" id="search-jumbo">
+    <div >
+      {/* id = "SearchBar">  */}
+      <div >
+      {/* className="container"> */}
         <div className="input-group">
           <input
             type="text"
