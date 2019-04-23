@@ -11,7 +11,8 @@ import Searchbar from "../components/Searchbar";
 import Update from "../components/Upcoming";
 import UpdateItem from "../components/UpdateItem"
 import "./Profile.css"
-import BackgroundImage from "../components/BackgroundImage"
+import Brand from "../components/Brand";
+// import Loader from "../components/Loader";
 
 class Profile extends Component {
 
@@ -22,8 +23,8 @@ class Profile extends Component {
         bio: "",
         profilePicture: "",
         mediaClips: "",
-        upcoming:"",
-        loading:"",
+        upcoming: "",
+        loading: "",
 
 
     };
@@ -51,13 +52,25 @@ class Profile extends Component {
 
             <div className="Profile">
 
-                <div className="Background">
-                    <Searchbar />
+                <div> 
+               
+                    <Container>
+                        <Row>
+                            <Col xs={4} md={4}>
+                                <Brand />
+                            </Col>
+                            <Col xs={8} md={8} id="search">
+                                <Searchbar />
+                            </Col>
+                            
+                        </Row>
+                    
                     <br>
                     </br>
-                    <Container>
+                    <Row>
                         <Row className="ProfileInfo">
-                            {this.state.loading ? <Row >
+                            {this.state.loading ? 
+                            <Row >
                                 <Col md={12}>
                                     <Row>
                                         <Col xs={12} md={6}>
@@ -112,11 +125,16 @@ class Profile extends Component {
 
                                     </Col>
                                 </Row>
-                            </Row> : null}
+                                
+                            </Row> 
+                             : null}
                         </Row>
+                        
 
                         <Row className="ProfileMedia">
-                            {this.state.loading ? <Row >
+                            {this.state.loading ?
+                                
+                                     <Row >
                                 <Col xs={12} md={4}>
                                     <div>
                                         <h6>Media 1</h6>
@@ -138,9 +156,12 @@ class Profile extends Component {
                                         </MediaClips>
                                     </div>
                                 </Col>
-                            </Row> : null}
 
+                            </Row> 
+                             : null}
                         </Row>
+                        
+                    </Row>
                     </Container>
                     <Col size="md-12" id="navbar">
                         <Navbar />

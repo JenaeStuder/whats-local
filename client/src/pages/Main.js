@@ -9,14 +9,14 @@ import Create from "../components/Create";
 import Navbar from "../components/Navbar";
 import Suggestions from "../components/Suggestions";
 // import UserUpdates from "../componentsUserUpdates";
-//import BackgroundImage from "../components/BackgroundImage";
+
 import Brand from "../components/Brand";
 
 class MainPage extends Component{
 
-    // state={
-    //     loading: "",
-    // };
+    state={
+        loading: "",
+    };
     // componentDidMount() {
         //     this.loadProfile();
 
@@ -24,13 +24,20 @@ class MainPage extends Component{
     render(){
         return(
             <div className="MainPage">
-            <div className= "Background">
+            
             <Container>
-                <Row>
-                    <Brand/>
-                    <Searchbar/>
-                    <Navbar/>
-                </Row>
+            <Row>
+                            <Col xs={2} md={2}>
+                                <Brand />
+                            </Col>
+                            <Col xs={6} md={6} id="search">
+                                <Searchbar />
+                            </Col>
+                            <Col xs={4} md={4}>
+                            <Navbar/>
+                            </Col>
+                            
+                        </Row>
             </Container>
             <Container>
             <Row className="Spotlight">
@@ -59,7 +66,7 @@ class MainPage extends Component{
 
             </Container>
             
-            </div>
+            
             </div>
         )
     }

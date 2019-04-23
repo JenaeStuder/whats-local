@@ -5,18 +5,29 @@
   -webkit-text-fill-color: transparent;
     /* color: linear-gradient(-10deg,,); */
     font-family: urbanjungle;
-    font-size: 4em;
-    padding: 0 0 0 10%;
+    /* height: 100%;
+    width: 100%; */
+    font-size: 55px;
+    padding: 8% 0 0 9%; 
+    z-index: 1;
+    /* margin-top: 2vh; */
  }
-    .Logobtn{
-    height: 80px;
-    width:100px;
-    background-color: rgb( 54, 78, 78, .9);
-    margin: 1%;
-    /* padding:1%; */
-    /* border:1px solid rgb( 54, 78, 78); */
-    border-radius: 10px 30px;
-    
+    #logobtn{
+   /* height: 60%;
+    width:30%;
+    background-color: white;
+    box-shadow: 5px 5px lightgrey; */
+    /* background-color: rgb( 54, 78, 78, .9); */
+    /* margin: 1%;
+    padding:1%;
+    border-radius: 10px 30px; */
+    /* margin: 6% 0 0 8%; */
+    }
+h4:hover {
+  background-color: darkslategrey;
+}
+a:link {
+  text-decoration: none;
 }
 
 @font-face {

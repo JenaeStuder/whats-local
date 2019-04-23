@@ -14,7 +14,7 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 import "./Signup.css";
-import BackgroundImage from "../components/BackgroundImage"
+import Brand from "../components/Brand";
 
 
 class SignUp extends Component {
@@ -87,13 +87,17 @@ class SignUp extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="Background">
+      <div>
+        <Container>
+        <Row>
+          <Brand/>
+        </Row>
         <Row>
           <Col size="md-6">
-            <div class="jumbotron jumbotron-fluid whats-local-jumbo">
-              <h1 id="title">what's</h1>
-              <h1 id="title">local</h1>
-            </div>
+            {/* <div class="jumbotron jumbotron-fluid whats-local-jumbo"> */}
+              <h1 id="title">what's local</h1>
+              {/* <h1 id="title">local</h1> */}
+            {/* </div> */}
             <p id="subtitle">Join the community !</p>
             <p id="subtitle">(it's long, but it's worth it)</p>
             <Card>
@@ -307,6 +311,7 @@ class SignUp extends Component {
                     </Col>
                 </Row>
             </Container> */}
+            </Container>
       </div>
     );
   }
