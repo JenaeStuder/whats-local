@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-// import { registerUser } from "../../actions/authActions";
+import { registerUser } from "../actions/authActions";
 import classnames from "classnames";
 import SignUpForm from "../components/SignUpForm";
 import Form from "react-bootstrap/Form";
@@ -18,13 +18,6 @@ import Brand from "../components/Brand";
 
 
 class SignUp extends Component {
-  // state = {
-  //   fullName: "",
-  //   username: "",
-  //   password: "",
-  //   zipcode: ""
-  // };
-
   constructor() {
     super();
     this.state = {
@@ -34,6 +27,8 @@ class SignUp extends Component {
       email: "",
       password: "",
       password2: "",
+      zipCode: "",
+      userType: "",
       errors: {}
     };
   }
@@ -50,13 +45,6 @@ class SignUp extends Component {
     this.setState({ [e.target.id]: e.target.value });
   };
 
-  // handleInputChange = event => {
-  //   const { name, value } = event.target;
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // };
-
   onSubmit = e => {
     e.preventDefault();
     const newUser = {
@@ -65,24 +53,13 @@ class SignUp extends Component {
       lastName: this.state.lastName,
       email: this.state.email,
       password: this.state.password,
-      password2: this.state.password2
+      password2: this.state.password2,
+      zipCode: this.state.zipCode,
+      userType: this.state.userType
     };
     console.log(newUser);
-    // this.props.registerUser(newUser, this.props.history);
+    this.props.registerUser(newUser, this.props.history);
   };
-
-  // handleFormSubmit = event => {
-  //     event.preventDefault();
-  //     if (this.state.title && this.state.author) {
-  //       API.saveBook({
-  //         title: this.state.title,
-  //         author: this.state.author,
-  //         synopsis: this.state.synopsis
-  //       })
-  //         .then(res => this.loadBooks())
-  //         .catch(err => console.log(err));
-  //     }
-  //   };
 
   render() {
     const { errors } = this.state;
@@ -94,14 +71,15 @@ class SignUp extends Component {
         </Row>
         <Row>
           <Col size="md-6">
+
             {/* <div class="jumbotron jumbotron-fluid whats-local-jumbo"> */}
               <h1 id="title">what's local</h1>
               {/* <h1 id="title">local</h1> */}
             {/* </div> */}
+
             <p id="subtitle">Join the community !</p>
             <p id="subtitle">(it's long, but it's worth it)</p>
             <Card>
-              {/* <SignUpForm></ SignUpForm> */}
               <form noValidate onSubmit={this.onSubmit} className="signup">
                 <div className="form-group">
                   <input
@@ -209,7 +187,6 @@ class SignUp extends Component {
                     error={errors.userType}
                     id="userType"
                     placeholder="Choose One..."
-                    // type="select"
                     className={classnames("form-control", {
                       invalid: errors.userType
                     })}
@@ -238,6 +215,7 @@ class SignUp extends Component {
             </Card>
           </Col>
         </Row>
+
 
         {/* <Container>
                 <Row>
@@ -312,9 +290,18 @@ class SignUp extends Component {
                 </Row>
             </Container> */}
             </Container>
+
       </div>
     );
   }
 }
 
-export default SignUp;
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default connect(
+  mapStateToProps,
+  { registerUser }
+)(withRouter(SignUp));

@@ -15,11 +15,13 @@ import Brand from "../components/Brand";
 class MainPage extends Component{
 
     state={
-        loading: "",
+
+        loading: "true",
+
     };
     // componentDidMount() {
-        //     this.loadProfile();
-
+    //         this.loadProfile();
+    // }
 
     render(){
         return(

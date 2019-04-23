@@ -17,6 +17,7 @@ import Brand from "../components/Brand";
 class Profile extends Component {
 
     state = {
+        userName: "",
         firstName: "",
         lastName: "",
         socialMediaHandles: "",
@@ -33,18 +34,18 @@ class Profile extends Component {
     // }
 
 
-    // loadProfile = () => {
-    //     API.getProfile().then(res => this.setState({
-    //         firstName: res.data,
-    //         lastName: "",
-    //         socialMediaHandles: "",
-    //         bio: "",
-    //         profilePicture: "",
-    //         mediaClips: "",
-    //         upcoming:""
-    //     })
-    //     ).catch(err => console.log(err));
-    // };
+    loadProfile = () => {
+        API.getProfile().then(res => this.setState({
+            firstName: res.firstName,
+            lastName: res.lastName,
+            socialMediaHandles: res.socialMediaHandles,
+            bio: res.bio,
+            profilePicture: res.profilePicture,
+            mediaClips: res.media,
+            upcoming:""
+        })
+        ).catch(err => console.log(err));
+    };
 
 
     render(props) {
@@ -69,8 +70,9 @@ class Profile extends Component {
                     </br>
                     <Row>
                         <Row className="ProfileInfo">
-                            {this.state.loading ? 
-                            <Row >
+
+                            {this.state.userName} <Row >
+
                                 <Col md={12}>
                                     <Row>
                                         <Col xs={12} md={6}>
