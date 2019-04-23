@@ -19,13 +19,13 @@ font-family: 'Abel', sans-serif; */
 }
 h6{
     font-family: 'Abel', sans-serif;
-    color: darkslategrey;
+    color: white;
     font-size: 20px;
 
 }
 h5{
     font-family: 'Abel', sans-serif;
-    color: darkslategrey;
+    color: white;
     font-size:30px;
 
 }
@@ -50,6 +50,9 @@ h5{
         box-shadow: 10px 10px 5px grey;
       }
       #updates{
-          color: darkslategrey;
+          color: white;
+      }
+      h1{
+          color: white;
       }
   
