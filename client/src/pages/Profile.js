@@ -16,6 +16,7 @@ import BackgroundImage from "../components/BackgroundImage"
 class Profile extends Component {
 
     state = {
+        userName: "",
         firstName: "",
         lastName: "",
         socialMediaHandles: "",
@@ -57,7 +58,7 @@ class Profile extends Component {
                     </br>
                     <Container>
                         <Row className="ProfileInfo">
-                            {this.state.loading ? <Row >
+                            {this.state.userName} <Row >
                                 <Col md={12}>
                                     <Row>
                                         <Col xs={12} md={6}>
