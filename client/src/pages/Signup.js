@@ -186,8 +186,8 @@ class SignUp extends Component {
                     })}
                   >
                     <option value="" disabled>Choose One...</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
+                    <option value={true}>Yes</option>
+                    <option value={false}>No</option>
                   </select>
                   <span className="red-text">{errors.userType}</span>
                 </div>
