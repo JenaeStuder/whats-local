@@ -51,6 +51,9 @@ form {
   background-size: 135% 100vh;
   background-position: right left;
 }
+#userType{
+  height: 35px;
+}
 
 
 
