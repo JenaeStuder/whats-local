@@ -3,14 +3,11 @@ import "./style.css";
 
 function Brand(){
     return(
-
-        <a className="Logobtn" id="logobtn" href="/main">
+        <div className="Logobtn" id="logobtn">
+        <a href="/main" >
         <h4>WL</h4></a>
-        // <div>
-        //     {/* <button
-        //     onclick= */}
-        // <h4 className="Logo" id-="logos">WL</h4>
-        // </div>
+        </div>
+       
     )
 }
 
