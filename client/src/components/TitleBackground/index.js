@@ -10,18 +10,19 @@ function TitleBackground() {
       <Login />
       <div className="jumbotron jumbotron-fluid" id="title-jumbo">
         <div className="container">
-        <Row>
-          <Col xs={12}>
-          <h1 className="display-3">what's local</h1>
-          </Col>
+          <Row>
+            <Col xs={12}>
+              <h1 className="display-3">whats local</h1>
+            </Col>
           </Row>
           <Row>
             <Col xs={12}>
-          <p className="lead">connect | local | art</p>
-          </Col>
+              <h6 className="lead">connect | local | art</h6>
+            </Col>
           </Row>
         </div>
       </div>
+      <br />
       <Searchbar />
     </div>
   );
