@@ -136,14 +136,14 @@
           console.log("This too");
           
           $.ajax({
-            url:"/api/artists/profile/" + localStorage.getItem('id'),
+            url:"/api/artists/profile/5cb4832accd71a5e9e7e0a56" ,
             method: "PUT",
             data: {path:url + file.name}
             }).then(res => {
             
             console.log(`profile pic updated`);
             $.ajax({
-              url:"/api/artists/profile/" + localStorage.getItem('id'),
+              url:"/api/artists/profile/5cb4832accd71a5e9e7e0a56" ,
               method:"GET"
               }).then(res => {
               const  newURL = res.profilePicture.replace(/ /g, "%20")
@@ -154,8 +154,8 @@
         })
         $("#addedMedia").on("change", function(e) {
           const file = e.target.files[0];
-          const mediaType = file.type.split("/");
-          console.log(mediaType[0], file);
+          // const mediaType = file.type.split("/");
+          console.log(file);
 
           // creating our strage reference 
           const storageRef = firebase.storage().ref('media/' + file.name);
@@ -170,20 +170,19 @@
             console.log("This too");
           
           $.ajax({
-            url:"/api/artists/5cbe7510b1bfa579c59651db",
+            url:"/api/artists/5cb4832accd71a5e9e7e0a56",
             method: "PUT",
-            media: {
-              path:url + file.name,
-              mediaType:mediaType[0]
-              }
-            }).then(res => {
+            media: url + file.name})
+            .then(res => {
             
             console.log(`media saved`);
             $.ajax({
-              url:"/api/artists/profile/5cbe7510b1bfa579c59651db",
+              url:"/api/artists/profile/5cb4832accd71a5e9e7e0a56 ",
               method:"GET"
               }).then(res => {
-              const  newURL = res.profilePicture.replace(/ /g, "%20")
+              const newURL = res.media.path.replace(/ /g, "%20");
+              const mediaTypeParse = newURL.split(".");
+              const mediaTypeExt = mediaTypeParse[mediaTypeParse.length - 1];
               console.log(newURL);
               })
             }) 

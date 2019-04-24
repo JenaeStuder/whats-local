@@ -1,5 +1,4 @@
-// const db = require("../models");
-const db = mongoose.model("users");
+const db = require("../models");
 //res.json(dbModel;
 
 // connection setup for the storage service that will containt the media files. 
@@ -10,26 +9,26 @@ module.exports = {
   findAll: function(req, res) {
     console.log("hit handler for find all");
     
-    db
+    db.User
       .find(req.query)
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
-    db
+    db.User
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
     console.log("Hit");
-    db.create(req.body)
+    db.User.create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
-    db
+    db.User
       .findOneAndUpdate(req.params.id, req.body)
       .then(dbModel => {
         console.log(dbModel);
@@ -38,7 +37,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
-    db
+    db.User
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
@@ -52,7 +51,7 @@ module.exports = {
     // })
        
       // call to database is made to insert the URL reference for the artist
-        // db.Users
+        // db.User
         //   .findOneAndUpdate({_id: req.params.id}, {$push:{media:{path:data}}})
         //   .then(dbModel => {
         //       console.log(dbModel)
@@ -60,7 +59,7 @@ module.exports = {
         //   .catch(err => res.status(422).json(err))  
   }, 
   removeStorageItem: function(req, res) {
-    db.findById({_id: req.params.id}, {$pull:{media:{path: req.body}}})
+    db.User.findById({_id: req.params.id}, {$pull:{media:{path: req.body}}})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
 
@@ -71,7 +70,7 @@ module.exports = {
     console.log("update route");
     
     
-    db.findOneAndUpdate(req.params.id, {profilePicture:req.body.path})
+    db.User.findOneAndUpdate(req.params.id, {profilePicture:req.body.path})
     .then(dbModel => {
       console.log(dbModel);
       

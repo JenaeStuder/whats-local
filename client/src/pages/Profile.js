@@ -28,7 +28,7 @@ class Profile extends Component {
         loading: "",
 
 
-    // };
+    };
     componentDidMount() {
         console.log(this.props);
         // this.loadProfile();
