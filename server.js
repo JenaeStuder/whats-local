@@ -18,7 +18,9 @@ app.use(bodyParser.json());
 // Routes
 // app.use("/api/users", users);
 
-//DB Configconst db = require("./config/keys").mongoURI;
+//DB Config
+
+// const db = require("./config/keys").mongoURI;
 
 //Connect to MongoDB
 

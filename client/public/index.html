@@ -172,7 +172,8 @@
           $.ajax({
             url:"/api/artists/5cb4832accd71a5e9e7e0a56",
             method: "PUT",
-            media: url + file.name})
+            data: {media: url + file.name}
+          })
             .then(res => {
             
             console.log(`media saved`);
@@ -180,10 +181,10 @@
               url:"/api/artists/profile/5cb4832accd71a5e9e7e0a56 ",
               method:"GET"
               }).then(res => {
-              const newURL = res.media.path.replace(/ /g, "%20");
+              const newURL = res.media[0].replace(/ /g, "%20");
               const mediaTypeParse = newURL.split(".");
               const mediaTypeExt = mediaTypeParse[mediaTypeParse.length - 1];
-              console.log(newURL);
+              console.log(newURL, `File Extension: ${mediaTypeExt}`);
               })
             }) 
           })
