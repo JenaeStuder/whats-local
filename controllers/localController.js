@@ -28,6 +28,8 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
+    console.log(req.body, req.data, req.body.data);
+    
     db.User
       .findOneAndUpdate(req.params.id, req.body)
       .then(dbModel => {
