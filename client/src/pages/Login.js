@@ -55,8 +55,7 @@ class Login extends Component {
     e.preventDefault();
     const userData = {
       email: this.state.email,
-      password: this.state.password,
-      name: this.state.userName
+      password: this.state.password
     };
     this.props.loginUser(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
   };
@@ -74,35 +73,35 @@ class Login extends Component {
             <p id="subtitle">We missed you</p>
             <Card>
               <form noValidate onSubmit={this.onSubmit}>
-                <div className="input-field col s12">
+                <div className="form-group">
                   <input
                     onChange={this.onChange}
                     value={this.state.email}
                     error={errors.email}
                     id="email"
                     type="email"
-                    className={classnames("", {
+                    placeholder="Enter your Email"
+                    className={classnames("form-control", {
                       invalid: errors.email || errors.emailnotfound
                     })}
                   />
-                  <label htmlFor="email">Email</label>
                   <span className="red-text">
                     {errors.email}
                     {errors.emailnotfound}
                   </span>
                 </div>
-                <div className="input-field col s12">
+                <div className="form-group">
                   <input
                     onChange={this.onChange}
                     value={this.state.password}
                     error={errors.password}
                     id="password"
                     type="password"
-                    className={classnames("", {
+                    placeholder="Enter your Password"
+                    className={classnames("form-control", {
                       invalid: errors.password || errors.passwordincorrect
                     })}
                   />
-                  <label htmlFor="password">Password</label>
                   <span className="red-text">
                     {errors.password}
                     {errors.passwordincorrect}
@@ -122,14 +121,14 @@ class Login extends Component {
                     Login
                   </button>
                 </div>
-                <label>Don't have an Account? </label>
-                <Button
+                <a id="subtitle" href="/signup">Don't have an Account? </a>
+                {/* <Button
                   className="btn btn-dark btn-lg btn-block"
                   id="signup"
                   type="submit"
                   //onClick=""
                   title="Signup"
-                />
+                /> */}
                 <div class="g-signin2" data-onsuccess="onSignIn" />
               </form>
             </Card>

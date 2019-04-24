@@ -19,36 +19,36 @@ import Brand from "../components/Brand";
 
 class Profile extends Component {
 
-    state = {
-        userName: "",
-        firstName: "",
-        lastName: "",
-        socialMediaHandles: "",
-        bio: "",
-        profilePicture: "",
-        mediaClips: "",
-        upcoming: "",
-        loading: "",
+    // state = {
+    //     userName: "",
+    //     firstName: "",
+    //     lastName: "",
+    //     socialMediaHandles: "",
+    //     bio: "",
+    //     profilePicture: "",
+    //     mediaClips: "",
+    //     upcoming: "",
+    //     loading: "",
 
 
+    // // };
+    // componentDidMount() {
+    //     // this.loadProfile();
+    // }
+
+
+    // loadProfile = () => {
+    //     API.getProfile().then(res => this.setState({
+    //         firstName: res.firstName,
+    //         lastName: res.lastName,
+    //         socialMediaHandles: res.socialMediaHandles,
+    //         bio: res.bio,
+    //         profilePicture: res.profilePicture,
+    //         mediaClips: res.media,
+    //         upcoming:""
+    //     })
+    //     ).catch(err => console.log(err));
     // };
-    componentDidMount() {
-        // this.loadProfile();
-    }
-
-
-    loadProfile = () => {
-        API.getProfile().then(res => this.setState({
-            firstName: res.firstName,
-            lastName: res.lastName,
-            socialMediaHandles: res.socialMediaHandles,
-            bio: res.bio,
-            profilePicture: res.profilePicture,
-            mediaClips: res.media,
-            upcoming:""
-        })
-        ).catch(err => console.log(err));
-    };
 
 
     render() {
@@ -76,7 +76,7 @@ class Profile extends Component {
                     <Row>
                         <Row className="ProfileInfo">
 
-                            {this.state.userName} <Row >
+                            <Row >
 
                                 <Col md={12}>
                                     <Row>
@@ -136,12 +136,12 @@ class Profile extends Component {
                                 </Row>
                                 
                             </Row> 
-                             : null}
+                    
                         </Row>
                         
 
                         <Row className="ProfileMedia">
-                            {this.state.loading ?
+                            {/* {this.state.loading ? */}
                                 
                                      <Row >
                                 <Col xs={12} md={4}>
@@ -167,7 +167,7 @@ class Profile extends Component {
                                 </Col>
 
                             </Row> 
-                             : null}
+                             {/* : null} */}
                         </Row>
                         
                     </Row>
