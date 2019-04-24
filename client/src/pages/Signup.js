@@ -211,6 +211,7 @@ class SignUp extends Component {
                     Sign up
                 </button>
                 </div>
+                <a id="subtitle" href="/login">Already have an Account? </a>
               </form>
             </Card>
           </Col>

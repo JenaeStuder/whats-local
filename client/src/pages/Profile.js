@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { logoutUser } from "../actions/authActions";
 import API from "../utils/API";
 import ProfilePicture from "../components/ProfilePicture";
 import Bio from "../components/Bio";
@@ -16,40 +19,43 @@ import Brand from "../components/Brand";
 
 class Profile extends Component {
 
-    state = {
-        userName: "",
-        firstName: "",
-        lastName: "",
-        socialMediaHandles: "",
-        bio: "",
-        profilePicture: "",
-        mediaClips: "",
-        upcoming: "",
-        loading: "",
+
+    // state = {
+    //     userName: "",
+    //     firstName: "",
+    //     lastName: "",
+    //     socialMediaHandles: "",
+    //     bio: "",
+    //     profilePicture: "",
+    //     mediaClips: "",
+    //     upcoming: "",
+    //     loading: "",
 
 
-    };
-    componentDidMount() {
-        console.log(this.props);
-        // this.loadProfile();
-    }
+    // // };
+    // componentDidMount() {
+    //     // this.loadProfile();
+    // }
 
 
-    loadProfile = () => {
-        API.getProfile().then(res => this.setState({
-            firstName: res.firstName,
-            lastName: res.lastName,
-            socialMediaHandles: res.socialMediaHandles,
-            bio: res.bio,
-            profilePicture: res.profilePicture,
-            mediaClips: res.media,
-            upcoming:""
-        })
-        ).catch(err => console.log(err));
-    };
+    // loadProfile = () => {
+    //     API.getProfile().then(res => this.setState({
+    //         firstName: res.firstName,
+    //         lastName: res.lastName,
+    //         socialMediaHandles: res.socialMediaHandles,
+    //         bio: res.bio,
+    //         profilePicture: res.profilePicture,
+    //         mediaClips: res.media,
+    //         upcoming:""
+    //     })
+    //     ).catch(err => console.log(err));
+    // };
 
 
-    render(props) {
+
+    render() {
+        const { user } = this.props.auth;
+        console.log({ user });
         return (
 
             <div className="Profile">
@@ -72,7 +78,7 @@ class Profile extends Component {
                     <Row>
                         <Row className="ProfileInfo">
 
-                            {this.state.userName} <Row >
+                            <Row >
 
                                 <Col md={12}>
                                     <Row>
@@ -95,7 +101,7 @@ class Profile extends Component {
                                             <Row>
 
                                                 <h5>
-                                                {/* {this.state.socialMediaHandles} */}
+                                                    {/* {this.state.socialMediaHandles} */}
                                                 </h5>
                                             </Row>
                                             <Row>
@@ -132,12 +138,12 @@ class Profile extends Component {
                                 </Row>
                                 
                             </Row> 
-                             : null}
+                    
                         </Row>
                         
 
                         <Row className="ProfileMedia">
-                            {this.state.loading ?
+                            {/* {this.state.loading ? */}
                                 
                                      <Row >
                                 <Col xs={12} md={4}>
@@ -163,7 +169,7 @@ class Profile extends Component {
                                 </Col>
 
                             </Row> 
-                             : null}
+                             {/* : null} */}
                         </Row>
                         
                     </Row>
@@ -178,4 +184,14 @@ class Profile extends Component {
 
 }
 
-export default Profile;
+Profile.propTypes = {
+    logoutUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired
+  };
+  const mapStateToProps = state => ({
+    auth: state.auth
+  });
+  export default connect(
+    mapStateToProps,
+    { logoutUser }
+  )(Profile);
