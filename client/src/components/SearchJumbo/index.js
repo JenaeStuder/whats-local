@@ -14,7 +14,8 @@ class SearchJumbo extends Component {
     this.handleClose = this.handleClose.bind(this);
 
     this.state = {
-      show: false
+      show: false,
+      title: ""
     };
   }
 
@@ -22,8 +23,8 @@ class SearchJumbo extends Component {
     this.setState({ show: false });
   }
 
-  handleShow() {
-    this.setState({ show: true });
+  handleShow(title) {
+    this.setState({ show: true, title: title });
   }
 
   render() {
@@ -41,7 +42,9 @@ class SearchJumbo extends Component {
                 className="btn btn-lg search-jumbo-button"
                 id="artistBtn button"
                 type="submit"
-                onClick={this.handleShow}
+                onClick={() => {
+                  this.handleShow("artist");
+                }}
                 title="artist"
                 // backgroundImage="https"
               />
@@ -57,7 +60,9 @@ class SearchJumbo extends Component {
                 className="btn btn-lg search-jumbo-button"
                 id="cityBtn button"
                 type="submit"
-                onClick={this.handleShow}
+                onClick={() => {
+                  this.handleShow("city");
+                }}
                 title="city"
                 // backgroundImage="https"
               />
@@ -73,7 +78,9 @@ class SearchJumbo extends Component {
                 className="btn btn-lg search-jumbo-button"
                 id="categorybtn button"
                 type="submit"
-                onClick={this.handleShow}
+                onClick={() => {
+                  this.handleShow("category");
+                }}
                 title="category"
                 // backgroundImage="https"
               />
@@ -83,15 +90,18 @@ class SearchJumbo extends Component {
         <Modal show={this.state.show} onHide={this.handleClose}>
           {console.log(this)}
           <Modal.Header closeButton />
-          {this.title === "artist" ? (
-            <Modal.Title> Find Artists </Modal.Title>
-          ) : this.title === "city" ? (
-            <Modal.Title> Find Your City </Modal.Title>
+          {this.state.title === "artist" ? (
+            <Modal.Title className="modal-title"> Find Artists </Modal.Title>
+          ) : this.state.title === "city" ? (
+            <Modal.Title className="modal-title"> Find Your City </Modal.Title>
           ) : (
-            <Modal.Title> Find by Category </Modal.Title>
+            <Modal.Title className="modal-title">
+              {" "}
+              Find by Category{" "}
+            </Modal.Title>
           )}
           <Searchbar />
-          <Modal.Footer>
+          <Modal.Footer className="modal-footer">
             <Button variant="secondary" onClick={this.handleClose}>
               Close
             </Button>
