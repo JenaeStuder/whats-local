@@ -2,9 +2,9 @@ import axios from "axios";
 
 
 export default {
-  getProfile: function() {
+  getProfile: function(id) {
     console.log("api");
-    return axios.get("/api/artists");
+    return axios.get("/api/artists/" + id);
   },
   // submit user/artist
   submitArtist: function(artistData) {
