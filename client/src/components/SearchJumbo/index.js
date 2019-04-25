@@ -3,6 +3,7 @@ import SearchBtn from "../SearchBtns";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import Searchbar from "../Searchbar";
 import "./style.css";
 
 class SearchJumbo extends Component {
@@ -13,7 +14,8 @@ class SearchJumbo extends Component {
     this.handleClose = this.handleClose.bind(this);
 
     this.state = {
-      show: false
+      show: false,
+      title: ""
     };
   }
 
@@ -21,8 +23,8 @@ class SearchJumbo extends Component {
     this.setState({ show: false });
   }
 
-  handleShow() {
-    this.setState({ show: true });
+  handleShow(title) {
+    this.setState({ show: true, title: title });
   }
 
   render() {
@@ -40,53 +42,77 @@ class SearchJumbo extends Component {
                 className="btn btn-lg search-jumbo-button" id= "jumbotron"
                 id="artistBtn button"
                 type="submit"
-                onClick={this.handleShow}
+                onClick={() => {
+                  this.handleShow("artist");
+                }}
                 title="artist"
                 // backgroundImage="https"
               />
             </div>
+            <div
+              class="jumbotron"
+              style={{
+                backgroundImage: `url(https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`
+              }}
+            >
+              <SearchBtn
+                className="btn btn-lg search-jumbo-button"
+                id="cityBtn button"
+                type="submit"
+                onClick={() => {
+                  this.handleShow("city");
+                }}
+                title="city"
+                // backgroundImage="https"
+              />
+            </div>
 
-      <div class="jumbotron" id= "jumbotron" style={{backgroundImage : `url(https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`}}>
-        <SearchBtn
-          className="btn btn-lg search-jumbo-button"
-          id="cityBtn button"
-          type="submit"
-          onClick={this.handleShow}
-          title="city"
-          // backgroundImage="https"
-        />
-      </div>
+            <div
+              class="jumbotron"
+              style={{
+                backgroundImage: `url(https://images.pexels.com/photos/959314/pexels-photo-959314.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`
+              }}
+            >
+              <SearchBtn
+                className="btn btn-lg search-jumbo-button"
+                id="categorybtn button"
+                type="submit"
+                onClick={() => {
+                  this.handleShow("category");
+                }}
+                title="category"
+                // backgroundImage="https"
+              />
+            </div>
+          </Card.Body>
+        </Card>
+        <Modal show={this.state.show} onHide={this.handleClose}>
+          {console.log(this)}
+          <Modal.Header closeButton />
+          {this.state.title === "artist" ? (
+            <Modal.Title className="modal-title"> Find Artists </Modal.Title>
+          ) : this.state.title === "city" ? (
+            <Modal.Title className="modal-title"> Find Your City </Modal.Title>
+          ) : (
+            <Modal.Title className="modal-title">
+              {" "}
+              Find by Category{" "}
+            </Modal.Title>
+          )}
+          <Searchbar />
+          <Modal.Footer className="modal-footer">
+            <Button variant="secondary" onClick={this.handleClose}>
+              Close
+            </Button>
+            {/* <Button variant="primary" onClick={this.handleClose}>
+              Save Changes
+            </Button> */}
+          </Modal.Footer>
 
-      <div class="jumbotron" id= "jumbotron" style={{backgroundImage : `url(https://images.pexels.com/photos/959314/pexels-photo-959314.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`}}>
-        <SearchBtn
-          className="btn btn-lg search-jumbo-button"
-          id="categorybtn button"
-          type="submit"
-          onClick={this.handleShow}
-          title="category"
-          // backgroundImage="https"
-        />
-      </div>
-      </Card.Body>
-      </Card>
-      <Modal show={this.state.show} onHide={this.handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>Modal heading</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={this.handleClose}>
-                Close
-              </Button>
-              <Button variant="primary" onClick={this.handleClose}>
-                Save Changes
-              </Button>
-            </Modal.Footer>
         </Modal>
-    </div>
-  );
+      </div>
+    );
   }
 }
-
 
 export default SearchJumbo;

@@ -15,8 +15,10 @@ import Update from "../components/Upcoming";
 import UpdateItem from "../components/UpdateItem"
 import "./Profile.css"
 import Brand from "../components/Brand";
+
 import jwt_decode from "jwt-decode";
 // import Loader from "../components/Loader";
+
 
 class Profile extends Component {
   state = {
@@ -28,7 +30,7 @@ class Profile extends Component {
     profilePicture: "",
     mediaClips: [],
     upcoming: "",
-    loading: "",
+    load: "false",
     user_id: jwt_decode(localStorage.jwtToken.split(" ")[1]).id
   };
 
@@ -80,25 +82,26 @@ class Profile extends Component {
                   <Col md={12}>
                     <Row>
                       <Col xs={12} md={6}>
-                        {/* <h6>Profile Picture</h6> */}
+                        {<h6>Profile Picture</h6>}
 
-                        {/* <ProfilePicture image={this.state.profilePicture} /> */}
+                        {<ProfilePicture image={this.state.profilePicture} />}
                       </Col>
                       <Col xs={12} md={6}>
                         <Row className="InfoSection" id="info-border-wrap">
                           {/* <h6>Name</h6> */}
                           <h5>
-                            {/* {this.state.firstName}
-                                                    {this.state.lastName} */}
+                            {{this.state.firstName}
+                            {this.state.lastName}}
                           </h5>
                         </Row>
                         <Row>
-                          <h5>{/* {this.state.socialMediaHandles} */}</h5>
+                          <h5>{{this.state.socialMediaHandles}}</h5>
                         </Row>
                         <Row>
                           <div>
-                            {/* <h6>Bio</h6> */}
-                            {/* <Bio bio={this.state.bio}> */}
+                            {<h6>Bio</h6>}
+                            {<Bio bio={this.state.bio}>}
+
 
                             {/* </Bio> */}
                           </div>
@@ -107,10 +110,12 @@ class Profile extends Component {
                     </Row>
                   </Col>
 
+
                   <Row>
                     <Col sm={12} className="Updates-border-wrap" id="updates">
                       {/* <h6>Artist Updates</h6> */}
                       {/* {this.state.upcoming.length ? (
+
                                             <Update>
                                                 {this.state.upcoming.map(update => (
                                                     <UpdateItem key={update._id}>
@@ -120,7 +125,9 @@ class Profile extends Component {
                                         )
                                             : (
                                                 <h5> {this.state.firstName} doesn't have any updates, check back soon!</h5>
+
                                             )} */}
+
                     </Col>
                   </Row>
                 </Row>
@@ -164,7 +171,7 @@ class Profile extends Component {
                     </Col>
                   );
                 })}
-                : null}
+                : <loader/>}
               </Row>
             </Row>
           </Container>
