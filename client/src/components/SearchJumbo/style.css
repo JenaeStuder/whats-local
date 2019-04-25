@@ -16,7 +16,6 @@
   background-color: transparent;
   border: transparent;
   color: white;
-  
 }
 
 .display-4 {
@@ -29,13 +28,11 @@
   background-color: transparent;
   color: white;
   text-shadow: 1.5px 1.5px 1.5px #000;
-  
 }
-#jumbotron{
+#jumbotron {
   /* box-shadow: 5px 5px rgb(255, 255, 255, .5); */
   color: white;
   text-align: center;
-
 }
 
 .modal-title {
