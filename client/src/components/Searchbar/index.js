@@ -23,6 +23,7 @@ class Searchbar extends Component {
     const findArtist = {
       searchName: this.state.searchName
     };
+    console.log(findArtist);
   };
 
   render() {
