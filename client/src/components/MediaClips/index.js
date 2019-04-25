@@ -7,16 +7,16 @@ function MediaClip(props)
     return (
         <div className="media-border-wrap" id= "media">
         {(function(){
-            switch (props.media){
+            switch (props.mediaType){
 
             case "image":
-                return <img className="media" src={props.media} />;
+                return <img className="media" src={props.url} />;
                 break;
             case "video":
-            return <video className="media" src={props.media} /> ;
+            return <video className="media" src={props.url} /> ;
                 break;
             case "audio":
-                return <audio className="media" src={props.media} />;
+                return <audio className="media" src={props.url} />;
                 default:
                 return null;
             }

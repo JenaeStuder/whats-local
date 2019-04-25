@@ -20,36 +20,42 @@ import Brand from "../components/Brand";
 class Profile extends Component {
 
 
-    // state = {
-    //     userName: "",
-    //     firstName: "",
-    //     lastName: "",
-    //     socialMediaHandles: "",
-    //     bio: "",
-    //     profilePicture: "",
-    //     mediaClips: "",
-    //     upcoming: "",
-    //     loading: "",
+    state = {
+        userName: "",
+        firstName: "",
+        lastName: "",
+        socialMediaHandles: "",
+        bio: "",
+        profilePicture: "",
+        mediaClips: [],
+        upcoming: "",
+        loading: "",
 
 
-    // // };
-    // componentDidMount() {
-    //     // this.loadProfile();
-    // }
+    };
+    componentDidMount() {
+        this.loadProfile();
+    }
 
 
-    // loadProfile = () => {
-    //     API.getProfile().then(res => this.setState({
-    //         firstName: res.firstName,
-    //         lastName: res.lastName,
-    //         socialMediaHandles: res.socialMediaHandles,
-    //         bio: res.bio,
-    //         profilePicture: res.profilePicture,
-    //         mediaClips: res.media,
-    //         upcoming:""
-    //     })
-    //     ).catch(err => console.log(err));
-    // };
+    loadProfile = () => {
+        API.getProfile("5cbfc709d05c151404c087cd")
+          .then(res => {
+            console.log(res);
+
+            this.setState({
+              firstName: res.data.firstName,
+              lastName: res.data.lastName,
+              socialMediaHandles: res.data.socialMediaHandles,
+              bio: res.data.bio,
+              profilePicture: res.data.profilePicture,
+              mediaClips: res.data.media,
+              userName: res.data.username,
+              upcoming: ""
+            });
+          })
+          .catch(err => console.log(err));
+    };
 
 
 
@@ -144,32 +150,35 @@ class Profile extends Component {
 
                         <Row className="ProfileMedia">
                             {/* {this.state.loading ? */}
-                                
-                                     <Row >
-                                <Col xs={12} md={4}>
-                                    <div>
-                                        <h6>Media 1</h6>
-                                        {/* <MediaClips media={this.state.mediaClips}>
-                                        </MediaClips> */}
-                                    </div>
-                                </Col>
-                                <Col xs={12} md={4}>
-                                    <div>
-                                        <h6>Media 2</h6>
-                                        {/* <MediaClips media={this.state.mediaClips}>
-                                        </MediaClips> */}
-                                    </div>
-                                </Col>
-                                <Col xs={12} md={4}>
-                                    <div>
-                                        <h6>Media 3</h6>
-                                        {/* <MediaClips media={this.state.mediaClips}>
-                                        </MediaClips> */}
-                                    </div>
-                                </Col>
+                            
+                            {
+                                this.state.mediaClips.map(item => {
+                                    const newURL = item.replace(/ /g, "%20");
+                                    const mediaTypeParse = newURL.split(".");
+                                    const mediaTypeExt = mediaTypeParse[mediaTypeParse.length - 1];
+                                    console.log(newURL, `File Extension: ${mediaTypeExt}`);
 
-                            </Row> 
-                             {/* : null} */}
+                                    let mediaClassification = "";
+
+                                    if(mediaTypeExt == "png" || "jpeg" || "gif" || "tiff"){
+                                        mediaClassification = "image"
+                                    }else if(mediaTypeExt == "mp4" || "mov" || "avi" || "flv" || "wmv"){
+                                        mediaClassification = "video"
+                                    }else if(mediaTypeExt == "mp3" || "wav" || "aiff"){
+                                        mediaClassification = "audio"
+                                    }
+
+                                    return  <Col xs={12} md={4}>
+                                                <div>
+                                                    <h6>Media 1</h6>
+                                                    <MediaClips media={this.state.mediaClips} mediaType={mediaClassification} url={newURL}>
+                                                    </MediaClips>
+                                                </div>
+                                            </Col>
+                                })
+                            }
+                            
+                            : null}
                         </Row>
                         
                     </Row>
