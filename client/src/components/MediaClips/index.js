@@ -9,13 +9,13 @@ function MediaClip(props)
         {(function(){
             switch (props.media){
 
-            case "1":
+            case "image":
                 return <img className="media" src={props.media} />;
                 break;
-            case "2":
+            case "video":
             return <video className="media" src={props.media} /> ;
                 break;
-            case "3":
+            case "audio":
                 return <audio className="media" src={props.media} />;
                 default:
                 return null;
