@@ -28,10 +28,7 @@ db = process.env.MONGODB_URI || "mongodb://localhost/whatslocal";
 
 
 mongoose
-  .connect(
-    db,
-    { useNewUrlParser: true }
-  )
+  .connect(db, { useNewUrlParser: true })
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
 

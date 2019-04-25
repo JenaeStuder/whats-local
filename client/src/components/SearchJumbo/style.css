@@ -1,10 +1,9 @@
 .jumbo-image {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    text-align: center;
-    margin-bottom: 2%;
-    color:white;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin-bottom: 2%;
 }
 
 .button-title {
@@ -37,4 +36,14 @@
   color: white;
   text-align: center;
 
+}
+
+.modal-title {
+  position: relative;
+  text-align: center;
+  padding-top: 1em;
+}
+
+.modal-footer {
+  background-color: #49a0b5;
 }
