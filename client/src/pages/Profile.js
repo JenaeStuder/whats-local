@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { logoutUser } from "../actions/authActions";
+import { setCurrentUser, logoutUser } from "../actions/authActions";
 import API from "../utils/API";
 import ProfilePicture from "../components/ProfilePicture";
 import Bio from "../components/Bio";
@@ -16,6 +16,7 @@ import UpdateItem from "../components/UpdateItem"
 import "./Profile.css"
 import Brand from "../components/Brand";
 // import Loader from "../components/Loader";
+
 
 class Profile extends Component {
 
@@ -33,9 +34,9 @@ class Profile extends Component {
 
 
     // // };
-    // componentDidMount() {
-    //     // this.loadProfile();
-    // }
+    componentDidMount() {
+        // this.loadProfile();
+    }
 
 
     // loadProfile = () => {
@@ -51,7 +52,8 @@ class Profile extends Component {
     //     ).catch(err => console.log(err));
     // };
 
-
+    // const user = this.props.auth
+    // console.log({ user });
 
     render() {
         const { user } = this.props.auth;
@@ -77,16 +79,15 @@ class Profile extends Component {
                     </br>
                     <Row>
                         <Row className="ProfileInfo">
-
                             <Row >
 
                                 <Col md={12}>
                                     <Row>
                                         <Col xs={12} md={6}>
+                                            
+                                            <h6>{this.props.auth.userName}</h6>
 
-                                            {/* <h6>Profile Picture</h6> */}
-
-                                            {/* <ProfilePicture image={this.state.profilePicture} /> */}
+                                            {/* <ProfilePicture></ProfilePicture> */}
 
 
                                         </Col>
