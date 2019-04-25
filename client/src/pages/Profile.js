@@ -144,6 +144,35 @@ class Profile extends Component {
 
                         <Row className="ProfileMedia">
                             {/* {this.state.loading ? */}
+                            
+                            {
+                                array.map(item => {
+                                    const newURL = item.replace(/ /g, "%20");
+                                    const mediaTypeParse = newURL.split(".");
+                                    const mediaTypeExt = mediaTypeParse[mediaTypeParse.length - 1];
+                                    console.log(newURL, `File Extension: ${mediaTypeExt}`);
+
+                                    const mediaClassification;
+
+                                    if(mediaTypeExt == "png" || "jpeg" || "gif" || "tiff"){
+                                        mediaClassification = "image"
+                                    }else if(mediaTypeExt == "mp4" || "mov" || "avi" || "flv" || "wmv"){
+                                        mediaClassification = "video"
+                                    }else if(mediaTypeExt == "mp3" || "wav" || "aiff"){
+                                        mediaClassification = "audio"
+                                    }
+                                    
+
+                                    <Col xs={12} md={4}>
+                                    <div>
+                                        <h6>Media 1</h6>
+                                        <MediaClips media={this.state.mediaClips} mediaType={mediaClassification} url={newURL}>
+                                        </MediaClips>
+                                    </div>
+                                </Col>
+                                })
+                            }
+                            
                                 
                                      <Row >
                                 <Col xs={12} md={4}>
