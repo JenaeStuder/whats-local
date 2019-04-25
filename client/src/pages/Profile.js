@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { logoutUser } from "../actions/authActions";
+import { setCurrentUser, logoutUser } from "../actions/authActions";
 import API from "../utils/API";
 import ProfilePicture from "../components/ProfilePicture";
 import Bio from "../components/Bio";
