@@ -15,7 +15,7 @@ import Update from "../components/Upcoming";
 import UpdateItem from "../components/UpdateItem"
 import "./Profile.css"
 import Brand from "../components/Brand";
-import Loading from "../components/Loader";
+
 
 
 class Profile extends Component {
@@ -184,7 +184,7 @@ class Profile extends Component {
                                 })
                             }
                             
-                            : <Loading/>}
+                            :}
 
                         </Row>
                         
