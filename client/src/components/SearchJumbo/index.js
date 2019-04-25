@@ -33,13 +33,13 @@ class SearchJumbo extends Component {
         <Card>
           <Card.Body>
             <div
-              class="jumbotron jumbo-image"
+              class="jumbotron jumbo-image" id= "jumbotron"
               style={{
                 backgroundImage: `url(https://images.pexels.com/photos/1916824/pexels-photo-1916824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`
               }}
             >
               <SearchBtn
-                className="btn btn-lg search-jumbo-button"
+                className="btn btn-lg search-jumbo-button" id= "jumbotron"
                 id="artistBtn button"
                 type="submit"
                 onClick={() => {
@@ -49,7 +49,6 @@ class SearchJumbo extends Component {
                 // backgroundImage="https"
               />
             </div>
-
             <div
               class="jumbotron"
               style={{
@@ -109,6 +108,7 @@ class SearchJumbo extends Component {
               Save Changes
             </Button> */}
           </Modal.Footer>
+
         </Modal>
       </div>
     );

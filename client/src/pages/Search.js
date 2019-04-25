@@ -4,7 +4,9 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Navbar from "../components/Navbar";
 import "./Search.css";
-import BackgroundImage from "../components/BackgroundImage"
+import Container from "react-bootstrap/Container";
+import Brand from "../components/Brand";
+
 // class Search extends React.Component {
 
 //     render() {
@@ -22,11 +24,16 @@ import BackgroundImage from "../components/BackgroundImage"
 
 function Search() {
   return (
-    <div className= "Background">
+    <div>
+      <Container>
       <div class="jumbotron jumbotron-fluid search-jumbo">
         <h1 class="display-4">Search by</h1>
       </div>
       <SearchJumbo />
+      <br></br>
+      <br></br>
+      <br></br>
+      </Container>
       <Navbar />
     </div>
   );

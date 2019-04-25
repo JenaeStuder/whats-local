@@ -3,7 +3,7 @@ import "./style.css";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-dark bg-dark">
+    <nav className="navbar navbar-dark bg-dark" id="nav">
       <a className="nav-item nav-link navbar-brand" href="/main">
         <i class="fas fa-home" />
       </a>

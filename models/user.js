@@ -4,7 +4,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // subdocument schema for the media files
-//const MediaSchema = new Schema({ path: String});
+const MediaSchema = new Schema({ 
+  path: String,
+  type: String
+});
 // subdocument schema for the saved artist of the user
 //const SavedArtist = new Schema({ artists: String});
 
@@ -40,10 +43,18 @@ const UserSchema = new Schema({
     of: String
   },
   profilePicture: {type: String},
-  media: [String],
+  media: [{type: String}],
   favoriteArtits: {type: String},
   bio: {
     type: String
+  },
+  zipCode: {
+    type: String,
+    required: true
+  },
+  userType: {
+    type: Boolean,
+    required: true
   },
 
   // `date` must be of type Date. The default value is the current date

@@ -12,19 +12,24 @@ function TitleBackground() {
         <div className="container">
           <Row>
             <Col xs={12}>
+
               <h1 className="display-3">whats local</h1>
             </Col>
           </Row>
           <Row>
             <Col xs={12}>
+
               <h6 className="lead">connect | local | art</h6>
             </Col>
           </Row>
         </div>
       </div>
+
       <br />
       <Searchbar />
+
     </div>
+    
   );
 }
 

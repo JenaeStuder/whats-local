@@ -1,12 +1,5 @@
 const db = require("../models");
-//res.json(dbModel);
-
-// gcp storage 
-const { Storage } = require("@google-cloud/storage");
-const storage = new Storage();
-const bucket = storage.bucket('gs://whatslocal-3cb63/');
-const url = "https://whatslocal-3cb63.storage.googleapis.com/media";
-
+//res.json(dbModel;
 
 // connection setup for the storage service that will containt the media files. 
 
@@ -14,6 +7,8 @@ const url = "https://whatslocal-3cb63.storage.googleapis.com/media";
 // Defining methods for the booksController
 module.exports = {
   findAll: function(req, res) {
+    console.log("hit handler for find all");
+    
     db.User
       .find(req.query)
       .sort({ date: -1 })
@@ -33,9 +28,14 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
+    console.log(req.body, req.data, req.body.data);
+    
     db.User
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then(dbModel => res.json(dbModel))
+      .findOneAndUpdate(req.params.id, req.body)
+      .then(dbModel => {
+        console.log(dbModel);
+        res.json(dbModel)
+      })
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
@@ -53,7 +53,7 @@ module.exports = {
     // })
        
       // call to database is made to insert the URL reference for the artist
-        // db.Users
+        // db.User
         //   .findOneAndUpdate({_id: req.params.id}, {$push:{media:{path:data}}})
         //   .then(dbModel => {
         //       console.log(dbModel)

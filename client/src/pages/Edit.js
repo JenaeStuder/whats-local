@@ -14,7 +14,7 @@ import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 import EditForm from "../components/EditForm";
 import "./Signup.css";
-import BackgroundImage from "../components/BackgroundImage"
+
 
 class Edit extends Component {
   state = {
@@ -48,11 +48,11 @@ class Edit extends Component {
 
   render() {
     return (
-      <div className="Background">
+      <div>
         {/* <Container style={{ marginTop: 20, height: "100vh" }}> */}
         <Row>
           <Col size="md-6">
-            <div class="jumbotron jumbotron-fluid whats-local-jumbo">
+            <div>
               <h1 id="title">what's</h1>
               <h1 id="title">local</h1>
             </div>

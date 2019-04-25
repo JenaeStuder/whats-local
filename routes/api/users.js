@@ -7,7 +7,7 @@ const keys = require("../../config/keys");
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 // Load User model
-const User = require("../../models/User");
+const User = require("../../models/user");
 
 // @route POST api/users/register
 // @desc Register user
@@ -71,7 +71,11 @@ router.post("/login", (req, res) => {
                 // Create JWT Payload
                 const payload = {
                     id: user.id,
-                    name: user.name
+                    userName: user.userName,
+                    firstName: user.firstName,
+                    lastName: user.lastName,
+                    zipCode: user.zipCode,
+                    userType: user.userType
                 };
                 // Sign token
                 jwt.sign(
