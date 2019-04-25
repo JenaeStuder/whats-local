@@ -136,18 +136,55 @@
           console.log("This too");
           
           $.ajax({
-            url:"/api/artists/profile/5cb4832accd71a5e9e7e0a56",
+            url:"/api/artists/profile/5cb4832accd71a5e9e7e0a56" ,
             method: "PUT",
             data: {path:url + file.name}
             }).then(res => {
             
             console.log(`profile pic updated`);
             $.ajax({
-              url:"/api/artists/profile/5cb4832accd71a5e9e7e0a56",
+              url:"/api/artists/profile/5cb4832accd71a5e9e7e0a56" ,
               method:"GET"
               }).then(res => {
               const  newURL = res.profilePicture.replace(/ /g, "%20")
               console.log(newURL);
+              })
+            }) 
+          })
+        })
+        $("#addedMedia").on("change", function(e) {
+          const file = e.target.files[0];
+          // const mediaType = file.type.split("/");
+          console.log(file);
+
+          // creating our strage reference 
+          const storageRef = firebase.storage().ref('media/' + file.name);
+          // upload file
+          const task = storageRef.put(file)
+          task.on('state_changed', function progess(snapshot){
+            const percentageTransferred = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            console.log(percentageTransferred + "% done");
+            });
+          task.then(data => {
+            console.log("then hit!");
+            console.log("This too");
+          
+          $.ajax({
+            url:"/api/artists/5cb4832accd71a5e9e7e0a56",
+            method: "PUT",
+            data: {media: url + file.name}
+          })
+            .then(res => {
+            
+            console.log(`media saved`);
+            $.ajax({
+              url:"/api/artists/profile/5cb4832accd71a5e9e7e0a56 ",
+              method:"GET"
+              }).then(res => {
+              const newURL = res.media[0].replace(/ /g, "%20");
+              const mediaTypeParse = newURL.split(".");
+              const mediaTypeExt = mediaTypeParse[mediaTypeParse.length - 1];
+              console.log(newURL, `File Extension: ${mediaTypeExt}`);
               })
             }) 
           })

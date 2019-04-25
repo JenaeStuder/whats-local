@@ -19,6 +19,7 @@ import Brand from "../components/Brand";
 
 class Profile extends Component {
 
+
     // state = {
     //     userName: "",
     //     firstName: "",
@@ -49,6 +50,7 @@ class Profile extends Component {
     //     })
     //     ).catch(err => console.log(err));
     // };
+
 
 
     render() {
