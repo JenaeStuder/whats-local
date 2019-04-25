@@ -15,7 +15,8 @@ import Update from "../components/Upcoming";
 import UpdateItem from "../components/UpdateItem"
 import "./Profile.css"
 import Brand from "../components/Brand";
-// import Loader from "../components/Loader";
+import Loading from "../components/Loader";
+
 
 class Profile extends Component {
 
@@ -27,18 +28,21 @@ class Profile extends Component {
         socialMediaHandles: "",
         bio: "",
         profilePicture: "",
+
         mediaClips: [],
         upcoming: "",
-        loading: "",
+        load: "false",
 
 
     };
     componentDidMount() {
         this.loadProfile();
+
     }
 
 
     loadProfile = () => {
+
         API.getProfile("5cbfc709d05c151404c087cd")
           .then(res => {
             console.log(res);
@@ -55,6 +59,7 @@ class Profile extends Component {
             });
           })
           .catch(err => console.log(err));
+
     };
 
 
@@ -92,30 +97,30 @@ class Profile extends Component {
 
                                             {/* <h6>Profile Picture</h6> */}
 
-                                            {/* <ProfilePicture image={this.state.profilePicture} /> */}
+                                            <ProfilePicture image={this.state.profilePicture} />
 
 
                                         </Col>
                                         <Col xs={12} md={6}>
                                             <Row className="InfoSection" id="info-border-wrap">
-                                                {/* <h6>Name</h6> */}
+                                                <h6>Name</h6>
                                                 <h5>
-                                                    {/* {this.state.firstName}
-                                                    {this.state.lastName} */}
+                                                    {this.state.firstName}
+                                                    {this.state.lastName}
                                                 </h5>
                                             </Row>
                                             <Row>
 
                                                 <h5>
-                                                    {/* {this.state.socialMediaHandles} */}
+                                                    {this.state.socialMediaHandles}
                                                 </h5>
                                             </Row>
                                             <Row>
                                                 <div>
-                                                    {/* <h6>Bio</h6> */}
-                                                    {/* <Bio bio={this.state.bio}> */}
+                                                    <h6>Bio</h6> 
+                                                     <Bio bio={this.state.bio}> 
 
-                                                    {/* </Bio> */}
+                                                     </Bio>
                                                 </div>
                                             </Row>
                                         </Col>
@@ -127,8 +132,8 @@ class Profile extends Component {
 
                                     <Col sm={12} className="Updates-border-wrap" id="updates">
 
-                                        {/* <h6>Artist Updates</h6> */}
-                                        {/* {this.state.upcoming.length ? (
+                                        <h6>Artist Updates</h6>
+                                        {this.state.upcoming.length ? (
                                             <Update>
                                                 {this.state.upcoming.map(update => (
                                                     <UpdateItem key={update._id}>
@@ -138,7 +143,7 @@ class Profile extends Component {
                                         )
                                             : (
                                                 <h5> {this.state.firstName} doesn't have any updates, check back soon!</h5>
-                                            )} */}
+                                            )}
 
                                     </Col>
                                 </Row>
@@ -149,6 +154,7 @@ class Profile extends Component {
                         
 
                         <Row className="ProfileMedia">
+
                             {/* {this.state.loading ? */}
                             
                             {
@@ -178,7 +184,8 @@ class Profile extends Component {
                                 })
                             }
                             
-                            : null}
+                            : <Loading/>}
+
                         </Row>
                         
                     </Row>
