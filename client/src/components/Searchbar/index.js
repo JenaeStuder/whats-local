@@ -1,27 +1,52 @@
-import React from "react";
+import React, { Component } from "react";
 
-function Searchbar() {
-  return (
-    // <div className="jumbotron jumbotron-fluidsearch" id="search-jumbo">
-    <div >
-      {/* id = "SearchBar">  */}
-      <div >
-      {/* className="container"> */}
-        <div className="input-group">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Search your area..."
-          />
-          <span className="input-group-btn">
-            <button className="btn btn-light" type="button">
-              <i className="fa fa-search fa-fw" />
-            </button>
-          </span>
-        </div>
-      </div>
-    </div>
-  );
+// onSubmit = e => {
+//   e.preventDefault();
+//   const findArtist = {
+//     searchName: this.state.searchName
+//   };
+// };
+class Searchbar extends Component {
+  constructor() {
+    super();
+    this.state = {
+      searchName: ""
+    };
+  }
+
+  onChange = e => {
+    this.setState({ [e.target.id]: e.target.value });
+  };
+
+  onSubmit = e => {
+    e.preventDefault();
+    const findArtist = {
+      searchName: this.state.searchName
+    };
+  };
+
+  render() {
+    return (
+      <div>
+        <form noValidate onSubmit={this.onSubmit}>
+          <div className="input-group">
+            <input
+              onChange={this.onChange}
+              type="text"
+              value={this.state.searchName}
+              className="form-control"
+              placeholder="Search your area..."
+            />
+            <span className="input-group-btn">
+              <button className="btn btn-light" type="submit">
+                <i className="fa fa-search fa-fw" />
+              </button>
+            </span>
+          </div>
+        </form>
+      </div >
+    )
+  }
 }
 
 export default Searchbar;
