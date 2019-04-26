@@ -15,7 +15,6 @@ import Update from "../components/Upcoming";
 import UpdateItem from "../components/UpdateItem";
 import "./Profile.css";
 import Brand from "../components/Brand";
-
 import jwt_decode from "jwt-decode";
 // import Loader from "../components/Loader";
 
@@ -83,14 +82,14 @@ class Profile extends Component {
                         </Row>
                         <br>
                         </br>
-                        <Row>      
+                        <Row>
                             <Row className="ProfileInfo">
                                 <Col sx={1}>
                                     <Col xs={10}>
                                         <Row >
-{/* Row that contains the profile picture, Artist name, social media, bio, and updates. */}
+                                            {/* Row that contains the profile picture, Artist name, social media, bio, and updates. */}
                                             <Col md={12}>
-                                                <Row>    
+                                                <Row>
                                                     <Col xs={12} md={6} className="PicColumn" >
                                                         <ProfilePicture image={this.state.profilePicture} />
                                                     </Col>
@@ -121,7 +120,7 @@ class Profile extends Component {
                                                         </Row>
                                                     </Col>
                                                 </Row>
-                                            </Col>  
+                                            </Col>
                                             <Row>
                                                 <Col xs={1}></Col>
                                                 <Col sm={10} className="Updates-border-wrap" id="updates">
@@ -144,7 +143,7 @@ class Profile extends Component {
                                     </Col>
                                 </Col>
                                 <Col xs={1}></Col>
-                            </Row>   
+                            </Row>
                             <br />
                             <Row className="ProfileMedia">
                                 <div>
@@ -185,74 +184,31 @@ class Profile extends Component {
                         <br></br>
                         <br></br>
                     </Container>
-                    <Col size="md-12" id="navbar">
-                        <Navbar />
-                    </Col>
+                    </div >
+                    <Row>
+                <Col size="md-12" id="navbar">
+                    <Navbar />
+                </Col>
                   </Row>
-                </Row>
-              </Row>
+                  
+             </div >
+              
 
-              <Row className="ProfileMedia">
-                {/* {this.state.loading ? */}
-                {this.state.mediaClips.map(item => {
-                  const newURL = item.replace(/ /g, "%20");
-                  const mediaTypeParse = newURL.split(".");
-                  const mediaTypeExt =
-                    mediaTypeParse[mediaTypeParse.length - 1];
-                  console.log(newURL, `File Extension: ${mediaTypeExt}`);
-
-                  let mediaClassification = "";
-
-                  if (mediaTypeExt == "png" || "jpeg" || "gif" || "tiff") {
-                    mediaClassification = "image";
-                  } else if (
-                    mediaTypeExt == "mp4" ||
-                    "mov" ||
-                    "avi" ||
-                    "flv" ||
-                    "wmv"
-                  ) {
-                    mediaClassification = "video";
-                  } else if (mediaTypeExt == "mp3" || "wav" || "aiff") {
-                    mediaClassification = "audio";
-                  }
-
-                  return (
-                    <Col xs={12} md={4}>
-                      <div>
-                        <h6>Media 1</h6>
-                        <MediaClips
-                          media={this.state.mediaClips}
-                          mediaType={mediaClassification}
-                          url={newURL}
-                        />
-                      </div>
-                    </Col>
-                  );
-                })}
-                : null}
-              </Row>
-            </Row>
-          </Container>
-          <Col size="md-12" id="navbar">
-            <Navbar />
-          </Col>
-        </div>
-      </div>
+             
     );
-  }
+    }
 }
 
 Profile.propTypes = {
 
-  logoutUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
+    logoutUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired
 };
 const mapStateToProps = state => ({
-  auth: state.auth
+    auth: state.auth
 });
 export default connect(
-  mapStateToProps,
-  { logoutUser }
+    mapStateToProps,
+    { logoutUser }
 )(Profile);
 

@@ -6,11 +6,12 @@ import Row from "../components/Row";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
 import Brand from "../components/Brand";
+import Loader from "../components/Loader";
 
 class Results extends Component {
     state = {
         results: "",
-        loading: true
+        loading: false
 
     };
     // componentDidMount() {
@@ -39,6 +40,7 @@ class Results extends Component {
                                 <Searchbar />
                             </Col>
                         </Row>
+                        
                 {this.state.loading? <Row>
                     <Col size="md-6">
                         <div>
@@ -50,7 +52,7 @@ class Results extends Component {
                             {this.state.results}
                         </div>
                     </Col>
-                </Row>: null}
+                </Row>: Loader}
                 </div>
                 </Container>
             <Navbar />
