@@ -1,16 +1,16 @@
 #content {
-    border: 1px solid rgb(73,160,181, 0.5);
-    height: 100%;
-    margin-top: 10px;
+  border: 1px solid rgb(73, 160, 181, 0.5);
+  height: 100%;
+  margin-top: 10px;
 }
 
 #card-header {
-    color:rgb(73,160,181);
-    font-family: "Abel", sans-serif;
-    font-size: 25px;
+  color: rgb(73, 160, 181);
+  font-family: "Abel", sans-serif;
+  font-size: 25px;
 }
 
 #card-text {
-    color: darkslategrey;
-    font-family: "Abel", sans-serif;
+  color: darkslategrey;
+  font-family: "Abel", sans-serif;
 }
