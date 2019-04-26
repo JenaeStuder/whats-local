@@ -28,8 +28,8 @@ class Profile extends Component {
     profilePicture: "",
     mediaClips: [],
     upcoming: "",
-    loading: "",
-    user_id: jwt_decode(localStorage.jwtToken.split(" ")[1]).id
+    loading: ""
+    // user_id: jwt_decode(localStorage.jwtToken.split(" ")[1]).id
   };
 
   componentDidMount() {
