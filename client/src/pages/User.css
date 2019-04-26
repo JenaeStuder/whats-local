@@ -1,29 +1,29 @@
 button {
-    float: right;
+  float: right;
 }
 
 #profileName {
-    font-size: 25px;
-    text-shadow: -2px -2px 1px darkslategrey, -2px -2px 1px darkslategrey, -2px -2px 1px darkslategrey, -2px -2px 1px darkslategrey;
-    text-align: center;
-    
+  font-size: 2rem;
 }
 
 .pic {
-    position: center;
+  position: center;
 }
 
 #navbar {
-    position: fixed;
-    width: 100;
-    bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
+  position: fixed;
+  width: 100;
+  bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 #header {
-    margin-top: 2vh;
-    margin-bottom: 20px;
-    border-bottom: 1px ridge lightslategray;
+  margin-top: 2vh;
+  margin-bottom: 20px;
+  border-bottom: 1px ridge lightslategray;
 }
 
+#profileName {
+  float: right;
+}
