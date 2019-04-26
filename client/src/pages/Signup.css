@@ -1,11 +1,11 @@
 /* body {
   /*background-image : linear-gradient(#08164c,#993366);*/
-  /* background-image: url(../images/vertical-waves.png); */
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
-  /* min-width: 100%;
+/* background-image: url(../images/vertical-waves.png); */
+/* background-repeat: no-repeat; */
+/* background-size: cover; */
+/* min-width: 100%;
   height: fit-content; 
- } */ 
+ } */
 
 #title {
   font-family: "urbanjungle";
@@ -17,7 +17,7 @@
 }
 
 #subtitle {
-  font-family: "Fredericka the Great", cursive;
+  font-family: "Playfair Display", serif;
   font-weight: bold;
   font-size: large;
   color: white;
@@ -51,10 +51,6 @@ form {
   background-size: 135% 100vh;
   background-position: right left;
 }
-#userType{
+#userType {
   height: 35px;
 }
-
-
-
-

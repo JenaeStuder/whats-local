@@ -1,12 +1,16 @@
-.pic {
-    width: 25vh;
-    height: 25vh;
-    border-radius: 50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+#logout {
+  float: right;
 }
 
-#logout {
-    float: right;
+.user-image {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  border: solid 3px #fff;
+  vertical-align: top;
+  margin-bottom: 2vh;
+}
+
+#profileName {
+  color: #fff;
 }

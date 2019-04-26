@@ -12,14 +12,15 @@ import Row from "react-bootstrap/Row";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
 import Update from "../components/Upcoming";
-import UpdateItem from "../components/UpdateItem"
-import "./Profile.css"
+import UpdateItem from "../components/UpdateItem";
+import "./Profile.css";
 import Brand from "../components/Brand";
-import Loader from "../components/Loader";
+
+import jwt_decode from "jwt-decode";
+// import Loader from "../components/Loader";
 
 
 class Profile extends Component {
-
 
     state = {
         userName: "",
@@ -70,9 +71,7 @@ class Profile extends Component {
         return (
 
             <div className="Profile">
-
                 <div>
-
                     <Container>
                         <Row>
                             <Col xs={4} md={4}>
@@ -81,26 +80,19 @@ class Profile extends Component {
                             <Col xs={8} md={8} id="search">
                                 <Searchbar />
                             </Col>
-
                         </Row>
-
                         <br>
                         </br>
-                        <Row>
-                            
+                        <Row>      
                             <Row className="ProfileInfo">
                                 <Col sx={1}>
                                     <Col xs={10}>
                                         <Row >
 {/* Row that contains the profile picture, Artist name, social media, bio, and updates. */}
                                             <Col md={12}>
-                                                <Row>
-                                                    
+                                                <Row>    
                                                     <Col xs={12} md={6} className="PicColumn" >
-
                                                         <ProfilePicture image={this.state.profilePicture} />
-
-
                                                     </Col>
                                                     <Col xs={12} md={6}>
                                                         <Row className="InfoSection" id="info-border-wrap">
@@ -116,7 +108,6 @@ class Profile extends Component {
                                                             <Col xs={1}></Col>
                                                         </Row>
                                                         <Row>
-
                                                             <h5>
                                                                 {this.state.socialMediaHandles}
                                                             </h5>
@@ -125,19 +116,15 @@ class Profile extends Component {
                                                             <div>
                                                                 {/* <h6>Bio</h6>  */}
                                                                 <Bio bio={this.state.bio}>
-                                                                
                                                                 </Bio>
                                                             </div>
                                                         </Row>
                                                     </Col>
-
                                                 </Row>
-                                            </Col>
-                                            
+                                            </Col>  
                                             <Row>
                                                 <Col xs={1}></Col>
                                                 <Col sm={10} className="Updates-border-wrap" id="updates">
-
                                                     {/* <h6>Artist Updates</h6> */}
                                                     {this.state.upcoming.length ? (
                                                         <Update>
@@ -150,19 +137,15 @@ class Profile extends Component {
                                                         : (
                                                             <h5> {this.state.firstName} doesn't have any updates, check back soon!</h5>
                                                         )}
-
                                                 </Col>
                                                 <Col xs={1}></Col>
                                             </Row>
-
                                         </Row>
                                     </Col>
                                 </Col>
                                 <Col xs={1}></Col>
-                            </Row>
-                            
+                            </Row>   
                             <br />
-
                             <Row className="ProfileMedia">
                                 <div>
                                     <Col xs={1}></Col>
@@ -187,24 +170,17 @@ class Profile extends Component {
                                                 }
 
                                                 return <Col xs={12} md={4}>
-
-
                                                     <MediaClips media={this.state.mediaClips} mediaType={mediaClassification} url={newURL}>
                                                     </MediaClips>
-
                                                 </Col>
-
-
                                             })
                                         }
-
                                         {/* ) :( 
                             <Loader/>)}  */}
                                     </Col>
                                     <Col xs={1}></Col>
                                 </div>
                             </Row>
-
                         </Row>
                         <br></br>
                         <br></br>
@@ -212,21 +188,71 @@ class Profile extends Component {
                     <Col size="md-12" id="navbar">
                         <Navbar />
                     </Col>
-                </div>
-            </div>
-        );
-    }
+                  </Row>
+                </Row>
+              </Row>
 
+              <Row className="ProfileMedia">
+                {/* {this.state.loading ? */}
+                {this.state.mediaClips.map(item => {
+                  const newURL = item.replace(/ /g, "%20");
+                  const mediaTypeParse = newURL.split(".");
+                  const mediaTypeExt =
+                    mediaTypeParse[mediaTypeParse.length - 1];
+                  console.log(newURL, `File Extension: ${mediaTypeExt}`);
+
+                  let mediaClassification = "";
+
+                  if (mediaTypeExt == "png" || "jpeg" || "gif" || "tiff") {
+                    mediaClassification = "image";
+                  } else if (
+                    mediaTypeExt == "mp4" ||
+                    "mov" ||
+                    "avi" ||
+                    "flv" ||
+                    "wmv"
+                  ) {
+                    mediaClassification = "video";
+                  } else if (mediaTypeExt == "mp3" || "wav" || "aiff") {
+                    mediaClassification = "audio";
+                  }
+
+                  return (
+                    <Col xs={12} md={4}>
+                      <div>
+                        <h6>Media 1</h6>
+                        <MediaClips
+                          media={this.state.mediaClips}
+                          mediaType={mediaClassification}
+                          url={newURL}
+                        />
+                      </div>
+                    </Col>
+                  );
+                })}
+                : null}
+              </Row>
+            </Row>
+          </Container>
+          <Col size="md-12" id="navbar">
+            <Navbar />
+          </Col>
+        </div>
+      </div>
+    );
+  }
 }
 
 Profile.propTypes = {
-    logoutUser: PropTypes.func.isRequired,
-    auth: PropTypes.object.isRequired
+
+  logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
 };
 const mapStateToProps = state => ({
-    auth: state.auth
+  auth: state.auth
 });
 export default connect(
-    mapStateToProps,
-    { logoutUser }
+  mapStateToProps,
+  { logoutUser }
 )(Profile);
+
