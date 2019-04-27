@@ -39,13 +39,13 @@ class Header extends Component {
             alt="Vincent"
           />
 
-          <h2 id="profileName">
+          <h7 id="profileName">
             {" "}
             {this.state.firstName} {this.state.lastName}
             <br />
             <br />
             {this.state.status}
-          </h2>
+          </h7>
           <h6 id="bio">{this.state.bio}</h6>
         </div>
       </div>
