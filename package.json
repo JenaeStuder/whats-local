@@ -2,7 +2,6 @@
   "name": "test",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001/",
   "main": "server.js",
   "dependencies": {
     "@google-cloud/storage": "^2.5.0",
