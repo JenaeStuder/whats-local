@@ -26,6 +26,7 @@ class Results extends Component {
   //     ).catch(err => console.log(err));
   // };
 
+
   render(props) {
     return (
       <div>
@@ -40,6 +41,7 @@ class Results extends Component {
               </Col>
 
             </Row>       
+
 
                 {this.state.loading?( <Row>
                     <Col size="md-6">

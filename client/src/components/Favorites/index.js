@@ -7,13 +7,13 @@ import "./style.css";
 
 const Favorites = props => {
   return (
-    <div class="card text-center favorites-card">
-      <div class="card-header">
-        <h5>Favorited Artists</h5>
+    <div className="card text-center favorites-card">
+      <div className="card-header">
+        <h5 className="favorite-header">Favorited Artists</h5>
       </div>
-      <div class="card-body">
-        <h5 class="card-title" />
-        <ul class="list-group list-group-flush">{props.favorites}</ul>
+      <div className="card-body">
+        <h5 className="card-title" />
+        <ul className="list-group list-group-flush">{props.favorites}</ul>
       </div>
     </div>
   );
