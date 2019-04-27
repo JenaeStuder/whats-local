@@ -16,7 +16,7 @@ import UpdateItem from "../components/UpdateItem";
 import "./Profile.css";
 import Brand from "../components/Brand";
 import jwt_decode from "jwt-decode";
-// import Loader from "../components/Loader";
+import Loader from "../components/Loader";
 
 
 class Profile extends Component {
@@ -28,14 +28,15 @@ class Profile extends Component {
         socialMediaHandles: "",
         bio: "",
         profilePicture: "",
-
         mediaClips: [],
         upcoming: "",
-        load: "false",
+        loading: "false",
+        user_id: jwt_decode(localStorage.jwtToken.split(" ")[1]).id
 
 
     };
     componentDidMount() {
+        console.log(this.state.user_id);
         this.loadProfile();
 
     }
@@ -149,8 +150,8 @@ class Profile extends Component {
                                 <div>
                                     <Col xs={1}></Col>
                                     <Col xs={10}>
-                                        {/* {this.state.loading ?( */}
-
+                                        {this.state.loading ?(
+                                            <div>
                                         {
                                             this.state.mediaClips.map(item => {
                                                 const newURL = item.replace(/ /g, "%20");
@@ -174,8 +175,10 @@ class Profile extends Component {
                                                 </Col>
                                             })
                                         }
-                                        {/* ) :( 
-                            <Loader/>)}  */}
+                                        </div>
+                                        ) :( 
+                            <Loader/>)} 
+                            
                                     </Col>
                                     <Col xs={1}></Col>
                                 </div>
