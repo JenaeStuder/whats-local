@@ -18,29 +18,18 @@ class normalUser extends Component {
     firstName: "Vincent",
     lastName: "van Gogh",
     favorites: " ",
-    loading: true
+    loading: true,
+    favArray: []
   };
-  // componentDidMount() {
-  //     this.loadProfile();
-  // }
 
-  // loadProfile = () => {
-  //     API.getProfile().then(res => this.setState({
-  //         firstName: res.data,
-  //         lastName: "",
-  //         favorites:"",
-  //         loading: false,
-
-  //     })
-  //     ).catch(err => console.log(err));
-  // };
+  favArray = ["artie", "jenae", "alex"];
 
   render() {
     return (
       <div>
         <div className="user">
           <Container>
-            <Row>
+            <Row className="search-row">
               <Col xs={4} md={4}>
                 <Brand />
               </Col>
@@ -61,6 +50,9 @@ class normalUser extends Component {
                 </h5> */}
               </Col>
             </Row>
+            {/* <Favorites>
+            {favArray.forEach((element) => {console.log(element);
+            })} */}
             <Favorites />
           </Container>
           <Col size="md-12" id="navbar">
