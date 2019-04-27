@@ -43,7 +43,7 @@ class Profile extends Component {
 
     loadProfile = () => {
 
-        API.getProfile("5cbfc709d05c151404c087cd")
+        API.getProfile(this.state.user._id)
             .then(res => {
                 console.log(res);
 
