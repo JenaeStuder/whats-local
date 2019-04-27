@@ -1,4 +1,4 @@
-const db = require("../config/keys").mongoURI;
+const db = require("../models");
 //res.json(dbModel;
 
 // connection setup for the storage service that will containt the media files. 
