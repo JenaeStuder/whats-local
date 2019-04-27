@@ -116,6 +116,12 @@
       };
       firebase.initializeApp(config);
 
+      function parseJwt(token) {
+          var base64Url = token.split('.')[1];
+          var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+          return JSON.parse(window.atob(base64));
+        };
+
       const url = "https://whatslocal-3cb63.storage.googleapis.com/media/";
       $(() =>{
         //input ref
@@ -136,15 +142,14 @@
           console.log("This too");
           
           $.ajax({
-            url:"/api/artists/profile/5cb4832accd71a5e9e7e0a56" ,
+            url:"/api/artists/profile/" + parseJwt(localStorage.getItem("")) ,
             method: "PUT",
             data: {path:url + file.name}
             }).then(res => {
             
             console.log(`profile pic updated`);
             $.ajax({
-              url:"/api/artists/profile/5cb4832accd71a5e9e7e0a56" ,
-              method:"GET"
+              url:"/api/artists/profile/" + parseJwt(localStorage.getItem(""))
               }).then(res => {
               const  newURL = res.profilePicture.replace(/ /g, "%20")
               console.log(newURL);
@@ -170,7 +175,7 @@
             console.log("This too");
           
           $.ajax({
-            url:"/api/artists/5cb4832accd71a5e9e7e0a56",
+            url:"/api/artists/media/op/" + parseJwt(localStorage.getItem("")),
             method: "PUT",
             data: {media: url + file.name}
           })
@@ -178,7 +183,7 @@
             
             console.log(`media saved`);
             $.ajax({
-              url:"/api/artists/profile/5cb4832accd71a5e9e7e0a56 ",
+              url:"/api/artists/profile/" + parseJwt(localStorage.getItem("")),
               method:"GET"
               }).then(res => {
               const newURL = res.media[0].replace(/ /g, "%20");
