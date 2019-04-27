@@ -16,7 +16,7 @@ import UpdateItem from "../components/UpdateItem"
 import "./Profile.css"
 import Brand from "../components/Brand";
 import jwt_decode from "jwt-decode";
-// import Loader from "../components/Loader";
+import Loader from "../components/Loader";
 
 class Profile extends Component {
   state = {
@@ -127,44 +127,46 @@ class Profile extends Component {
               </Row>
 
               <Row className="ProfileMedia">
-                {/* {this.state.loading ? */}
-                {this.state.mediaClips.map(item => {
-                  const newURL = item.replace(/ /g, "%20");
-                  const mediaTypeParse = newURL.split(".");
-                  const mediaTypeExt =
-                    mediaTypeParse[mediaTypeParse.length - 1];
-                  console.log(newURL, `File Extension: ${mediaTypeExt}`);
+                {this.state.loading ? (
+                  <div>
+                    {this.state.mediaClips.map(item => {
+                      const newURL = item.replace(/ /g, "%20");
+                      const mediaTypeParse = newURL.split(".");
+                      const mediaTypeExt =
+                        mediaTypeParse[mediaTypeParse.length - 1];
+                      console.log(newURL, `File Extension: ${mediaTypeExt}`);
 
-                  let mediaClassification = "";
+                      let mediaClassification = "";
 
-                  if (mediaTypeExt == "png" || "jpeg" || "gif" || "tiff") {
-                    mediaClassification = "image";
-                  } else if (
-                    mediaTypeExt == "mp4" ||
-                    "mov" ||
-                    "avi" ||
-                    "flv" ||
-                    "wmv"
-                  ) {
-                    mediaClassification = "video";
-                  } else if (mediaTypeExt == "mp3" || "wav" || "aiff") {
-                    mediaClassification = "audio";
-                  }
+                      if (mediaTypeExt == "png" || "jpeg" || "gif" || "tiff") {
+                        mediaClassification = "image";
+                      } else if (
+                        mediaTypeExt == "mp4" ||
+                        "mov" ||
+                        "avi" ||
+                        "flv" ||
+                        "wmv"
+                      ) {
+                        mediaClassification = "video";
+                      } else if (mediaTypeExt == "mp3" || "wav" || "aiff") {
+                        mediaClassification = "audio";
+                      }
 
-                  return (
-                    <Col xs={12} md={4}>
-                      <div>
-                        <h6>Media 1</h6>
-                        <MediaClips
-                          media={this.state.mediaClips}
-                          mediaType={mediaClassification}
-                          url={newURL}
-                        />
-                      </div>
-                    </Col>
-                  );
-                })}
-                : null}
+                      return (
+                        <Col xs={12} md={4}>
+                          <div>
+                            <h6>Media 1</h6>
+                            <MediaClips
+                              media={this.state.mediaClips}
+                              mediaType={mediaClassification}
+                              url={newURL}
+                            />
+                          </div>
+                        </Col>
+                      );
+                    })}
+                  </div>)
+                : <Loader />}
               </Row>
             </Row>
           </Container>

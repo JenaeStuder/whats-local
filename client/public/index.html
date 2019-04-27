@@ -142,14 +142,14 @@
           console.log("This too");
           
           $.ajax({
-            url:"/api/artists/profile/" + parseJwt(localStorage.getItem("")) ,
+            url:"/api/artists/profile/" + parseJwt(localStorage.getItem("jwtToken")).id ,
             method: "PUT",
             data: {path:url + file.name}
             }).then(res => {
             
             console.log(`profile pic updated`);
             $.ajax({
-              url:"/api/artists/profile/" + parseJwt(localStorage.getItem(""))
+              url:"/api/artists/profile/" + parseJwt(localStorage.getItem("jwtToken")).id
               }).then(res => {
               const  newURL = res.profilePicture.replace(/ /g, "%20")
               console.log(newURL);
@@ -175,7 +175,7 @@
             console.log("This too");
           
           $.ajax({
-            url:"/api/artists/media/op/" + parseJwt(localStorage.getItem("")),
+            url:"/api/artists/media/op/" + parseJwt(localStorage.getItem("jwtToken")).id,
             method: "PUT",
             data: {media: url + file.name}
           })
@@ -183,7 +183,7 @@
             
             console.log(`media saved`);
             $.ajax({
-              url:"/api/artists/profile/" + parseJwt(localStorage.getItem("")),
+              url:"/api/artists/profile/" + parseJwt(localStorage.getItem("jwtToken")).id,
               method:"GET"
               }).then(res => {
               const newURL = res.media[0].replace(/ /g, "%20");
