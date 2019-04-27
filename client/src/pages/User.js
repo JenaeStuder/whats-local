@@ -27,7 +27,6 @@ class normalUser extends Component {
   render() {
     return (
       <div>
-        S
         <div className="user">
           <Container>
             <Row className="search-row">

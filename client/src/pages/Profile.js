@@ -64,7 +64,7 @@ class Profile extends Component {
       <div className="Profile">
         <div>
           <Container>
-            <Row>
+            <Row className="search-row">
               <Col xs={4} md={4}>
                 <Brand />
               </Col>
