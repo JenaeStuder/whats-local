@@ -16,7 +16,7 @@ import UpdateItem from "../components/UpdateItem"
 import "./Profile.css"
 import Brand from "../components/Brand";
 import jwt_decode from "jwt-decode";
-// import Loader from "../components/Loader";
+import Loader from "../components/Loader";
 
 class Profile extends Component {
 
@@ -27,14 +27,15 @@ class Profile extends Component {
         socialMediaHandles: "",
         bio: "",
         profilePicture: "",
-
         mediaClips: [],
         upcoming: "",
-        load: "false",
+        loading: "false",
+        user_id: jwt_decode(localStorage.jwtToken.split(" ")[1]).id
 
 
     };
     componentDidMount() {
+        console.log(this.state.user_id);
         this.loadProfile();
 
     }
@@ -42,7 +43,7 @@ class Profile extends Component {
 
     loadProfile = () => {
 
-        API.getProfile(this.state.user._id)
+        API.getProfile(this.state.user_id)
             .then(res => {
                 console.log(res);
 
@@ -75,12 +76,114 @@ class Profile extends Component {
                           <h5>{/* {this.state.socialMediaHandles} */}</h5>
                         </Row>
                         <Row>
+<<<<<<< HEAD
                           <div>
                             {/* <h6>Bio</h6> */}
                             {/* <Bio bio={this.state.bio}> */}
 
                             {/* </Bio> */}
                           </div>
+=======
+                            <Row className="ProfileInfo">
+                                <Col sx={1}>
+                                    <Col xs={10}>
+                                        <Row >
+                                            {/* Row that contains the profile picture, Artist name, social media, bio, and updates. */}
+                                            <Col md={12}>
+                                                <Row>
+                                                    <Col xs={12} md={6} className="PicColumn" >
+                                                        <ProfilePicture image={this.state.profilePicture} />
+                                                    </Col>
+                                                    <Col xs={12} md={6}>
+                                                        <Row className="InfoSection" id="info-border-wrap">
+                                                            {/* <h6>Name</h6> */}
+                                                            <Col xs={1}></Col>
+                                                            <Col xs={10}>
+                                                                <h5 id="nameSection">
+                                                                    {this.state.firstName}
+                                                                    &nbsp;
+                                                    {this.state.lastName}
+                                                                </h5>
+                                                            </Col>
+                                                            <Col xs={1}></Col>
+                                                        </Row>
+                                                        <Row>
+                                                            <h5>
+                                                                {this.state.socialMediaHandles}
+                                                            </h5>
+                                                        </Row>
+                                                        <Row>
+                                                            <div>
+                                                                {/* <h6>Bio</h6>  */}
+                                                                <Bio bio={this.state.bio}>
+                                                                </Bio>
+                                                            </div>
+                                                        </Row>
+                                                    </Col>
+                                                </Row>
+                                            </Col>
+                                            <Row>
+                                                <Col xs={1}></Col>
+                                                <Col sm={10} className="Updates-border-wrap" id="updates">
+                                                    {/* <h6>Artist Updates</h6> */}
+                                                    {this.state.upcoming.length ? (
+                                                        <Update>
+                                                            {this.state.upcoming.map(update => (
+                                                                <UpdateItem key={update._id}>
+                                                                </UpdateItem>
+                                                            ))}
+                                                        </Update>
+                                                    )
+                                                        : (
+                                                            <h5> {this.state.firstName} doesn't have any updates, check back soon!</h5>
+                                                        )}
+                                                </Col>
+                                                <Col xs={1}></Col>
+                                            </Row>
+                                        </Row>
+                                    </Col>
+                                </Col>
+                                <Col xs={1}></Col>
+                            </Row>
+                            <br />
+                            <Row className="ProfileMedia">
+                                <div>
+                                    <Col xs={1}></Col>
+                                    <Col xs={10}>
+                                        {this.state.loading ?(
+                                            <div>
+                                        {
+                                            this.state.mediaClips.map(item => {
+                                                const newURL = item.replace(/ /g, "%20");
+                                                const mediaTypeParse = newURL.split(".");
+                                                const mediaTypeExt = mediaTypeParse[mediaTypeParse.length - 1];
+                                                console.log(newURL, `File Extension: ${mediaTypeExt}`);
+
+                                                let mediaClassification = "";
+
+                                                if (mediaTypeExt == "png" || "jpeg" || "gif" || "tiff") {
+                                                    mediaClassification = "image"
+                                                } else if (mediaTypeExt == "mp4" || "mov" || "avi" || "flv" || "wmv") {
+                                                    mediaClassification = "video"
+                                                } else if (mediaTypeExt == "mp3" || "wav" || "aiff") {
+                                                    mediaClassification = "audio"
+                                                }
+
+                                                return <Col xs={12} md={4}>
+                                                    <MediaClips media={this.state.mediaClips} mediaType={mediaClassification} url={newURL}>
+                                                    </MediaClips>
+                                                </Col>
+                                            })
+                                        }
+                                        </div>
+                                        ) :( 
+                            <Loader/>)} 
+                            
+                                    </Col>
+                                    <Col xs={1}></Col>
+                                </div>
+                            </Row>
+>>>>>>> aec5c5f61adcc8dd9984116b6b5b20d898a47663
                         </Row>
                       </Col>
                     </Row>
