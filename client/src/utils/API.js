@@ -26,5 +26,17 @@ export default {
   // update user profile pic
   updateProfilePic: function(media) {
     return axios.put("/api/artists/profile/pic/" + media.id, media);
+  },
+  // search databse for artists
+  searchArtist: function(artistName) {
+    return axios
+      .get("/api/artists/" + artistName)
+      .then(response => {
+        let data = {
+          results: response.data,
+        };
+        this.setState(data);
+      })
+      .catch(error => console.log(error));
   }
 };

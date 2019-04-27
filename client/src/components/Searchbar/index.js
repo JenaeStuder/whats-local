@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Redirect } from 'react-router';
+import API from "../../utils/API";
 
 // onSubmit = e => {
 //   e.preventDefault();
@@ -7,12 +9,19 @@ import React, { Component } from "react";
 //   };
 // };
 class Searchbar extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      searchName: ""
+      results: [],
+      searchName: '',
     };
+    // this.submit = this.submit.on(this);
+    // this.changeTerm = this.changeTerm.on(this);
   }
+
+  // componentWillReceiveProps() {
+  //     this.props.history.push("/results"); // push user to dashboard when they login
+  // }
 
   onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
@@ -20,10 +29,8 @@ class Searchbar extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    const findArtist = {
-      searchName: this.state.searchName
-    };
-  };
+    API.searchArtist(this.state.searchName)
+  }
 
   render() {
     return (
@@ -33,6 +40,7 @@ class Searchbar extends Component {
             <input
               onChange={this.onChange}
               type="text"
+              id="searchName"
               value={this.state.searchName}
               className="form-control"
               placeholder="Search your area..."
@@ -44,6 +52,12 @@ class Searchbar extends Component {
             </span>
           </div>
         </form>
+        {this.state.results.length > 0 &&
+          <Redirect to={{
+            pathname: '/results',
+            state: { results: this.state.results }
+          }}/>
+        }
       </div >
     )
   }
