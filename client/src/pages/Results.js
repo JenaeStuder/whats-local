@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import Col from "../components/Col";
-import Container from "../components/Container";
-import Row from "../components/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
 import Brand from "../components/Brand";
+import Loader from "../components/Loader";
 
 class Results extends Component {
     state = {
         results: "",
-        loading: true
+        loading: false
 
     };
     // componentDidMount() {
@@ -39,9 +40,11 @@ class Results extends Component {
                                 <Searchbar />
                             </Col>
                         </Row>
-                {this.state.loading? <Row>
+                        
+                {this.state.loading?( <Row>
                     <Col size="md-6">
                         <div>
+                            findArtist
                             {this.state.results}
                         </div>
                     </Col>
@@ -50,7 +53,7 @@ class Results extends Component {
                             {this.state.results}
                         </div>
                     </Col>
-                </Row>: null}
+                </Row>):( <h3>We're sorry, your search did not return any results. Try again later!</h3>)}
                 </div>
                 </Container>
             <Navbar />
