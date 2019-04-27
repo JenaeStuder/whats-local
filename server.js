@@ -15,6 +15,8 @@ app.use(
 );
 app.use(bodyParser.json());
 
+app.use(express.static("public"));
+
 // Routes
 // app.use("/api/users", users);
 
