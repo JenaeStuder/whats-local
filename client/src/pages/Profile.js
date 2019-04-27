@@ -158,9 +158,7 @@ class Profile extends Component {
                                                 const mediaTypeParse = newURL.split(".");
                                                 const mediaTypeExt = mediaTypeParse[mediaTypeParse.length - 1];
                                                 console.log(newURL, `File Extension: ${mediaTypeExt}`);
-
                                                 let mediaClassification = "";
-
                                                 if (mediaTypeExt == "png" || "jpeg" || "gif" || "tiff") {
                                                     mediaClassification = "image"
                                                 } else if (mediaTypeExt == "mp4" || "mov" || "avi" || "flv" || "wmv") {
@@ -168,7 +166,6 @@ class Profile extends Component {
                                                 } else if (mediaTypeExt == "mp3" || "wav" || "aiff") {
                                                     mediaClassification = "audio"
                                                 }
-
                                                 return <Col xs={12} md={4}>
                                                     <MediaClips media={this.state.mediaClips} mediaType={mediaClassification} url={newURL}>
                                                     </MediaClips>
@@ -196,14 +193,11 @@ class Profile extends Component {
                   
              </div >
               
-
              
     );
     }
 }
-
 Profile.propTypes = {
-
     logoutUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired
 };
@@ -214,4 +208,3 @@ export default connect(
     mapStateToProps,
     { logoutUser }
 )(Profile);
-
