@@ -26,3 +26,11 @@
     font-family: "Helvetica Neue", sans-serif;
     color: #49a0b5;
 }
+
+.list-group-item {
+  background-color: transparent;
+}
+
+.favorites-card {
+  background-color: rgba(255, 255, 255, 0.3);
+}

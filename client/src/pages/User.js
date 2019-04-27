@@ -135,6 +135,9 @@ class normalUser extends Component {
                 </h5> */}
               </Col>
             </Row>
+            {/* <Favorites>
+            {favArray.forEach((element) => {console.log(element);
+            })} */}
             <Favorites />
           
           <Col size="md-12" id="navbar">

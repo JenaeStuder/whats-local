@@ -41,3 +41,7 @@ button {
 #secondaryUserRow {
     margin-left: 1vw;
 }
+
+.search-row {
+  background-color: rgba(0, 0, 0, 0.6);
+}
