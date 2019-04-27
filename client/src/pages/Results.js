@@ -39,19 +39,7 @@ class Results extends Component {
                 <Searchbar />
               </Col>
             </Row>
-    render(props) {
-        return (
-            <div>
-                <Container>
-           <div className="Results">
-           <Row>
-                            <Col xs={4} md={4}>
-                                <Brand />
-                            </Col>
-                            <Col xs={8} md={8} id="search">
-                                <Searchbar />
-                            </Col>
-                        </Row>
+    
                         
                 {this.state.loading?( <Row>
                     <Col size="md-6">
