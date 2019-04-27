@@ -17,13 +17,18 @@ function TitleBackground() {
           </Row>
           <Row id="mainPageSubtitle">
             <Col xs={12}>
-          <p className="lead">connect | local | art</p>
-          </Col>
+
+              <h6 className="lead">connect | local | art</h6>
+            </Col>
           </Row>
         </div>
       </div>
+
+      <br />
       <Searchbar />
+
     </div>
+    
   );
 }
 

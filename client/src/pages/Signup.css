@@ -1,11 +1,11 @@
 /* body {
   /*background-image : linear-gradient(#08164c,#993366);*/
-  /* background-image: url(../images/vertical-waves.png); */
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
-  /* min-width: 100%;
+/* background-image: url(../images/vertical-waves.png); */
+/* background-repeat: no-repeat; */
+/* background-size: cover; */
+/* min-width: 100%;
   height: fit-content; 
- } */ 
+ } */
 
 #title {
   font-family: "urbanjungle";
@@ -51,7 +51,6 @@ form {
   background-size: 135% 100vh;
   background-position: right left;
 }
-
-
-
-
+#userType {
+  height: 35px;
+}

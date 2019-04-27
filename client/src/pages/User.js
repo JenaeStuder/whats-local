@@ -14,6 +14,7 @@ import "./User.css";
 import Create from "../components/Create";
 import Suggestions from "../components/Suggestions";
 
+//import Favorites from "../components/favorites";
 
 class normalUser extends Component {
     state = {
@@ -116,12 +117,33 @@ class normalUser extends Component {
                     
                 
 
-            </div>
+            
 
 
-        )
-    }
+    
+    
 
+            <Row>
+              <Col size="md-12" id="header">
+                <Header />
+                {/* 
+                I relocated the profile Name/info/bio to the Header component instead of on the User Page */}
+
+                {/* <h5 id="profileName">
+                  {" "}
+                  {this.state.firstName} {this.state.lastName}
+                </h5> */}
+              </Col>
+            </Row>
+            <Favorites />
+          
+          <Col size="md-12" id="navbar">
+            <Navbar />
+          </Col>
+        </div>
+      
+    );
+  }
 }
 
 export default normalUser;

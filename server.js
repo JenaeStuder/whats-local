@@ -19,14 +19,16 @@ app.use(bodyParser.json());
 // app.use("/api/users", users);
 
 //DB Config
+
 const db = require("./config/keys").mongoURI;
+
 //Connect to MongoDB
 
+// const db = process.env.MONGODB_URI || "mongodb://localhost/whatslocal";
+
+
 mongoose
-  .connect(
-    db,
-    { useNewUrlParser: true }
-  )
+  .connect(db, { useNewUrlParser: true })
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
 

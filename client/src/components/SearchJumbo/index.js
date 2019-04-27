@@ -3,6 +3,7 @@ import SearchBtn from "../SearchBtns";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import Searchbar from "../Searchbar";
 import "./style.css";
 
 class SearchJumbo extends Component {
@@ -13,7 +14,8 @@ class SearchJumbo extends Component {
     this.handleClose = this.handleClose.bind(this);
 
     this.state = {
-      show: false
+      show: false,
+      title: ""
     };
   }
 
@@ -21,8 +23,8 @@ class SearchJumbo extends Component {
     this.setState({ show: false });
   }
 
-  handleShow() {
-    this.setState({ show: true });
+  handleShow(title) {
+    this.setState({ show: true, title: title });
   }
 
   render() {
@@ -31,17 +33,19 @@ class SearchJumbo extends Component {
         <Card id="searchCard">
           <Card.Body>
             <div
-              class="jumbotron jumbo-image" id= "jumbotron"
+              class="jumbotron jumbo-image"
               style={{
                 backgroundImage: `url(https://images.pexels.com/photos/1916824/pexels-photo-1916824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`
               }}
             >
               <SearchBtn
-                className="btn btn-lg search-jumbo-button" id= "jumbotron"
+                className="btn btn-lg search-jumbo-button"
                 id="artistBtn button"
                 type="submit"
-                onClick={this.handleShow}
-                title="artist"
+                onClick={() => {
+                  this.handleShow("artist");
+                }}
+                title="Artist"
                 // backgroundImage="https"
               />
             </div>
@@ -83,10 +87,9 @@ class SearchJumbo extends Component {
               </Button>
             </Modal.Footer>
         </Modal>
-    </div>
-  );
+      </div>
+    );
   }
 }
-
 
 export default SearchJumbo;

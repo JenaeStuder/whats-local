@@ -7,9 +7,8 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Image from "react-bootstrap/Image";
 import "./style.css";
 
-
-
 function Favorites(props) {
+  
 
     return (
         <div>

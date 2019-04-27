@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import Navbar from "../components/Navbar";
 import "./Search.css";
 import Container from "react-bootstrap/Container";
+import Brand from "../components/Brand";
 
 // class Search extends React.Component {
 
