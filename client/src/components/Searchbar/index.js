@@ -29,7 +29,8 @@ class Searchbar extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    API.searchArtist(this.state.searchName)
+    // API.searchArtist(this.state.searchName)
+    console.log("clicked")
   }
 
   render() {
