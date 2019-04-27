@@ -39,24 +39,41 @@ class Results extends Component {
                 <Searchbar />
               </Col>
             </Row>
-
-            {/* {this.state.loading? <Row> */}
-            <Col size="md-6">
-              <div>
-                findArtist
-                {/* {this.state.results} */}
-              </div>
-            </Col>
-            <Col size="md-6">
-              <div>{/* {this.state.results} */}</div>
-            </Col>
-            {/* </Row>: Loader} */}
-          </div>
-        </Container>
-        <Navbar />
-      </div>
-    );
-  }
+    render(props) {
+        return (
+            <div>
+                <Container>
+           <div className="Results">
+           <Row>
+                            <Col xs={4} md={4}>
+                                <Brand />
+                            </Col>
+                            <Col xs={8} md={8} id="search">
+                                <Searchbar />
+                            </Col>
+                        </Row>
+                        
+                {this.state.loading?( <Row>
+                    <Col size="md-6">
+                        <div>
+                            findArtist
+                            {this.state.results}
+                        </div>
+                    </Col>
+                    <Col size="md-6">
+                        <div>
+                            {this.state.results}
+                        </div>
+                    </Col>
+                </Row>):( <h3>We're sorry, your search did not return any results. Try again later!</h3>)}
+                </div>
+                </Container>
+            <Navbar />
+            
+            </div>
+            
+        )
+    }
 
   // loadResults = () => {
   //     API.getResults().then(res =>

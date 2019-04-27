@@ -16,7 +16,7 @@ import UpdateItem from "../components/UpdateItem";
 import "./Profile.css";
 import Brand from "../components/Brand";
 import jwt_decode from "jwt-decode";
-// import Loader from "../components/Loader";
+import Loader from "../components/Loader";
 
 class Profile extends Component {
   state = {
@@ -26,12 +26,13 @@ class Profile extends Component {
     socialMediaHandles: "",
     bio: "",
     profilePicture: "",
-
     mediaClips: [],
     upcoming: "",
-    load: "false"
+    loading: "false",
+    user_id: jwt_decode(localStorage.jwtToken.split(" ")[1]).id
   };
   componentDidMount() {
+    console.log(this.state.user_id);
     this.loadProfile();
   }
 
@@ -61,7 +62,7 @@ class Profile extends Component {
       <div className="Profile">
         <div>
           <Container>
-            <Row className="search-row">
+            <Row>
               <Col xs={4} md={4}>
                 <Brand />
               </Col>
@@ -140,43 +141,50 @@ class Profile extends Component {
                 <div>
                   <Col xs={1} />
                   <Col xs={10}>
-                    {/* {this.state.loading ?( */}
-
-                    {this.state.mediaClips.map(item => {
-                      const newURL = item.replace(/ /g, "%20");
-                      const mediaTypeParse = newURL.split(".");
-                      const mediaTypeExt =
-                        mediaTypeParse[mediaTypeParse.length - 1];
-                      console.log(newURL, `File Extension: ${mediaTypeExt}`);
-
-                      let mediaClassification = "";
-
-                      if (mediaTypeExt == "png" || "jpeg" || "gif" || "tiff") {
-                        mediaClassification = "image";
-                      } else if (
-                        mediaTypeExt == "mp4" ||
-                        "mov" ||
-                        "avi" ||
-                        "flv" ||
-                        "wmv"
-                      ) {
-                        mediaClassification = "video";
-                      } else if (mediaTypeExt == "mp3" || "wav" || "aiff") {
-                        mediaClassification = "audio";
-                      }
-
-                      return (
-                        <Col xs={12} md={4}>
-                          <MediaClips
-                            media={this.state.mediaClips}
-                            mediaType={mediaClassification}
-                            url={newURL}
-                          />
-                        </Col>
-                      );
-                    })}
-                    {/* ) :( 
-                            <Loader/>)}  */}
+                    {this.state.loading ? (
+                      <div>
+                        {this.state.mediaClips.map(item => {
+                          const newURL = item.replace(/ /g, "%20");
+                          const mediaTypeParse = newURL.split(".");
+                          const mediaTypeExt =
+                            mediaTypeParse[mediaTypeParse.length - 1];
+                          console.log(
+                            newURL,
+                            `File Extension: ${mediaTypeExt}`
+                          );
+                          let mediaClassification = "";
+                          if (
+                            mediaTypeExt == "png" ||
+                            "jpeg" ||
+                            "gif" ||
+                            "tiff"
+                          ) {
+                            mediaClassification = "image";
+                          } else if (
+                            mediaTypeExt == "mp4" ||
+                            "mov" ||
+                            "avi" ||
+                            "flv" ||
+                            "wmv"
+                          ) {
+                            mediaClassification = "video";
+                          } else if (mediaTypeExt == "mp3" || "wav" || "aiff") {
+                            mediaClassification = "audio";
+                          }
+                          return (
+                            <Col xs={12} md={4}>
+                              <MediaClips
+                                media={this.state.mediaClips}
+                                mediaType={mediaClassification}
+                                url={newURL}
+                              />
+                            </Col>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <Loader />
+                    )}
                   </Col>
                   <Col xs={1} />
                 </div>
@@ -195,7 +203,6 @@ class Profile extends Component {
     );
   }
 }
-
 Profile.propTypes = {
   logoutUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
