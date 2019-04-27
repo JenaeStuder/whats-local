@@ -43,9 +43,9 @@ class Profile extends Component {
 
     loadProfile = () => {
 
-        API.getProfile(this.state.user._id)
-            .then(res => {
-                console.log(res);
+        // API.getProfile(this.state.user._id)
+        //     .then(res => {
+        //         console.log(res);
 
                 this.setState({
                     firstName: res.data.firstName,
