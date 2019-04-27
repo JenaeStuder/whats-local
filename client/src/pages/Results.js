@@ -41,18 +41,19 @@ class Results extends Component {
                             </Col>
                         </Row>
                         
-                {this.state.loading? <Row>
+                {/* {this.state.loading? <Row> */}
                     <Col size="md-6">
                         <div>
-                            {this.state.results}
+                            findArtist
+                            {/* {this.state.results} */}
                         </div>
                     </Col>
                     <Col size="md-6">
                         <div>
-                            {this.state.results}
+                            {/* {this.state.results} */}
                         </div>
                     </Col>
-                </Row>: Loader}
+                {/* </Row>: Loader} */}
                 </div>
                 </Container>
             <Navbar />
