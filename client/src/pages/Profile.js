@@ -43,7 +43,7 @@ class Profile extends Component {
 
     loadProfile = () => {
 
-        API.getProfile(this.state.user._id)
+        API.getProfile(this.state.user_id)
             .then(res => {
                 console.log(res);
 
