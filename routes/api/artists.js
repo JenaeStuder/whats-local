@@ -15,7 +15,7 @@ router.route("/:id")
     .put(localController.update)
     .delete(localController.remove);
 // routes for the media files
-router.route("/media/op")
+router.route("/media/op/:id")
     .put(localController.addStorageItem)
     .delete(localController.removeStorageItem)
 router.route("/profile/:id")

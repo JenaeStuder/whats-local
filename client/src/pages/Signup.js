@@ -18,8 +18,8 @@ import Brand from "../components/Brand";
 
 
 class SignUp extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       userName: "",
       firstName: "",
