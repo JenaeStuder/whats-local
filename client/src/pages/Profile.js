@@ -12,44 +12,55 @@ import Row from "react-bootstrap/Row";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
 import Update from "../components/Upcoming";
-import UpdateItem from "../components/UpdateItem"
-import "./Profile.css"
+import UpdateItem from "../components/UpdateItem";
+import "./Profile.css";
 import Brand from "../components/Brand";
+import jwt_decode from "jwt-decode";
 // import Loader from "../components/Loader";
+
 
 class Profile extends Component {
 
+    state = {
+        userName: "",
+        firstName: "",
+        lastName: "",
+        socialMediaHandles: "",
+        bio: "",
+        profilePicture: "",
 
-    // state = {
-    //     userName: "",
-    //     firstName: "",
-    //     lastName: "",
-    //     socialMediaHandles: "",
-    //     bio: "",
-    //     profilePicture: "",
-    //     mediaClips: "",
-    //     upcoming: "",
-    //     loading: "",
-
-
-    // // };
-    // componentDidMount() {
-    //     // this.loadProfile();
-    // }
+        mediaClips: [],
+        upcoming: "",
+        load: "false",
 
 
-    // loadProfile = () => {
-    //     API.getProfile().then(res => this.setState({
-    //         firstName: res.firstName,
-    //         lastName: res.lastName,
-    //         socialMediaHandles: res.socialMediaHandles,
-    //         bio: res.bio,
-    //         profilePicture: res.profilePicture,
-    //         mediaClips: res.media,
-    //         upcoming:""
-    //     })
-    //     ).catch(err => console.log(err));
-    // };
+    };
+    componentDidMount() {
+        this.loadProfile();
+
+    }
+
+
+    loadProfile = () => {
+
+        API.getProfile("5cbfc709d05c151404c087cd")
+            .then(res => {
+                console.log(res);
+
+                this.setState({
+                    firstName: res.data.firstName,
+                    lastName: res.data.lastName,
+                    socialMediaHandles: res.data.socialMediaHandles,
+                    bio: res.data.bio,
+                    profilePicture: res.data.profilePicture,
+                    mediaClips: res.data.media,
+                    userName: res.data.username,
+                    upcoming: ""
+                });
+            })
+            .catch(err => console.log(err));
+
+    };
 
 
 
@@ -59,9 +70,7 @@ class Profile extends Component {
         return (
 
             <div className="Profile">
-
-                <div> 
-               
+                <div>
                     <Container>
                         <Row>
                             <Col xs={4} md={4}>
@@ -70,128 +79,136 @@ class Profile extends Component {
                             <Col xs={8} md={8} id="search">
                                 <Searchbar />
                             </Col>
-                            
                         </Row>
-                    
-                    <br>
-                    </br>
-                    <Row>
-                        <Row className="ProfileInfo">
-
-                            <Row >
-
-                                <Col md={12}>
-                                    <Row>
-                                        <Col xs={12} md={6}>
-
-                                            {/* <h6>Profile Picture</h6> */}
-
-                                            {/* <ProfilePicture image={this.state.profilePicture} /> */}
-
-
-                                        </Col>
-                                        <Col xs={12} md={6}>
-                                            <Row className="InfoSection" id="info-border-wrap">
-                                                {/* <h6>Name</h6> */}
-                                                <h5>
-                                                    {/* {this.state.firstName}
-                                                    {this.state.lastName} */}
-                                                </h5>
-                                            </Row>
+                        <br>
+                        </br>
+                        <Row>
+                            <Row className="ProfileInfo">
+                                <Col sx={1}>
+                                    <Col xs={10}>
+                                        <Row >
+                                            {/* Row that contains the profile picture, Artist name, social media, bio, and updates. */}
+                                            <Col md={12}>
+                                                <Row>
+                                                    <Col xs={12} md={6} className="PicColumn" >
+                                                        <ProfilePicture image={this.state.profilePicture} />
+                                                    </Col>
+                                                    <Col xs={12} md={6}>
+                                                        <Row className="InfoSection" id="info-border-wrap">
+                                                            {/* <h6>Name</h6> */}
+                                                            <Col xs={1}></Col>
+                                                            <Col xs={10}>
+                                                                <h5 id="nameSection">
+                                                                    {this.state.firstName}
+                                                                    &nbsp;
+                                                    {this.state.lastName}
+                                                                </h5>
+                                                            </Col>
+                                                            <Col xs={1}></Col>
+                                                        </Row>
+                                                        <Row>
+                                                            <h5>
+                                                                {this.state.socialMediaHandles}
+                                                            </h5>
+                                                        </Row>
+                                                        <Row>
+                                                            <div>
+                                                                {/* <h6>Bio</h6>  */}
+                                                                <Bio bio={this.state.bio}>
+                                                                </Bio>
+                                                            </div>
+                                                        </Row>
+                                                    </Col>
+                                                </Row>
+                                            </Col>
                                             <Row>
-
-                                                <h5>
-                                                    {/* {this.state.socialMediaHandles} */}
-                                                </h5>
+                                                <Col xs={1}></Col>
+                                                <Col sm={10} className="Updates-border-wrap" id="updates">
+                                                    {/* <h6>Artist Updates</h6> */}
+                                                    {this.state.upcoming.length ? (
+                                                        <Update>
+                                                            {this.state.upcoming.map(update => (
+                                                                <UpdateItem key={update._id}>
+                                                                </UpdateItem>
+                                                            ))}
+                                                        </Update>
+                                                    )
+                                                        : (
+                                                            <h5> {this.state.firstName} doesn't have any updates, check back soon!</h5>
+                                                        )}
+                                                </Col>
+                                                <Col xs={1}></Col>
                                             </Row>
-                                            <Row>
-                                                <div>
-                                                    {/* <h6>Bio</h6> */}
-                                                    {/* <Bio bio={this.state.bio}> */}
-
-                                                    {/* </Bio> */}
-                                                </div>
-                                            </Row>
-                                        </Col>
-
-                                    </Row>
-                                </Col>
-
-                                <Row>
-
-                                    <Col sm={12} className="Updates-border-wrap" id="updates">
-
-                                        {/* <h6>Artist Updates</h6> */}
-                                        {/* {this.state.upcoming.length ? (
-                                            <Update>
-                                                {this.state.upcoming.map(update => (
-                                                    <UpdateItem key={update._id}>
-                                                    </UpdateItem>
-                                                ))}
-                                            </Update>
-                                        )
-                                            : (
-                                                <h5> {this.state.firstName} doesn't have any updates, check back soon!</h5>
-                                            )} */}
-
+                                        </Row>
                                     </Col>
-                                </Row>
-                                
-                            </Row> 
-                    
-                        </Row>
-                        
+                                </Col>
+                                <Col xs={1}></Col>
+                            </Row>
+                            <br />
+                            <Row className="ProfileMedia">
+                                <div>
+                                    <Col xs={1}></Col>
+                                    <Col xs={10}>
+                                        {/* {this.state.loading ?( */}
 
-                        <Row className="ProfileMedia">
-                            {/* {this.state.loading ? */}
-                                
-                                     <Row >
-                                <Col xs={12} md={4}>
-                                    <div>
-                                        <h6>Media 1</h6>
-                                        {/* <MediaClips media={this.state.mediaClips}>
-                                        </MediaClips> */}
-                                    </div>
-                                </Col>
-                                <Col xs={12} md={4}>
-                                    <div>
-                                        <h6>Media 2</h6>
-                                        {/* <MediaClips media={this.state.mediaClips}>
-                                        </MediaClips> */}
-                                    </div>
-                                </Col>
-                                <Col xs={12} md={4}>
-                                    <div>
-                                        <h6>Media 3</h6>
-                                        {/* <MediaClips media={this.state.mediaClips}>
-                                        </MediaClips> */}
-                                    </div>
-                                </Col>
+                                        {
+                                            this.state.mediaClips.map(item => {
+                                                const newURL = item.replace(/ /g, "%20");
+                                                const mediaTypeParse = newURL.split(".");
+                                                const mediaTypeExt = mediaTypeParse[mediaTypeParse.length - 1];
+                                                console.log(newURL, `File Extension: ${mediaTypeExt}`);
 
-                            </Row> 
-                             {/* : null} */}
+                                                let mediaClassification = "";
+
+                                                if (mediaTypeExt == "png" || "jpeg" || "gif" || "tiff") {
+                                                    mediaClassification = "image"
+                                                } else if (mediaTypeExt == "mp4" || "mov" || "avi" || "flv" || "wmv") {
+                                                    mediaClassification = "video"
+                                                } else if (mediaTypeExt == "mp3" || "wav" || "aiff") {
+                                                    mediaClassification = "audio"
+                                                }
+
+                                                return <Col xs={12} md={4}>
+                                                    <MediaClips media={this.state.mediaClips} mediaType={mediaClassification} url={newURL}>
+                                                    </MediaClips>
+                                                </Col>
+                                            })
+                                        }
+                                        {/* ) :( 
+                            <Loader/>)}  */}
+                                    </Col>
+                                    <Col xs={1}></Col>
+                                </div>
+                            </Row>
                         </Row>
-                        
-                    </Row>
+                        <br></br>
+                        <br></br>
                     </Container>
-                    <Col size="md-12" id="navbar">
-                        <Navbar />
-                    </Col>
-                </div>
-            </div>
-        );
-    }
+                    </div >
+                    <Row>
+                <Col size="md-12" id="navbar">
+                    <Navbar />
+                </Col>
+                  </Row>
+                  
+             </div >
+              
 
+             
+    );
+    }
 }
 
 Profile.propTypes = {
+
     logoutUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired
-  };
-  const mapStateToProps = state => ({
+};
+const mapStateToProps = state => ({
     auth: state.auth
-  });
-  export default connect(
+});
+export default connect(
     mapStateToProps,
     { logoutUser }
-  )(Profile);
+)(Profile);
+
