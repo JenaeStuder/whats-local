@@ -84,10 +84,10 @@ class MainPage extends Component {
                     <Container>
                     <Row>
                         <Col md={8}>
-                            <Create />
+                            <Create id="createPost"/>
                         </Col>
                         <Col md={4}>
-                            <Suggestions />
+                            <Suggestions id="suggestionsCard"/>
                         </Col>
                     </Row>
                     </Container>

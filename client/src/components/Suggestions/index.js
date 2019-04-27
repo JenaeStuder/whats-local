@@ -10,7 +10,7 @@ import "./style.css";
 function Suggestions(props) {
     return (
         <div>
-            <Card>
+            <Card id="suggestionsCard">
                 <Card.Header id="suggestionsHeader">Suggestions for You</Card.Header>
                 <Card.Body>
                     <Row>

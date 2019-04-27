@@ -43,7 +43,7 @@ class ArtistSpotlight extends Component {
         return (
             <div className="Spotlight">
                 <Container>
-                    <Card>
+                    <Card id="spotlightCard">
                         <Card.Header id="spotlightHeader">Artist Spotlight</Card.Header>
                         <Card.Body>
                             <Row className="SpotlightArtist">

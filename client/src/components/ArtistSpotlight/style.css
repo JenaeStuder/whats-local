@@ -18,3 +18,7 @@
     color: #49a0b5;
     font-size: 5vh;
 }
+
+#spotlightCard {
+    background-color: rgb(225, 225, 225, .5);
+}

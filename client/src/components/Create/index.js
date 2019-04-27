@@ -12,7 +12,7 @@ import "./style.css";
 function Create(props) {
     return (
         <div>
-            <Card>
+            <Card id="createPostCard">
                 <Card.Header id="postHeader">Create Post</Card.Header>
                 <Card.Body>
                     <Row>
