@@ -18,7 +18,6 @@ import Brand from "../components/Brand";
 import jwt_decode from "jwt-decode";
 import Loader from "../components/Loader";
 
-
 class Profile extends Component {
 
     state = {
@@ -62,7 +61,6 @@ class Profile extends Component {
             .catch(err => console.log(err));
 
     };
-
 
 
     render() {
@@ -193,7 +191,6 @@ class Profile extends Component {
                   
              </div >
               
-             
     );
     }
 }
