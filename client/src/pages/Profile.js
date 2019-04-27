@@ -76,14 +76,6 @@ class Profile extends Component {
                           <h5>{/* {this.state.socialMediaHandles} */}</h5>
                         </Row>
                         <Row>
-<<<<<<< HEAD
-                          <div>
-                            {/* <h6>Bio</h6> */}
-                            {/* <Bio bio={this.state.bio}> */}
-
-                            {/* </Bio> */}
-                          </div>
-=======
                             <Row className="ProfileInfo">
                                 <Col sx={1}>
                                     <Col xs={10}>
@@ -183,7 +175,6 @@ class Profile extends Component {
                                     <Col xs={1}></Col>
                                 </div>
                             </Row>
->>>>>>> aec5c5f61adcc8dd9984116b6b5b20d898a47663
                         </Row>
                       </Col>
                     </Row>
