@@ -9,7 +9,6 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "concurrently": "^4.1.0",
-    "create-react-class": "^15.6.3",
     "express": "^4.16.4",
     "firebase": "^5.9.3",
     "if-env": "^1.0.4",
