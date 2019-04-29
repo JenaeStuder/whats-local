@@ -15,23 +15,22 @@ app.use(
 );
 app.use(bodyParser.json());
 
+app.use(express.static('public'));
+app.get('*', (req, res) => res.sendFile(path.resolve('public', 'index.html')));
 // Routes
 // app.use("/api/users", users);
 
 //DB Config
 
-// const db = require("./config/keys").mongoURI;
+const db = require("./config/keys").mongoURI;
 
 //Connect to MongoDB
 
-db = process.env.MONGODB_URI || "mongodb://localhost/whatslocal";
+// const db = process.env.MONGODB_URI || "mongodb://localhost/whatslocal";
 
 
 mongoose
-  .connect(
-    db,
-    { useNewUrlParser: true }
-  )
+  .connect(db, { useNewUrlParser: true })
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
 

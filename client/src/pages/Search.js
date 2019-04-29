@@ -26,13 +26,10 @@ function Search() {
   return (
     <div>
       <Container>
-      <div class="jumbotron jumbotron-fluid search-jumbo">
-        <h1 class="display-4">Search by</h1>
-      </div>
-      <SearchJumbo />
-      <br></br>
-      <br></br>
-      <br></br>
+        <div class="jumbotron jumbotron-fluid search-jumbo">
+          <h1 class="display-4">Search by</h1>
+        </div>
+        <SearchJumbo />
       </Container>
       <Navbar />
     </div>

@@ -12,7 +12,7 @@ class ControlledCarousel extends React.Component {
       index: 1,
       direction: null,
       controls: false,
-      interval: 2000,
+      interval: 1000,
       slide: false,
       indicators: false
     };
