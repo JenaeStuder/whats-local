@@ -13,8 +13,8 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 import EditForm from "../components/EditForm";
+import Navbar from "../components/Navbar";
 import "./Signup.css";
-
 
 class Edit extends Component {
   state = {
@@ -135,6 +135,7 @@ class Edit extends Component {
                     </Col>
                 </Row>
             </Container> */}
+        <Navbar />
       </div>
     );
   }
