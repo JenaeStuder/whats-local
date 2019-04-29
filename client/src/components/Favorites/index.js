@@ -5,7 +5,10 @@ import Row from "../Row";
 import Col from "../Col";
 import "./style.css";
 
-const Favorites = props => {
+function Favorites() {
+  //This is just an example array for now
+  var favesArray = ["Artie the Great", "Jenae Sunflower", "TonyTony"];
+
   return (
     <div className="card text-center favorites-card">
       <div className="card-header">
@@ -13,10 +16,18 @@ const Favorites = props => {
       </div>
       <div className="card-body">
         <h5 className="card-title" />
-        <ul className="list-group list-group-flush">{props.favorites}</ul>
+        <ul className="list-unstyled">
+          {favesArray.map((value, index) => {
+            return (
+              <li className="fave-artist" key={index}>
+                {value}{" "}
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </div>
   );
-};
+}
 
 export default Favorites;
