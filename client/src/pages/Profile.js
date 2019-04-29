@@ -38,8 +38,8 @@ class Profile extends Component {
   }
 
   loadProfile = () => {
-    // API.getProfile(this.state.user_id)
-    API.getProfile("5cc7586200313ddafcc3e004")
+    API.getProfile(this.state.user_id)
+    // API.getProfile("5cc7586200313ddafcc3e004")
       .then(res => {
         console.log(res);
 
@@ -62,7 +62,7 @@ class Profile extends Component {
     console.log({ user });
     return (
       <div className="Profile">
-        <div className="row no-gutters">
+        <div className="row no-margin">
           
             <Row className="search-row">
               <Col xs={4} md={4}>
@@ -78,8 +78,8 @@ class Profile extends Component {
             <Container>
                 <Row>
                 <Jumbotron className="ProfileInfo">
-                <Col sx={1}>
-                  <Col xs={10}>
+                {/* <Col sx={1}> */}
+                  <Col xs={12}>
                     <Row>
                       {/* Row that contains the profile picture, Artist name, social media, bio, and updates. */}
                       <Col md={12}>
@@ -87,7 +87,7 @@ class Profile extends Component {
                           <Col xs={12} md={6} className="PicColumn">
                             <ProfilePicture image={this.state.profilePicture} />
                           </Col>
-                          <hr/>
+                         
                           <Col xs={12} md={6}>
                             <Row className="InfoSection" id="info-border-wrap">
                               {/* <h6>Name</h6> */}
@@ -114,7 +114,7 @@ class Profile extends Component {
                         </Row>
                       </Col>
                       
-                      <Row>
+                      <Row className="Update-Row">
                         <Col xs={1} />
                         <Col
                           sm={10}
@@ -140,8 +140,8 @@ class Profile extends Component {
                       </Row>
                     </Row>
                   </Col>
-                </Col>
-                <Col xs={1} />
+                {/* </Col>
+                <Col xs={1} /> */}
               {/* </Row> */}
               </Jumbotron>
               <br />

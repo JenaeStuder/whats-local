@@ -38,6 +38,9 @@ font-family: 'Abel', sans-serif; */
     /* box-shadow: 10px 10px 5px rgb(193, 177, 175, .5); */
     
 }
+.row.no-gutters{
+    margin:0px;
+}
 .bio-border-wrap{
     
     max-width: 250px;
@@ -67,6 +70,9 @@ h5{
     color: rgb(53, 58, 63);
     font-size:30px;
 
+}
+.Update-Row{
+    border-top: 1px ridge lightslategray;
 }
 #info-border-wrap{
     

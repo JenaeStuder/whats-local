@@ -8,10 +8,11 @@
     /* height: 100%;
     width: 100%; */
     font-size: 55px;
-    padding: 8% 0 0 9%; 
+    /* padding: 0 0 0 10%;  */
     z-index: 1;
-    /* margin-top: .1vh; */
-    margin-left: 5%;
+    margin-top: 2vh;
+    padding-left: 30%;
+    /* margin-left: 20%; */
  }
     #logobtn{
    /* height: 60%;
@@ -24,9 +25,9 @@
     border-radius: 10px 30px; */
     /* margin: 6% 0 0 8%; */
     }
-h4:hover {
+/* h4:hover {
   background-color: darkslategrey;
-}
+} */
 a:link {
   text-decoration: none;
 }
