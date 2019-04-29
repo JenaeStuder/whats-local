@@ -14,3 +14,15 @@
   color: darkslategrey;
   font-family: "Abel", sans-serif;
 }
+
+.list-group-item {
+  background-color: transparent;
+}
+
+.favorites-card {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.favorite-header {
+  color: #fff;
+}
