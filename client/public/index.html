@@ -153,7 +153,8 @@
             
             console.log(`profile pic updated`);
             $.ajax({
-              url:"/api/artists/profile/" + parseJwt(localStorage.getItem("jwtToken")).id
+              url:"/api/artists/profile/" + parseJwt(localStorage.getItem("jwtToken")).id,
+              method: "GET"
               }).then(res => {
               const  newURL = res.profilePicture.replace(/ /g, "%20")
               console.log(newURL);
