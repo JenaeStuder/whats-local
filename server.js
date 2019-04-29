@@ -15,8 +15,9 @@ app.use(
 );
 app.use(bodyParser.json());
 
-app.use(express.static("public"));
-app.get('*', (req, res) => res.sendFile(path.resolve('public', 'index.html'));
+
+app.use(express.static('public'));
+// app.get('*', (req, res) => res.sendFile(path.resolve('client', 'public', 'index.html')));
 // Routes
 // app.use("/api/users", users);
 
