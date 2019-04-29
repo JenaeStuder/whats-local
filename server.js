@@ -15,8 +15,11 @@ app.use(
 );
 app.use(bodyParser.json());
 
+
 app.use(express.static('public'));
-app.get('*', (req, res) => res.sendFile(path.resolve('public', 'index.html'));
+
+app.get('*', (req, res) => res.sendFile(path.resolve('public', 'index.html')));
+
 // Routes
 // app.use("/api/users", users);
 
@@ -27,7 +30,6 @@ const db = require("./config/keys").mongoURI;
 //Connect to MongoDB
 
 // const db = process.env.MONGODB_URI || "mongodb://localhost/whatslocal";
-
 
 mongoose
   .connect(db, { useNewUrlParser: true })
@@ -41,7 +43,9 @@ require("./config/passport")(passport);
 
 app.use(routes);
 // app.use("/api/users", users);
-const PORT= process.env.PORT ||3001;
+const PORT = process.env.PORT || 3001;
 
 // process.env.port is Heroku's port if you choose to deploy the app there
-app.listen(PORT, () => console.log(`🌎  ==> API Server now listening on PORT ${PORT} !`));
+app.listen(PORT, () =>
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT} !`)
+);
