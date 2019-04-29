@@ -91,11 +91,13 @@ class EditForm extends Component {
           name="profilepic"
           placeholder="Upload Profile Picture"
         />
+        <p id="subtitle">Upload your art</p>
         <FileUpload 
           id="addedMedia"
           labeltext="Add Media"
           name="content"
           placeholder="Content Upload"
+          
         />
         {/* <Select
           id="usertype"

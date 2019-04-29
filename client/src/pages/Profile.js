@@ -16,8 +16,8 @@ import UpdateItem from "../components/UpdateItem";
 import "./Profile.css";
 import Brand from "../components/Brand";
 import jwt_decode from "jwt-decode";
-import Loader from "../components/Loader";
-import Jumbotron from "react-bootstrap/Jumbotron"
+import Spinner from 'react-bootstrap/Spinner';
+import Jumbotron from "react-bootstrap/Jumbotron";
 
 class Profile extends Component {
   state = {
@@ -38,7 +38,8 @@ class Profile extends Component {
   }
 
   loadProfile = () => {
-    API.getProfile(this.state.user_id)
+    // API.getProfile(this.state.user_id)
+    API.getProfile("5cc7586200313ddafcc3e004")
       .then(res => {
         console.log(res);
 
@@ -190,7 +191,7 @@ class Profile extends Component {
                         })}
                       </div>
                     ) : (
-                      <Loader />
+                      <Spinner animation="grow"/>
                     )}
                   </Col>
                   <Col xs={1} />

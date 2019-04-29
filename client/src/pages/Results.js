@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
 import Brand from "../components/Brand";
-import Loader from "../components/Loader";
+import Spinner from "react-bootstrap/Spinner";
 
 class Results extends Component {
   state = {
@@ -44,7 +44,7 @@ class Results extends Component {
           
           <div className="Results">
           <Container>
-            {this.state.loading ? (<Row>
+            {this.state.loading ?( <Row>
               <Col size="md-6">
                 <div>
                   findArtist
@@ -56,7 +56,7 @@ class Results extends Component {
                   {this.state.results}
                 </div>
               </Col>
-            </Row>) : (<Loader/>)}
+            </Row>) : (<Spinner animation="grow" />)}
             </Container>
           </div>
        
@@ -65,48 +65,6 @@ class Results extends Component {
       </div >
 
     )
-  }
-
-  // loadResults = () => {
-  //     API.getResults().then(res =>
-  //         this.setState({
-  //             results: res.data,
-  //             loading: false
-  //         })
-  //     ).catch(err => console.log(err));
-  // };
-
-  render(props) {
-    return (
-      <div>
-        <Container>
-          <div className="Results">
-            <Row className="search-row">
-              <Col xs={4} md={4}>
-                <Brand />
-              </Col>
-              <Col xs={8} md={8} id="search">
-                <Searchbar />
-              </Col>
-            </Row>
-            {this.state.loading ? (
-              <Row>
-                <Col size="md-6">
-                  <div>{this.state.results}</div>
-                </Col>
-                <Col size="md-6">
-                  <div>{this.state.results}</div>
-                </Col>
-              </Row>
-            ) : (
-                "Sorry, no results. Try searching for something else."
-              )}
-          </div>
-        </Container>
-        <Navbar />
-      </div>
-    );
-  }
-}
+  }};
 
 export default Results;
