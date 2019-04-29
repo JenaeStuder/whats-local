@@ -22,8 +22,6 @@ class normalUser extends Component {
     favArray: []
   };
 
-  favArray = ["artie", "jenae", "alex"];
-
   render() {
     return (
       <div>
