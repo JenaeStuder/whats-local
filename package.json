@@ -2,7 +2,6 @@
   "name": "test",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001/",
   "main": "server.js",
   "dependencies": {
     "@google-cloud/storage": "^2.5.0",
@@ -10,7 +9,6 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "concurrently": "^4.1.0",
-    "create-react-class": "^15.6.3",
     "express": "^4.16.4",
     "firebase": "^5.9.3",
     "if-env": "^1.0.4",
@@ -30,6 +28,7 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "sass": "^1.17.4",
+    "studio-auto-complete": "0.0.9",
     "validator": "^10.11.0"
   },
   "scripts": {
