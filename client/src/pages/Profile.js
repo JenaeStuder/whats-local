@@ -80,7 +80,8 @@ class Profile extends Component {
                       <Col md={12}>
                         <Row>
                           <Col xs={12} md={6} className="PicColumn">
-                            <ProfilePicture image={this.state.profilePicture} />
+                            <img src={this.state.profilePicture}></img>
+                            {/* <ProfilePicture src={this.state.profilePicture} /> */}
                           </Col>
                           <Col xs={12} md={6}>
                             <Row className="InfoSection" id="info-border-wrap">
@@ -143,7 +144,7 @@ class Profile extends Component {
                   <Col xs={10}>
                     {this.state.loading ? (
                       <div>
-                        {this.state.mediaClips.map(item => {
+                        {this.state.mediaClips.map((item, index) => {
                           const newURL = item.replace(/ /g, "%20");
                           const mediaTypeParse = newURL.split(".");
                           const mediaTypeExt =
@@ -172,12 +173,12 @@ class Profile extends Component {
                             mediaClassification = "audio";
                           }
                           return (
-                            <Col xs={12} md={4}>
-                              <MediaClips
+                            <Col>
+                            <MediaClips
                                 media={this.state.mediaClips}
-                                mediaType={mediaClassification}
+                                mediatype={mediaClassification}
                                 url={newURL}
-                              />
+                            />                              
                             </Col>
                           );
                         })}
