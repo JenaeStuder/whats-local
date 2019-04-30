@@ -59,7 +59,7 @@ class Profile extends Component {
 
   render() {
     const { user } = this.props.auth;
-    console.log({ user });
+    console.log( );
     return (
       <div className="Profile">
         <div className="row no-margin">
