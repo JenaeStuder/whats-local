@@ -54,14 +54,14 @@ module.exports = {
        
       // call to database is made to insert the URL reference for the artist
       db.User
-        .findOneAndUpdate({_id: req.params.id}, {$push:{media:req.body.path}})
+        .findOneAndUpdate({_id: req.params.id}, {$push:{media:req.body.media}})
         .then(dbModel => {
             console.log(dbModel)
             res.json(dbModel)})
         .catch(err => res.status(422).json(err))  
   }, 
   removeStorageItem: function(req, res) {
-    db.User.findById({_id: req.params.id}, {$pull:{media:req.body.path}})
+    db.User.findById({_id: req.params.id}, {$pull:{media:req.body}})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
 
