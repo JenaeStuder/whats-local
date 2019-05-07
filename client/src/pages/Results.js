@@ -7,8 +7,12 @@ import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
 import Brand from "../components/Brand";
 
+import "./Results.css";
+
+
 import Spinner from "react-bootstrap/Spinner";
 import Background from "../assets/images/buildings-cars.jpg";
+
 
 
 class Results extends Component {
@@ -29,8 +33,58 @@ class Results extends Component {
   //     ).catch(err => console.log(err));
   // };
 
+  render(props) {
+    return (
+      <div>
+        <Container>
+          <div className="Results">
+            <Row className="search-row">
+              <Col xs={4} md={4}>
+                <Brand />
+              </Col>
+              <Col xs={8} md={8} id="search">
+                <Searchbar />
+              </Col>
+            </Row>
+
+
+            {this.state.loading ? (
+              <Row>
+                <Col size="md-6">
+                  <div>
+                    findArtist
+                    {this.state.results}
+                  </div>
+                </Col>
+                <Col size="md-6">
+                  <div>{this.state.results}</div>
+                </Col>
+              </Row>
+            ) : (
+              <h3>
+                We're sorry, your search did not return any results. Try again
+                later!
+              </h3>
+            )}
+          </div>
+        </Container>
+        <Navbar />
+      </div>
+    );
+  }
+
+  // loadResults = () => {
+  //     API.getResults().then(res =>
+  //         this.setState({
+  //             results: res.data,
+  //             loading: false
+  //         })
+  //     ).catch(err => console.log(err));
+  // };
 
   render(props) {
+    console.log(this.props)
+
 
     const style ={
       minWidth: "100vw",
@@ -39,6 +93,7 @@ class Results extends Component {
       backgroundSize:'cover',
       backgroundRepeat: 'no-repeat'
     };
+
     return (
       <div style={style}>
 
@@ -68,8 +123,20 @@ class Results extends Component {
                   {this.state.results}
                 </div>
               </Col>
+
+            </Row>
+            {this.state.loading ? (
+              <Row>
+                <Col size="md-6">
+                  <div>{this.state.results}</div>
+                </Col>
+                <Col size="md-6">
+                  <div>{this.state.results}</div>
+                </Col>
+      
             </Row>) : (<Spinner animation="grow" />)}
             </Container>
+
           </div>
        
         <Navbar />

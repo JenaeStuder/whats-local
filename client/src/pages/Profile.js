@@ -16,6 +16,7 @@ import UpdateItem from "../components/UpdateItem";
 import "./Profile.css";
 import Brand from "../components/Brand";
 import jwt_decode from "jwt-decode";
+
 import Spinner from 'react-bootstrap/Spinner';
 import Jumbotron from "react-bootstrap/Jumbotron";
 
@@ -63,6 +64,8 @@ class Profile extends Component {
   render() {
     const { user } = this.props.auth;
 
+    console.log({ user });
+    console.log(this.state);
     const style ={
       minWidth: "100vw",
       minHeight: "100vh",
@@ -77,7 +80,7 @@ class Profile extends Component {
       style={style}>
 
         <div className="row no-margin">
-          
+
             <Row className="search-row">
               <Col xs={4} md={4}>
                 <Brand />
@@ -88,18 +91,20 @@ class Profile extends Component {
             </Row>
             </div>
             <br />
+
             <div>
             <Container>
                 <Row>
                 <Jumbotron className="ProfileInfo">
                 {/* <Col sx={1}> */}
                   <Col xs={12}>
+
                     <Row>
                       {/* Row that contains the profile picture, Artist name, social media, bio, and updates. */}
                       <Col md={12}>
                         <Row>
                           <Col xs={12} md={6} className="PicColumn">
-                            <img src={this.state.profilePicture}></img>
+                            <img className="PicColumn" src={this.state.profilePicture}></img>
                             {/* <ProfilePicture src={this.state.profilePicture} /> */}
                           </Col>
                          
@@ -129,7 +134,8 @@ class Profile extends Component {
                         </Row>
                       </Col>
                       
-                      <Row className="Update-Row">
+
+
                         <Col xs={1} />
                         <Col
                           sm={10}
@@ -155,8 +161,10 @@ class Profile extends Component {
                       </Row>
                     </Row>
                   </Col>
+
                 {/* </Col>
                 <Col xs={1} /> */}
+
               {/* </Row> */}
               </Jumbotron>
               <br />
