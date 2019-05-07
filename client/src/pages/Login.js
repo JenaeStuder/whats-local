@@ -77,11 +77,9 @@ class Login extends Component {
     return (
       <div style={style}>
 
-    return (
-      <div>
-
         <Row>
-          <Col size="md-6">
+        <Col xs={2}></Col>
+          <Col xs={8}>
             <div >
               <h1 id="title">what's</h1>
               <h1 id="title">local</h1>
@@ -149,6 +147,7 @@ class Login extends Component {
               </form>
             </Card>
           </Col>
+          <Col xs={2}></Col>
         </Row>
       </div>
     );

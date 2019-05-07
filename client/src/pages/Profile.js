@@ -76,10 +76,6 @@ class Profile extends Component {
       <div className="Profile"
       style={style}>
 
-    console.log( );
-    return (
-      <div className="Profile">
-
         <div className="row no-margin">
           
             <Row className="search-row">

@@ -1,6 +1,6 @@
 
 import React, { Component, backgroundImage } from "react";
-import React, { Component } from "react";
+
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -87,14 +87,6 @@ class SignUp extends Component {
           <Brand/>
         </Row>
         <Row className="FormRow">
-
-    return (
-      <div>
-        <Container>
-        <Row>
-          <Brand/>
-        </Row>
-        <Row>
 
           <Col size="md-6">
 
@@ -317,7 +309,6 @@ class SignUp extends Component {
                 </Row>
             </Container> */}
             </Container>
-
 
       </div>
     );

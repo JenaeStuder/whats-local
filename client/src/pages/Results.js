@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
 import Brand from "../components/Brand";
 
+import Spinner from "react-bootstrap/Spinner";
 import Background from "../assets/images/buildings-cars.jpg";
 
 
@@ -40,9 +41,6 @@ class Results extends Component {
     };
     return (
       <div style={style}>
-
-    return (
-      <div>
 
         <div className="row no-gutters">
           <Row className="search-row">

@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 import "./Search.css";
 import Container from "react-bootstrap/Container";
 import Brand from "../components/Brand";
-import Background from "../assets/images/blur-colorful.jpg";
+import Background from "../assets/images/blur-dark.jpg";
 
 // class Search extends React.Component {
 

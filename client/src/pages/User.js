@@ -10,7 +10,7 @@ import Favorites from "../components/Favorites";
 import waves from "../images/vertical-waves.png";
 import "./User.css";
 import Brand from "../components/Brand";
-import Background from "../assets/images/blur-lights.jpg";
+import Background from "../assets/images/blur-car-lights.jpg";
 
 //import Favorites from "../components/favorites";
 
