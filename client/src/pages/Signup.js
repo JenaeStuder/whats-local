@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+
 import React, { Component, backgroundImage } from "react";
-=======
 import React, { Component } from "react";
->>>>>>> ae697f552ff8cab6471a9743d237a0082cbdc452
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -19,12 +17,11 @@ import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 import "./Signup.css";
 import Brand from "../components/Brand";
-<<<<<<< HEAD
+
 import Background from "../assets/images/asphalt.jpg";
 // import BackgroundImage from "../components/BackgroundImage"
 
-=======
->>>>>>> ae697f552ff8cab6471a9743d237a0082cbdc452
+
 
 
 class SignUp extends Component {
@@ -73,7 +70,7 @@ class SignUp extends Component {
 
   render() {
     const { errors } = this.state;
-<<<<<<< HEAD
+
     const style ={
       minWidth: "100vw",
       minHeight: "100vh",
@@ -90,7 +87,7 @@ class SignUp extends Component {
           <Brand/>
         </Row>
         <Row className="FormRow">
-=======
+
     return (
       <div>
         <Container>
@@ -98,7 +95,7 @@ class SignUp extends Component {
           <Brand/>
         </Row>
         <Row>
->>>>>>> ae697f552ff8cab6471a9743d237a0082cbdc452
+
           <Col size="md-6">
 
             {/* <div class="jumbotron jumbotron-fluid whats-local-jumbo"> */}
@@ -320,11 +317,8 @@ class SignUp extends Component {
                 </Row>
             </Container> */}
             </Container>
-<<<<<<< HEAD
-            {/* </BackgroundImage> */}
-=======
 
->>>>>>> ae697f552ff8cab6471a9743d237a0082cbdc452
+
       </div>
     );
   }
