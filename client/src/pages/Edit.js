@@ -15,7 +15,9 @@ import Image from "react-bootstrap/Image";
 import EditForm from "../components/EditForm";
 import Navbar from "../components/Navbar";
 import "./Signup.css";
+
 import Background from "../assets/images/blurred-background.jpg";
+
 
 class Edit extends Component {
   state = {
