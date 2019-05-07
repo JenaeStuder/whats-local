@@ -4,6 +4,7 @@ import axios from "axios";
 export default {
   getProfile: function(id) {
     console.log("api");
+    console.log(id);
     return axios.get("/api/artists/" + id);
   },
   // submit user/artist

@@ -60,6 +60,7 @@ class Profile extends Component {
   render() {
     const { user } = this.props.auth;
     console.log({ user });
+    console.log(this.state);
     return (
       <div className="Profile">
         <div>

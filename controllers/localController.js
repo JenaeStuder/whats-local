@@ -1,5 +1,5 @@
 const db = require("../models");
-//res.json(dbModel;
+// res.json(dbModel);
 
 // connection setup for the storage service that will containt the media files. 
 
@@ -16,6 +16,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
+    console.log("Yay");
     db.User
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))

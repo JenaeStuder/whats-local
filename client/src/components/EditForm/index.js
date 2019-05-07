@@ -90,12 +90,14 @@ class EditForm extends Component {
           labeltext="Add Profile Picture:"
           name="profilepic"
           placeholder="Upload Profile Picture"
+          onChange={this.handleInputChange}
         />
         <FileUpload 
           id="addedMedia"
           labeltext="Add Media"
           name="content"
           placeholder="Content Upload"
+          onChange={this.handleInputChange}
         />
         {/* <Select
           id="usertype"

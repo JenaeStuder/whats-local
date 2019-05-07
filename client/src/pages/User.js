@@ -13,6 +13,7 @@ import "./User.css";
 //import Favorites from "../components/favorites";
 import Create from "../components/Create";
 import Suggestions from "../components/Suggestions";
+import API from "../utils/API";
 
 //import Favorites from "../components/favorites";
 
@@ -27,20 +28,21 @@ class normalUser extends Component {
 
 
     };
-    // componentDidMount() {
-    //     this.loadProfile();
-    // }
+    componentDidMount() {
+        this.loadProfile();
+    }
 
-    // loadProfile = () => {
-    //     API.getProfile().then(res => this.setState({
-    //         firstName: res.data,
-    //         lastName: "",
-    //         favorites:"",
-    //         loading: false,
+    loadProfile = () => {
+      
+        API.getProfile().then(res => this.setState({
+            firstName: res.data,
+            lastName: "",
+            favorites:"",
+            loading: false,
 
-    //     })
-    //     ).catch(err => console.log(err));
-    // };
+        })
+        ).catch(err => console.log(err));
+    };
 
 
     render() {

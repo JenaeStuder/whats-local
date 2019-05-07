@@ -9,6 +9,7 @@ import Create from "../components/Create";
 import Navbar from "../components/Navbar";
 import Suggestions from "../components/Suggestions";
 import Button from "../components/Button";
+import API from "../utils/API";
 // import UserUpdates from "../componentsUserUpdates";
 
 import Brand from "../components/Brand";
@@ -20,9 +21,24 @@ class MainPage extends Component {
         loading: "true",
 
     };
-    // componentDidMount() {
-    //         this.loadProfile();
-    // }
+    componentDidMount() {
+        this.loadProfile();
+    }
+
+    loadProfile = (user_id) => {
+        API.getProfile(user_id).then(res => {
+            console.log(res);
+
+            this.setState({
+                firstName: res.firstName,
+                lastName: res.lastName,
+                socialMediaHandles: res.socialMediaHandles,
+                profilePicture: res.profilePicture,
+                mediaClips: res.media,
+            })
+        }
+        ).catch(err => console.log(err));
+    };
 
     render() {
         return (
