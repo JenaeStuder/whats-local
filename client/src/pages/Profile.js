@@ -33,6 +33,7 @@ class Profile extends Component {
   };
   componentDidMount() {
     console.log(this.state.user_id);
+    console.log(this.state);
     this.loadProfile();
   }
 

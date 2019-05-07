@@ -54,7 +54,7 @@ module.exports = {
        
       // call to database is made to insert the URL reference for the artist
       db.User
-        .findOneAndUpdate({_id: req.params.id}, {$push:{media:{path:data}}})
+        .findOneAndUpdate({_id: req.params.id}, {$push:{media: req.body.media}})
         .then(dbModel => {
             console.log(dbModel)
             res.json(dbModel)})
@@ -72,7 +72,7 @@ module.exports = {
     console.log("update route");
     
     
-    db.User.findOneAndUpdate(req.params.id, {profilePicture:req.body.path})
+    db.User.findOneAndUpdate({_id: req.params.id}, {$set:{profilePicture:req.body.path}})
     .then(dbModel => {
       console.log(dbModel);
       
