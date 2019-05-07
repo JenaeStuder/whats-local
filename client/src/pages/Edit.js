@@ -15,6 +15,7 @@ import Image from "react-bootstrap/Image";
 import EditForm from "../components/EditForm";
 import Navbar from "../components/Navbar";
 import "./Signup.css";
+import Background from "../assets/images/blurred-background.jpg";
 
 class Edit extends Component {
   state = {
@@ -47,8 +48,17 @@ class Edit extends Component {
   //   };
 
   render() {
+    const style ={
+      minWidth: "100vw",
+      minHeight: "100vh",
+      backgroundImage: `url(${Background})`,
+      backgroundSize:'cover',
+      backgroundRepeat: 'no-repeat',
+      margin: 0,
+    };
     return (
-      <div>
+      <div
+         style={style}>
         {/* <Container style={{ marginTop: 20, height: "100vh" }}> */}
         <Row>
           <Col size="md-6">

@@ -19,6 +19,9 @@ function Navbar() {
         <a className="nav-item nav-link navbar-brand" href="/edit">
             <i class="fas fa-edit"></i>
         </a>
+        {/* <a className="nav-item nav-link navbar-brand">
+            <i class="fas fa-sign-out-alt"></i>
+        </a> */}
     </nav>
   );
 }
