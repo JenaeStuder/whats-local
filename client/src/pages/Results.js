@@ -76,7 +76,7 @@ class Results extends Component {
   // };
 
   render(props) {
-    console.log(this.props.history)
+    console.log(this.props)
     return (
       <div>
         <Container>

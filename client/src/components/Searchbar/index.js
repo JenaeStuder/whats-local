@@ -47,11 +47,11 @@ class Searchbar extends Component {
         userName: res.data.username,
         upcoming: ""
       });
-      this.props.history.push(`/results/${searchName}`);
+      // this.props.history.push(`/results/${searchName}`);
       // this.redirect();
       // <Redirect to={{
       //       pathname: '/results',
-      //       // state: { results: this.state.results }
+      //       state: { results: this.state.results }
       //     }}/>
     })
     .catch(err => console.log(err));
@@ -86,9 +86,10 @@ class Searchbar extends Component {
             </span>
           </div>
         </form>
-        {/* {this.state.userName &&
-          <Redirect to={{pathname: '/results'}}/>
-        } */}
+        {this.state.userName &&
+          <Redirect to={{pathname: '/results',
+          state: { results: this.state.results }}}/>
+        }
       </div >
     )
   }

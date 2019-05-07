@@ -59,6 +59,7 @@ class Profile extends Component {
   render() {
     const { user } = this.props.auth;
     console.log({ user });
+    console.log(this.state);
     return (
       <div className="Profile">
         <div>
@@ -83,7 +84,7 @@ class Profile extends Component {
                       <Col md={12}>
                         <Row>
                           <Col xs={12} md={6} className="PicColumn">
-                            <img src={this.state.profilePicture}></img>
+                            <img className="PicColumn" src={this.state.profilePicture}></img>
                             {/* <ProfilePicture src={this.state.profilePicture} /> */}
                           </Col>
                           <Col xs={12} md={6}>
