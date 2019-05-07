@@ -16,8 +16,12 @@ import UpdateItem from "../components/UpdateItem";
 import "./Profile.css";
 import Brand from "../components/Brand";
 import jwt_decode from "jwt-decode";
-import Loader from "../components/Loader";
-import Jumbotron from "react-bootstrap/Jumbotron"
+import Spinner from 'react-bootstrap/Spinner';
+import Jumbotron from "react-bootstrap/Jumbotron";
+<<<<<<< HEAD
+import Background from "../assets/images/beach-blur.jpg";
+=======
+>>>>>>> ae697f552ff8cab6471a9743d237a0082cbdc452
 
 class Profile extends Component {
   state = {
@@ -39,6 +43,7 @@ class Profile extends Component {
 
   loadProfile = () => {
     API.getProfile(this.state.user_id)
+    // API.getProfile("5cc7586200313ddafcc3e004")
       .then(res => {
         console.log(res);
 
@@ -58,11 +63,26 @@ class Profile extends Component {
 
   render() {
     const { user } = this.props.auth;
-    console.log({ user });
+<<<<<<< HEAD
+    const style ={
+      minWidth: "100vw",
+      minHeight: "100vh",
+      backgroundImage: `url(${Background})`,
+      backgroundSize:'cover',
+      backgroundRepeat: 'no-repeat',
+      margin:0,
+    };
+    console.log( );
+    return (
+      <div className="Profile"
+      style={style}>
+=======
+    console.log( );
     return (
       <div className="Profile">
-        <div>
-         
+>>>>>>> ae697f552ff8cab6471a9743d237a0082cbdc452
+        <div className="row no-margin">
+          
             <Row className="search-row">
               <Col xs={4} md={4}>
                 <Brand />
@@ -71,20 +91,23 @@ class Profile extends Component {
                 <Searchbar />
               </Col>
             </Row>
+            </div>
             <br />
-            
+            <div>
             <Container>
                 <Row>
                 <Jumbotron className="ProfileInfo">
-                <Col sx={1}>
-                  <Col xs={10}>
+                {/* <Col sx={1}> */}
+                  <Col xs={12}>
                     <Row>
                       {/* Row that contains the profile picture, Artist name, social media, bio, and updates. */}
                       <Col md={12}>
                         <Row>
                           <Col xs={12} md={6} className="PicColumn">
-                            <ProfilePicture image={this.state.profilePicture} />
+                            <img src={this.state.profilePicture}></img>
+                            {/* <ProfilePicture src={this.state.profilePicture} /> */}
                           </Col>
+                         
                           <Col xs={12} md={6}>
                             <Row className="InfoSection" id="info-border-wrap">
                               {/* <h6>Name</h6> */}
@@ -111,7 +134,7 @@ class Profile extends Component {
                         </Row>
                       </Col>
                       
-                      <Row>
+                      <Row className="Update-Row">
                         <Col xs={1} />
                         <Col
                           sm={10}
@@ -137,8 +160,8 @@ class Profile extends Component {
                       </Row>
                     </Row>
                   </Col>
-                </Col>
-                <Col xs={1} />
+                {/* </Col>
+                <Col xs={1} /> */}
               {/* </Row> */}
               </Jumbotron>
               <br />
@@ -148,7 +171,7 @@ class Profile extends Component {
                   <Col xs={10}>
                     {this.state.loading ? (
                       <div>
-                        {this.state.mediaClips.map(item => {
+                        {this.state.mediaClips.map((item, index) => {
                           const newURL = item.replace(/ /g, "%20");
                           const mediaTypeParse = newURL.split(".");
                           const mediaTypeExt =
@@ -177,18 +200,18 @@ class Profile extends Component {
                             mediaClassification = "audio";
                           }
                           return (
-                            <Col xs={12} md={4}>
-                              <MediaClips
+                            <Col>
+                            <MediaClips
                                 media={this.state.mediaClips}
-                                mediaType={mediaClassification}
+                                mediatype={mediaClassification}
                                 url={newURL}
-                              />
+                            />                              
                             </Col>
                           );
                         })}
                       </div>
                     ) : (
-                      <Loader />
+                      <Spinner animation="grow"/>
                     )}
                   </Col>
                   <Col xs={1} />
@@ -199,12 +222,15 @@ class Profile extends Component {
             <br />
           </Container>
         </div>
-        <Row>
+        
+       
+        
           <Col size="md-12" id="navbar">
             <Navbar />
           </Col>
-        </Row>
-      </div>
+        
+        </div>
+      
     );
   }
 }

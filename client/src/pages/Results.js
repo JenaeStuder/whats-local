@@ -6,8 +6,11 @@ import Row from "react-bootstrap/Row";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
 import Brand from "../components/Brand";
-import Loader from "../components/Loader";
-import "./Results.css";
+import Spinner from "react-bootstrap/Spinner";
+<<<<<<< HEAD
+import Background from "../assets/images/buildings-cars.jpg";
+=======
+>>>>>>> ae697f552ff8cab6471a9743d237a0082cbdc452
 
 class Results extends Component {
   state = {
@@ -27,87 +30,57 @@ class Results extends Component {
   //     ).catch(err => console.log(err));
   // };
 
-  render(props) {
-    return (
-      <div>
-        <Container>
-          <div className="Results">
-            <Row className="search-row">
-              <Col xs={4} md={4}>
-                <Brand />
-              </Col>
-              <Col xs={8} md={8} id="search">
-                <Searchbar />
-              </Col>
-            </Row>
-
-            {this.state.loading ? (
-              <Row>
-                <Col size="md-6">
-                  <div>
-                    findArtist
-                    {this.state.results}
-                  </div>
-                </Col>
-                <Col size="md-6">
-                  <div>{this.state.results}</div>
-                </Col>
-              </Row>
-            ) : (
-              <h3>
-                We're sorry, your search did not return any results. Try again
-                later!
-              </h3>
-            )}
-          </div>
-        </Container>
-        <Navbar />
-      </div>
-    );
-  }
-
-  // loadResults = () => {
-  //     API.getResults().then(res =>
-  //         this.setState({
-  //             results: res.data,
-  //             loading: false
-  //         })
-  //     ).catch(err => console.log(err));
-  // };
 
   render(props) {
+<<<<<<< HEAD
+    const style ={
+      minWidth: "100vw",
+      minHeight: "100vh",
+      backgroundImage: `url(${Background})`,
+      backgroundSize:'cover',
+      backgroundRepeat: 'no-repeat'
+    };
+    return (
+      <div style={style}>
+=======
     return (
       <div>
-        <Container>
+>>>>>>> ae697f552ff8cab6471a9743d237a0082cbdc452
+        <div className="row no-gutters">
+          <Row className="search-row">
+            <Col xs={4} md={4}>
+              <Brand />
+            </Col>
+            <Col xs={8} md={8} id="search">
+              <Searchbar />
+            </Col>
+          </Row>
+        </div>
+        
+          
           <div className="Results">
-            <Row className="search-row">
-              <Col xs={4} md={4}>
-                <Brand />
+          <Container>
+            {this.state.loading ?( <Row>
+              <Col size="md-6">
+                <div>
+                  findArtist
+                            {this.state.results}
+                </div>
               </Col>
-              <Col xs={8} md={8} id="search">
-                <Searchbar />
+              <Col size="md-6">
+                <div>
+                  {this.state.results}
+                </div>
               </Col>
-            </Row>
-            {this.state.loading ? (
-              <Row>
-                <Col size="md-6">
-                  <div>{this.state.results}</div>
-                </Col>
-                <Col size="md-6">
-                  <div>{this.state.results}</div>
-                </Col>
-              </Row>
-            ) : (
-              <h5 className="sorry">
-                Sorry, no results. Try searching for something else.
-              </h5>
-            )}
+            </Row>) : (<Spinner animation="grow" />)}
+            </Container>
           </div>
-        </Container>
+       
         <Navbar />
-      </div>
-    );
-  }
-}
+
+      </div >
+
+    )
+  }};
 
 export default Results;

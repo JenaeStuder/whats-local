@@ -10,6 +10,7 @@ import Favorites from "../components/Favorites";
 import waves from "../images/vertical-waves.png";
 import "./User.css";
 import Brand from "../components/Brand";
+import Background from "../assets/images/blur-lights.jpg";
 
 //import Favorites from "../components/favorites";
 
@@ -23,18 +24,30 @@ class normalUser extends Component {
   };
 
   render() {
+    const style ={
+      minWidth: "100vw",
+      minHeight: "100vh",
+      backgroundImage: `url(${Background})`,
+      backgroundSize:'cover',
+      backgroundRepeat: 'no-repeat'
+    };
     return (
-      <div>
-        <div className="user">
+      <div
+         style={style}>
+        
+          <div className="row no-gutters">
+          
+          <Row className="search-row">
+            <Col xs={4} md={4}>
+              <Brand />
+            </Col>
+            <Col xs={8} md={8} id="search">
+              <Searchbar />
+            </Col>
+          </Row>
+          </div>
+          <div className="user">
           <Container>
-            <Row className="search-row">
-              <Col xs={4} md={4}>
-                <Brand />
-              </Col>
-              <Col xs={8} md={8} id="search">
-                <Searchbar />
-              </Col>
-            </Row>
 
             <Row>
               <Col size="md-12" id="header">
