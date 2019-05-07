@@ -34,11 +34,20 @@ class Results extends Component {
   // };
 
   render(props) {
+
+    const style ={
+      minWidth: "100vw",
+      minHeight: "100vh",
+      backgroundImage: `url(${Background})`,
+      backgroundSize:'cover',
+      backgroundRepeat: 'no-repeat'
+    };
     return (
-      <div>
-        <Container>
-          <div className="Results">
-            <Row className="search-row">
+      
+        <div style={style}>
+
+        <div className="row no-gutters">
+          <Row className="search-row">
               <Col xs={4} md={4}>
                 <Brand />
               </Col>
@@ -46,8 +55,11 @@ class Results extends Component {
                 <Searchbar />
               </Col>
             </Row>
+            </div>
 
-
+ 
+            <div className="Results">
+          <Container>
             {this.state.loading ? (
               <Row>
                 <Col size="md-6">
@@ -66,9 +78,12 @@ class Results extends Component {
                 later!
               </h3>
             )}
-          </div>
+         
         </Container>
+        
         <Navbar />
+        </div>
+      
       </div>
     );
   }
@@ -82,68 +97,56 @@ class Results extends Component {
   //     ).catch(err => console.log(err));
   // };
 
-  render(props) {
-    console.log(this.props)
+  // render(props) {
+  //   console.log(this.props)
 
 
-    const style ={
-      minWidth: "100vw",
-      minHeight: "100vh",
-      backgroundImage: `url(${Background})`,
-      backgroundSize:'cover',
-      backgroundRepeat: 'no-repeat'
-    };
 
-    return (
-      <div style={style}>
-
-        <div className="row no-gutters">
-          <Row className="search-row">
-            <Col xs={4} md={4}>
-              <Brand />
-            </Col>
-            <Col xs={8} md={8} id="search">
-              <Searchbar />
-            </Col>
-          </Row>
-        </div>
+    // return (
+     
+    //         <Col xs={4} md={4}>
+    //           <Brand />
+    //         </Col>
+    //         <Col xs={8} md={8} id="search">
+    //           <Searchbar />
+    //         </Col>
+    //       </Row>
+    //     </div>
         
-          
-          <div className="Results">
-          <Container>
-            {this.state.loading ?( <Row>
-              <Col size="md-6">
-                <div>
-                  findArtist
-                            {this.state.results}
-                </div>
-              </Col>
-              <Col size="md-6">
-                <div>
-                  {this.state.results}
-                </div>
-              </Col>
+         
+    //         {this.state.loading ?( <Row>
+    //           <Col size="md-6">
+    //             <div>
+    //               findArtist
+    //                         {this.state.results}
+    //             </div>
+    //           </Col>
+    //           <Col size="md-6">
+    //             <div>
+    //               {this.state.results}
+    //             </div>
+    //           </Col>
 
-            </Row>
-            {this.state.loading ? (
-              <Row>
-                <Col size="md-6">
-                  <div>{this.state.results}</div>
-                </Col>
-                <Col size="md-6">
-                  <div>{this.state.results}</div>
-                </Col>
+    //         </Row>
+    //         {this.state.loading ? (
+    //           <Row>
+    //             <Col size="md-6">
+    //               <div>{this.state.results}</div>
+    //             </Col>
+    //             <Col size="md-6">
+    //               <div>{this.state.results}</div>
+    //             </Col>
       
-            </Row>) : (<Spinner animation="grow" />)}
-            </Container>
+    //         </Row>) : (<Spinner animation="grow" />)}
+    //         </Container>
 
-          </div>
+    //       </div>
        
-        <Navbar />
+    //     <Navbar />
 
-      </div >
+    //   </div >
 
-    )
-  }};
+    // )
+  };
 
 export default Results;
