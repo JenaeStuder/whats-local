@@ -6,7 +6,7 @@ import Col from "../Col";
 import "./style.css";
 
 function Favorites() {
-  //This is just an example array for now
+  //Example array for now
   var favesArray = ["Artie the Great", "Jenae Sunflower", "TonyTony"];
 
   return (

@@ -13,7 +13,6 @@ import Loader from "../components/Loader";
 
 import Background from "../assets/images/brick-wall.jpg";
 
-
 import Brand from "../components/Brand";
 
 class MainPage extends Component {
@@ -38,9 +37,6 @@ class MainPage extends Component {
       <div className="MainPage"
       style={style}
       >
-
-    return (
-      <div className="MainPage">
 
         
         <div className="row no-gutters">
