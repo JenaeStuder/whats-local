@@ -99,7 +99,7 @@ function SignUpForm(props) {
         options={["Yes", "No"]}
       />
       <Button
-        className="btn btn-dark btn-lg btn-block"
+        className="btn"
         id="signup"
         type="submit"
         //onClick=""
@@ -109,7 +109,7 @@ function SignUpForm(props) {
       <label>Already have an Account?</label>
 
       <Button
-        className="btn btn-dark btn-lg btn-block"
+        className="btn"
         id="signup"
         // type="submit"
         action={submitFunc}

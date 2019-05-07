@@ -7,10 +7,7 @@ import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
 import Brand from "../components/Brand";
 import Spinner from "react-bootstrap/Spinner";
-<<<<<<< HEAD
 import Background from "../assets/images/buildings-cars.jpg";
-=======
->>>>>>> ae697f552ff8cab6471a9743d237a0082cbdc452
 
 class Results extends Component {
   state = {
@@ -32,7 +29,6 @@ class Results extends Component {
 
 
   render(props) {
-<<<<<<< HEAD
     const style ={
       minWidth: "100vw",
       minHeight: "100vh",
@@ -42,10 +38,6 @@ class Results extends Component {
     };
     return (
       <div style={style}>
-=======
-    return (
-      <div>
->>>>>>> ae697f552ff8cab6471a9743d237a0082cbdc452
         <div className="row no-gutters">
           <Row className="search-row">
             <Col xs={4} md={4}>

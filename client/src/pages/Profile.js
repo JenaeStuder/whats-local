@@ -18,10 +18,7 @@ import Brand from "../components/Brand";
 import jwt_decode from "jwt-decode";
 import Spinner from 'react-bootstrap/Spinner';
 import Jumbotron from "react-bootstrap/Jumbotron";
-<<<<<<< HEAD
 import Background from "../assets/images/beach-blur.jpg";
-=======
->>>>>>> ae697f552ff8cab6471a9743d237a0082cbdc452
 
 class Profile extends Component {
   state = {
@@ -63,7 +60,6 @@ class Profile extends Component {
 
   render() {
     const { user } = this.props.auth;
-<<<<<<< HEAD
     const style ={
       minWidth: "100vw",
       minHeight: "100vh",
@@ -76,11 +72,6 @@ class Profile extends Component {
     return (
       <div className="Profile"
       style={style}>
-=======
-    console.log( );
-    return (
-      <div className="Profile">
->>>>>>> ae697f552ff8cab6471a9743d237a0082cbdc452
         <div className="row no-margin">
           
             <Row className="search-row">
