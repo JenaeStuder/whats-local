@@ -1,9 +1,10 @@
-import React, {Component} from "react";
+import React, { Component, backgroundImage } from "react";
+import { Link, withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { registerUser } from "../actions/authActions";
+import classnames from "classnames";
 import SignUpForm from "../components/SignUpForm";
-//import Container from "../components/Container";
-//import Row from "../components/Row";
-//import Col from "../components/Col";
-//import Jumbotron from "../components/Jumbotron";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
@@ -12,61 +13,229 @@ import Row from "react-bootstrap/Row";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
-import './Signup.css';
+import "./Signup.css";
+import Brand from "../components/Brand";
+import Background from "../assets/images/asphalt.jpg";
+// import BackgroundImage from "../components/BackgroundImage"
+
+
 
 class SignUp extends Component {
-
-    state = {
-        fullName: "",
-        username: "",
-        password: "",
-        zipcode: "",
-    }
-
-    handleInputChange = event => {
-        const { name, value } = event.target;
-        this.setState({
-          [name]: value
-        });
+  constructor(props) {
+    super(props);
+    this.state = {
+      userName: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      password2: "",
+      zipCode: "",
+      userType: "",
+      errors: {}
     };
+  }
 
-    // handleFormSubmit = event => {
-    //     event.preventDefault();
-    //     if (this.state.title && this.state.author) {
-    //       API.saveBook({
-    //         title: this.state.title,
-    //         author: this.state.author,
-    //         synopsis: this.state.synopsis
-    //       })
-    //         .then(res => this.loadBooks())
-    //         .catch(err => console.log(err));
-    //     }
-    //   };
-    
-    
-    render() {
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({
+        errors: nextProps.errors
+      });
+    }
+  }
 
+  onChange = e => {
+    this.setState({ [e.target.id]: e.target.value });
+  };
+
+  onSubmit = e => {
+    e.preventDefault();
+    const newUser = {
+      userName: this.state.userName,
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      email: this.state.email,
+      password: this.state.password,
+      password2: this.state.password2,
+      zipCode: this.state.zipCode,
+      userType: this.state.userType
+    };
+    console.log(newUser);
+    this.props.registerUser(newUser, this.props.history);
+  };
+
+  render() {
+    const { errors } = this.state;
+    const style ={
+      minWidth: "100vw",
+      minHeight: "100vh",
+      backgroundImage: `url(${Background})`,
+      backgroundSize:'cover',
+      backgroundRepeat: 'no-repeat'
+    };
     return (
+      <div
+         style={style}>
+        {/* <BackgroundImage> */}
+        <Container>
+        <Row className= "BrandRow">
+          <Brand/>
+        </Row>
+        <Row className="FormRow">
+          <Col size="md-6">
 
-        <div>
-            <Container style={{ marginTop: 20, height: "100vh"}}>
-                    <Row>
-                        <Col size="md-6">
-                            <h1 id="title">what's</h1>
-                            <h1 id="title">local?</h1>
-                            <p id="subtitle">Sign Up</p>
-                            <Card>
-                            <SignUpForm/>
-                            </Card>
-                        </Col>  
-                    </Row>
-            </Container>
-            {/* <Container>
+            {/* <div class="jumbotron jumbotron-fluid whats-local-jumbo"> */}
+              <h1 id="title">what's local</h1>
+              {/* <h1 id="title">local</h1> */}
+            {/* </div> */}
+
+            <p id="subtitle">Join the community !</p>
+            <p id="subtitle">(it's long, but it's worth it)</p>
+            <Card>
+              <form noValidate onSubmit={this.onSubmit} className="signup">
+                <div className="form-group">
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.email}
+                    error={errors.email}
+                    id="email"
+                    placeholder="Email Address"
+                    type="email"
+                    className={classnames("form-control", {
+                      invalid: errors.email
+                    })}
+                  />
+                  <span className="red-text">{errors.email}</span>
+                </div>
+                <div className="form-group">
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.userName}
+                    error={errors.userName}
+                    id="userName"
+                    placeholder="User Name"
+                    type="text"
+                    className={classnames("form-control", {
+                      invalid: errors.userName
+                    })}
+                  />
+                  <span className="red-text">{errors.userName}</span>
+                </div>
+                <div className="form-group">
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.firstName}
+                    error={errors.firstName}
+                    id="firstName"
+                    placeholder="First Name"
+                    type="text"
+                    className={classnames("form-control", {
+                      invalid: errors.firstName
+                    })}
+                  />
+                  <span className="red-text">{errors.firstName}</span>
+                </div>
+                <div className="form-group">
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.lastName}
+                    error={errors.lastName}
+                    id="lastName"
+                    placeholder="Last Name"
+                    type="text"
+                    className={classnames("form-control", {
+                      invalid: errors.lastName
+                    })}
+                  />
+                  <span className="red-text">{errors.lastName}</span>
+                </div>
+                <div className="form-group">
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.password}
+                    error={errors.password}
+                    id="password"
+                    placeholder="Password"
+                    type="password"
+                    className={classnames("form-control", {
+                      invalid: errors.password
+                    })}
+                  />
+                  <span className="red-text">{errors.password}</span>
+                </div>
+                <div className="form-group">
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.password2}
+                    error={errors.password2}
+                    id="password2"
+                    placeholder="Confirm Password"
+                    type="password"
+                    className={classnames("form-control", {
+                      invalid: errors.password2
+                    })}
+                  />
+                  <span className="red-text">{errors.password2}</span>
+                </div>
+                <div className="form-group">
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.zipCode}
+                    error={errors.zipCode}
+                    id="zipCode"
+                    placeholder="Zip Code"
+                    type="text"
+                    className={classnames("form-control", {
+                      invalid: errors.zipCode
+                    })}
+                  />
+                  <span className="red-text">{errors.zipCode}</span>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="userType">Are You an Artist?</label>
+                  <select
+                    onChange={this.onChange}
+                    value={this.state.userType}
+                    error={errors.userType}
+                    id="userType"
+                    placeholder="Choose One..."
+                    className={classnames("form-control", {
+                      invalid: errors.userType
+                    })}
+                  >
+                    <option value="" disabled>Choose One...</option>
+                    <option value={true}>Yes</option>
+                    <option value={false}>No</option>
+                  </select>
+                  <span className="red-text">{errors.userType}</span>
+                </div>
+                <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+                  <button
+                    style={{
+                      width: "150px",
+                      borderRadius: "3px",
+                      letterSpacing: "1.5px",
+                      marginTop: "1rem"
+                    }}
+                    type="submit"
+                    className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                  >
+                    Sign up
+                </button>
+                </div>
+                <a id="subtitle" href="/login">Already have an Account? </a>
+              </form>
+            </Card>
+          </Col>
+        </Row>
+
+
+        {/* <Container>
                 <Row>
                     {/* <Col className="image">
                 
                     </Col> */}
-                    {/* <Col>
+        {/* <Col>
                     <Jumbotron fluid>
                             <Container>
                                 <h1>what's local?</h1>
@@ -132,11 +301,20 @@ class SignUp extends Component {
                         </Card>
                     </Col>
                 </Row>
-            </Container> */} 
-        </div>
+            </Container> */}
+            </Container>
+            {/* </BackgroundImage> */}
+      </div>
     );
-    }
+  }
 }
 
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
 
-export default SignUp;
+export default connect(
+  mapStateToProps,
+  { registerUser }
+)(withRouter(SignUp));

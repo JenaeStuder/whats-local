@@ -1,0 +1,9 @@
+.media{
+    border: 2px solid black;
+    height: 300px;
+    width: 300px;
+    content: center;
+    margin: 5%;
+    padding: 2%;
+    border: 3%
+}

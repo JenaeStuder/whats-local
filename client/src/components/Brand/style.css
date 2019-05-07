@@ -1,0 +1,40 @@
+   
+ h4{
+    background: -webkit-linear-gradient(#82d9ee, #49a0b5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    /* color: linear-gradient(-10deg,,); */
+    font-family: urbanjungle;
+    /* height: 100%;
+    width: 100%; */
+    font-size: 55px;
+    /* padding: 0 0 0 10%;  */
+    z-index: 1;
+    margin-top: 2vh;
+    margin-left:0px;
+    margin-right: 0px;
+    padding-left: 20%;
+    /* margin-left: 20%; */
+ }
+    #logobtn{
+   /* height: 60%;
+    width:30%;
+    background-color: white;
+    box-shadow: 5px 5px lightgrey; */
+    /* background-color: rgb( 54, 78, 78, .9); */
+    /* margin: 1%;
+    padding:1%;
+    border-radius: 10px 30px; */
+    /* margin: 6% 0 0 8%; */
+    }
+/* h4:hover {
+  background-color: darkslategrey;
+} */
+a:link {
+  text-decoration: none;
+}
+
+@font-face {
+    font-family: urbanjungle;
+    src: url(../../assets/fonts/urbanjungledemo-webfont.woff);
+}

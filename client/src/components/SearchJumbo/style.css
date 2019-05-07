@@ -1,24 +1,46 @@
 .jumbo-image {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    text-align: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin-bottom: 2%;
 }
 
 .button-title {
-    font-family: "Playfair Display", serif;
-    text-shadow: -2px -2px 1px black, -2px -2px 1px black, -2px -2px 1px black, -2px -2px 1px black;
+  font-family: "Playfair Display", serif;
+  text-shadow: -2px -2px 1px black, -2px -2px 1px black, -2px -2px 1px black,
+    -2px -2px 1px black;
 }
 
 .card {
-    background-color: transparent;
-    border: transparent;
+  background-color: transparent;
+  border: transparent;
+  color: white;
 }
 
 .display-4 {
-    font-family: "Fredericka the Great", cursive;
+  font-family: "Fredericka the Great", cursive;
+  color: white;
 }
 
 .search-jumbo-button {
-    float: none;
+  float: none;
+  background-color: transparent;
+  color: white;
+  text-shadow: 1.5px 1.5px 1.5px #000;
+}
+#jumbotron {
+  /* box-shadow: 5px 5px rgb(255, 255, 255, .5); */
+  color: white;
+  text-align: center;
+}
+
+.modal-title {
+  position: relative;
+  text-align: center;
+  padding-top: 1em;
+}
+
+.modal-footer {
+  background-color: #49a0b5;
 }

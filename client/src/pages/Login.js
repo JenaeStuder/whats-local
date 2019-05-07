@@ -1,4 +1,9 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { loginUser } from "../actions/authActions";
+import classnames from "classnames";
 import LoginForm from "../components/LoginForm";
 import Container from "../components/Container";
 //import Row from "../components/Row";
@@ -12,127 +17,148 @@ import Row from "react-bootstrap/Row";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
-import './Signup.css';
+import "./Signup.css";
+import Background from "../assets/images/blurred.jpg";
+
 
 class Login extends Component {
+  constructor() {
+    super();
+    this.state = {
+      email: "",
+      password: "",
+      errors: {}
+    };
+  }
 
-    state = {
-        username: "",
-        password: ""
+  componentDidMount() {
+    // If logged in and user navigates to Login page, should redirect them to dashboard
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/profile");
     }
+  }
 
-    handleInputChange = event => {
-        const { name, value } = event.target;
-        this.setState({
-          [name]: value
-        });
-      };
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.auth.isAuthenticated) {
+      this.props.history.push("/profile"); // push user to dashboard when they login
+    }
+    if (nextProps.errors) {
+      this.setState({
+        errors: nextProps.errors
+      });
+    }
+  }
 
-    //   handleFormSubmit = event => {
-    //     event.preventDefault();
-    //     if (this.state.title && this.state.author) {
-    //       API.saveBook({
-    //         title: this.state.title,
-    //         author: this.state.author,
-    //         synopsis: this.state.synopsis
-    //       })
-    //         .then(res => this.loadBooks())
-    //         .catch(err => console.log(err));
-    //     }
-    //   };
-    
-    render() {
+  onChange = e => {
+    this.setState({ [e.target.id]: e.target.value });
+  };
+  onSubmit = e => {
+    e.preventDefault();
+    const userData = {
+      email: this.state.email,
+      password: this.state.password
+    };
+    this.props.loginUser(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
+  };
+
+  render() {
+    const { errors } = this.state;
+    const style ={
+      minWidth: "100vw",
+      minHeight: "100vh",
+      backgroundImage: `url(${Background})`,
+      backgroundSize:'cover',
+      backgroundRepeat: 'no-repeat',
+      opacity: .9,
+    };
     return (
-
-        <div>
-            {/* <Container style={{ marginTop: 20, height: "100vh"}}> */}
-                    <Row>
-                        <Col size="md-6">
-                            <h1 id="title">what's</h1>
-                            <h1 id="title">local?</h1>
-                            <p id="subtitle">Login</p>
-                            <Card>
-                            <LoginForm/>
-                            </Card>
-                        </Col>  
-                    </Row>
-            {/* </Container> */}
-            {/* <Container>
-                <Row>
-                    {/* <Col className="image">
-                
-                    </Col> */}
-                    {/* <Col>
-                    <Jumbotron fluid>
-                            <Container>
-                                <h1>what's local?</h1>
-                                <h3>
-                                    Sign Up
-                                </h3>
-                            </Container>
-                    </Jumbotron>
-                    <Card>
-                        <Card.Body>
-                        <Form>
-                            <Form.Row>
-                                <Form.Group as={Col} controlId="formGridEmail">
-                                    <Form.Label>Full Name</Form.Label>
-                                    <Form.Control type="text" placeholder="Full Name" />
-                                </Form.Group>
-
-                                <Form.Group as={Col} controlId="formGridPassword">
-                                    <Form.Label>Password</Form.Label>
-                                    <Form.Control type="password" placeholder="Password" />
-                                </Form.Group>
-                            </Form.Row>
-
-                            <Form.Group controlId="formGridAddress1">
-                                <Form.Label>Address</Form.Label>
-                                <Form.Control placeholder="1234 Main St" />
-                            </Form.Group>
-
-                            <Form.Group controlId="formGridAddress2">
-                                <Form.Label>Address 2</Form.Label>
-                                <Form.Control placeholder="Apartment, studio, or floor" />
-                            </Form.Group>
-
-                            <Form.Row>
-                                <Form.Group as={Col} controlId="formGridCity">
-                                    <Form.Label>City</Form.Label>
-                                    <Form.Control />
-                                </Form.Group>
-
-                                <Form.Group as={Col} controlId="formGridState">
-                                    <Form.Label>State</Form.Label>
-                                    <Form.Control as="select">
-                                        <option>Choose...</option>
-                                        <option>...</option>
-                                    </Form.Control>
-                                </Form.Group>
-
-                                <Form.Group as={Col} controlId="formGridZip">
-                                    <Form.Label>Zip</Form.Label>
-                                    <Form.Control />
-                                </Form.Group>
-                            </Form.Row>
-
-                            <Form.Group id="formGridCheckbox">
-                                <Form.Check type="checkbox" label="Check me out" />
-                            </Form.Group>
-
-                            <Button variant="primary" type="submit">
-                                Submit
-                            </Button>
-                        </Form>
-                        </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
-            </Container> */} 
-        </div>
+      <div style={style}>
+        <Row>
+          <Col size="md-6">
+            <div >
+              <h1 id="title">what's</h1>
+              <h1 id="title">local</h1>
+            </div>
+            <p id="subtitle">We missed you</p>
+            <Card>
+              <form noValidate onSubmit={this.onSubmit}>
+                <div className="form-group">
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.email}
+                    error={errors.email}
+                    id="email"
+                    type="email"
+                    placeholder="Enter your Email"
+                    className={classnames("form-control", {
+                      invalid: errors.email || errors.emailnotfound
+                    })}
+                  />
+                  <span className="red-text">
+                    {errors.email}
+                    {errors.emailnotfound}
+                  </span>
+                </div>
+                <div className="form-group">
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.password}
+                    error={errors.password}
+                    id="password"
+                    type="password"
+                    placeholder="Enter your Password"
+                    className={classnames("form-control", {
+                      invalid: errors.password || errors.passwordincorrect
+                    })}
+                  />
+                  <span className="red-text">
+                    {errors.password}
+                    {errors.passwordincorrect}
+                  </span>
+                </div>
+                <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+                  <button
+                    style={{
+                      width: "150px",
+                      borderRadius: "3px",
+                      letterSpacing: "1.5px",
+                      marginTop: "1rem"
+                    }}
+                    type="submit"
+                    className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                  >
+                    Login
+                  </button>
+                </div>
+                <a id="subtitle" href="/signup">Don't have an Account? </a>
+                {/* <Button
+                  className="btn btn-dark btn-lg btn-block"
+                  id="signup"
+                  type="submit"
+                  //onClick=""
+                  title="Signup"
+                /> */}
+                <div class="g-signin2" data-onsuccess="onSignIn" />
+              </form>
+            </Card>
+          </Col>
+        </Row>
+      </div>
     );
- }
+  }
 }
-
-
-export default Login;
+Login.propTypes = {
+  loginUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired,
+  user: PropTypes.object.isRequired
+};
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors,
+  user: state.user
+});
+export default connect(
+  mapStateToProps,
+  { loginUser }
+)(Login);
