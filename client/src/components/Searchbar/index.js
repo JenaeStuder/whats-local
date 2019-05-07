@@ -22,15 +22,48 @@ class Searchbar extends Component {
   // componentWillReceiveProps() {
   //     this.props.history.push("/results"); // push user to dashboard when they login
   // }
-
+  redirect(){
+    window.location.href="/results";
+  }
   onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
 
   onSubmit = e => {
     e.preventDefault();
-    // API.searchArtist(this.state.searchName)
-    console.log("clicked")
+    // 
+    const searchName = this.state.searchName;
+    API.getProfile("5cbfc709d05c151404c087cd")
+    .then(res => {
+      console.log(res);
+
+      this.setState({
+        firstName: res.data.firstName,
+        lastName: res.data.lastName,
+        socialMediaHandles: res.data.socialMediaHandles,
+        bio: res.data.bio,
+        profilePicture: res.data.profilePicture,
+        mediaClips: res.data.media,
+        userName: res.data.username,
+        upcoming: ""
+      });
+      // this.props.history.push(`/results/${searchName}`);
+      // this.redirect();
+      // <Redirect to={{
+      //       pathname: '/results',
+      //       state: { results: this.state.results }
+      //     }}/>
+    })
+    .catch(err => console.log(err));
+    // API.searchArtist({
+    //   searchName: this.state.searchName
+    // })
+    //   .then(res => <Redirect to={{
+    //     pathname: '/results',
+    //     state: { results: this.state.results }
+    //   }}/>)
+    //   .catch(err => console.log(err));
+    console.log("clicked");
   }
 
   render() {
@@ -48,16 +81,14 @@ class Searchbar extends Component {
             />
             <span className="input-group-btn">
               <button className="btn btn-light" type="submit">
-                <i className="fa fa-search fa-fw" />
+                <i className="fa fa-search fa-fw"/>
               </button>
             </span>
           </div>
         </form>
-        {this.state.results.length > 0 &&
-          <Redirect to={{
-            pathname: '/results',
-            state: { results: this.state.results }
-          }}/>
+        {this.state.userName &&
+          <Redirect to={{pathname: '/results',
+          state: { results: this.state.results }}}/>
         }
       </div >
     )
