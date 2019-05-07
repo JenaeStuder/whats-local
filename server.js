@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 // const users = require("./routes/api/users");
 const routes = require("./routes");
-
+const path = require("path");
 const app = express();
 
 // Bodyparser middleware
