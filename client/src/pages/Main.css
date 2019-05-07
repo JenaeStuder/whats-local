@@ -1,5 +1,9 @@
 body {
+<<<<<<< HEAD
     /* background:url('https://i.imgur.com/UMnw0tW.jpg'); */
+=======
+    background:url('https://i.imgur.com/UMnw0tW.jpg');
+>>>>>>> ae697f552ff8cab6471a9743d237a0082cbdc452
     /* background-position:center center; */
     min-width: 100vw;
     min-height: 100vh;

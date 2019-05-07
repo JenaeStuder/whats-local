@@ -10,7 +10,11 @@ import Navbar from "../components/Navbar";
 import Suggestions from "../components/Suggestions";
 // import UserUpdates from "../componentsUserUpdates";
 import Loader from "../components/Loader";
+<<<<<<< HEAD
 import Background from "../assets/images/brick-wall.jpg";
+=======
+
+>>>>>>> ae697f552ff8cab6471a9743d237a0082cbdc452
 import Brand from "../components/Brand";
 
 class MainPage extends Component {
@@ -22,6 +26,7 @@ class MainPage extends Component {
   // }
 
   render() {
+<<<<<<< HEAD
     const style ={
       minWidth: "100vw",
       minHeight: "100vh",
@@ -34,6 +39,10 @@ class MainPage extends Component {
       <div className="MainPage"
       style={style}
       >
+=======
+    return (
+      <div className="MainPage">
+>>>>>>> ae697f552ff8cab6471a9743d237a0082cbdc452
         
         <div className="row no-gutters">
           
