@@ -17,6 +17,7 @@ import "./Profile.css";
 import Brand from "../components/Brand";
 import jwt_decode from "jwt-decode";
 import Loader from "../components/Loader";
+import Jumbotron from "react-bootstrap/Jumbotron"
 
 class Profile extends Component {
   state = {
@@ -62,8 +63,8 @@ class Profile extends Component {
     return (
       <div className="Profile">
         <div>
-          <Container>
-            <Row>
+         
+            <Row className="search-row">
               <Col xs={4} md={4}>
                 <Brand />
               </Col>
@@ -72,8 +73,10 @@ class Profile extends Component {
               </Col>
             </Row>
             <br />
-            <Row>
-              <Row className="ProfileInfo">
+            
+            <Container>
+                <Row>
+                <Jumbotron className="ProfileInfo">
                 <Col sx={1}>
                   <Col xs={10}>
                     <Row>
@@ -108,6 +111,7 @@ class Profile extends Component {
                           </Col>
                         </Row>
                       </Col>
+                      
                       <Row>
                         <Col xs={1} />
                         <Col
@@ -136,7 +140,8 @@ class Profile extends Component {
                   </Col>
                 </Col>
                 <Col xs={1} />
-              </Row>
+              {/* </Row> */}
+              </Jumbotron>
               <br />
               <Row className="ProfileMedia">
                 <div>

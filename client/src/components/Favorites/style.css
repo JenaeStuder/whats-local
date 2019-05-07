@@ -38,3 +38,8 @@
 .favorite-header {
   color: #fff;
 }
+
+.fave-artist {
+  font-family: "Abel", sans-serif;
+  font-size: 2.5rem;
+}

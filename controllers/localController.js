@@ -61,7 +61,7 @@ module.exports = {
         .catch(err => res.status(422).json(err))  
   }, 
   removeStorageItem: function(req, res) {
-    db.User.findById({_id: req.params.id}, {$pull:{media:{path: req.body}}})
+    db.User.findById({_id: req.params.id}, {$pull:{media:req.body}})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
 
