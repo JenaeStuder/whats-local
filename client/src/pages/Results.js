@@ -6,8 +6,10 @@ import Row from "react-bootstrap/Row";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
 import Brand from "../components/Brand";
+
 import Spinner from "react-bootstrap/Spinner";
 import Background from "../assets/images/buildings-cars.jpg";
+
 
 class Results extends Component {
   state = {
@@ -29,6 +31,7 @@ class Results extends Component {
 
 
   render(props) {
+
     const style ={
       minWidth: "100vw",
       minHeight: "100vh",
@@ -38,6 +41,7 @@ class Results extends Component {
     };
     return (
       <div style={style}>
+
         <div className="row no-gutters">
           <Row className="search-row">
             <Col xs={4} md={4}>

@@ -18,7 +18,9 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 import "./Signup.css";
+
 import Background from "../assets/images/blurred.jpg";
+
 
 
 class Login extends Component {
@@ -63,6 +65,7 @@ class Login extends Component {
 
   render() {
     const { errors } = this.state;
+
     const style ={
       minWidth: "100vw",
       minHeight: "100vh",
@@ -73,6 +76,7 @@ class Login extends Component {
     };
     return (
       <div style={style}>
+
         <Row>
         <Col xs={2}></Col>
           <Col xs={8}>
