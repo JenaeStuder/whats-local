@@ -9,6 +9,9 @@ import Create from "../components/Create";
 import Navbar from "../components/Navbar";
 import Suggestions from "../components/Suggestions";
 // import UserUpdates from "../componentsUserUpdates";
+import Loader from "../components/Loader";
+
+import Background from "../assets/images/brick-wall.jpg";
 
 import Brand from "../components/Brand";
 
@@ -21,21 +24,33 @@ class MainPage extends Component {
   // }
 
   render() {
+
+    const style ={
+      minWidth: "100vw",
+      minHeight: "100vh",
+      backgroundImage: `url(${Background})`,
+      backgroundSize:'cover',
+      backgroundRepeat: 'no-repeat',
+      margin: 0,
+    };
     return (
-      <div className="MainPage">
-        <Container>
+      <div className="MainPage"
+      style={style}
+      >
+
+        
+        <div className="row no-gutters">
+          
           <Row className="search-row">
             <Col xs={4} md={4}>
               <Brand />
             </Col>
-            <Col xs={6} md={4} id="search">
+            <Col xs={8} md={8} id="search">
               <Searchbar />
             </Col>
-            <Col xs={2} md={4}>
-              <Navbar />
-            </Col>
           </Row>
-        </Container>
+          </div>
+        
         <Container>
           <Row className="Spotlight">
             {this.state.loading ? (
@@ -57,7 +72,7 @@ class MainPage extends Component {
                   {/* <UserUpdates/> */}
                 </Col>
               </Row>
-            ) : null}
+            ) : <Loader/>}
           </Row>
         </Container>
       </div>

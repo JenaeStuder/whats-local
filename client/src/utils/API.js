@@ -4,6 +4,7 @@ import axios from "axios";
 export default {
   getProfile: function(id) {
     console.log("api");
+    console.log(id);
     return axios.get("/api/artists/" + id);
   },
   // submit user/artist
@@ -30,11 +31,12 @@ export default {
   // search databse for artists
   searchArtist: function(artistName) {
     return axios
-      .get("/api/artists/" + artistName)
+      .get("/api/artists/")
       .then(response => {
         let data = {
           results: response.data,
         };
+        console.log(data);
         this.setState(data);
       })
       .catch(error => console.log(error));

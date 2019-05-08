@@ -5,7 +5,6 @@ const passport = require("passport");
 // const users = require("./routes/api/users");
 const routes = require("./routes");
 const path = require("path");
-
 const app = express();
 
 // Bodyparser middleware
@@ -17,9 +16,11 @@ app.use(
 app.use(bodyParser.json());
 
 
-app.use(express.static('public'));
 
-app.get('*', (req, res) => res.sendFile(path.resolve('./client/public', 'index.html')));
+
+// app.use(express.static('public'));
+
+// app.get('*', (req, res) => res.sendFile(path.resolve('public', 'index.html')));
 
 // Routes
 // app.use("/api/users", users);
