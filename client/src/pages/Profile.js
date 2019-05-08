@@ -147,8 +147,7 @@ class Profile extends Component {
                   <Col xs={1} />
                   <Col xs={10}>
                     {this.state.loading ? (
-                      <div>
-                        {this.state.mediaClips.map(item => {
+                        this.state.mediaClips.map(item => {
                           const newURL = item.replace(/ /g, "%20");
                           const mediaTypeParse = newURL.split(".");
                           const mediaTypeExt =
@@ -185,8 +184,7 @@ class Profile extends Component {
                               />
                             </Col>
                           );
-                        })}
-                      </div>
+                        })
                     ) : (
                       <Loader />
                     )}
