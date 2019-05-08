@@ -6,8 +6,14 @@ import Row from "react-bootstrap/Row";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
 import Brand from "../components/Brand";
-import Loader from "../components/Loader";
+
 import "./Results.css";
+
+
+import Spinner from "react-bootstrap/Spinner";
+import Background from "../assets/images/buildings-cars.jpg";
+
+
 
 class Results extends Component {
   state = {
@@ -40,6 +46,7 @@ class Results extends Component {
                 <Searchbar />
               </Col>
             </Row>
+
 
             {this.state.loading ? (
               <Row>
@@ -77,17 +84,46 @@ class Results extends Component {
 
   render(props) {
     console.log(this.props)
+
+
+    const style ={
+      minWidth: "100vw",
+      minHeight: "100vh",
+      backgroundImage: `url(${Background})`,
+      backgroundSize:'cover',
+      backgroundRepeat: 'no-repeat'
+    };
+
     return (
-      <div>
-        <Container>
+      <div style={style}>
+
+        <div className="row no-gutters">
+          <Row className="search-row">
+            <Col xs={4} md={4}>
+              <Brand />
+            </Col>
+            <Col xs={8} md={8} id="search">
+              <Searchbar />
+            </Col>
+          </Row>
+        </div>
+        
+          
           <div className="Results">
-            <Row className="search-row">
-              <Col xs={4} md={4}>
-                <Brand />
+          <Container>
+            {this.state.loading ?( <Row>
+              <Col size="md-6">
+                <div>
+                  findArtist
+                            {this.state.results}
+                </div>
               </Col>
-              <Col xs={8} md={8} id="search">
-                <Searchbar />
+              <Col size="md-6">
+                <div>
+                  {this.state.results}
+                </div>
               </Col>
+
             </Row>
             {this.state.loading ? (
               <Row>
@@ -97,18 +133,17 @@ class Results extends Component {
                 <Col size="md-6">
                   <div>{this.state.results}</div>
                 </Col>
-              </Row>
-            ) : (
-              <h5 className="sorry">
-                Sorry, no results. Try searching for something else.
-              </h5>
-            )}
+      
+            </Row>) : (<Spinner animation="grow" />)}
+            </Container>
+
           </div>
-        </Container>
+       
         <Navbar />
-      </div>
-    );
-  }
-}
+
+      </div >
+
+    )
+  }};
 
 export default Results;

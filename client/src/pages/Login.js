@@ -19,6 +19,9 @@ import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 import "./Signup.css";
 
+import Background from "../assets/images/blurred.jpg";
+
+
 
 class Login extends Component {
   constructor() {
@@ -62,10 +65,21 @@ class Login extends Component {
 
   render() {
     const { errors } = this.state;
+
+    const style ={
+      minWidth: "100vw",
+      minHeight: "100vh",
+      backgroundImage: `url(${Background})`,
+      backgroundSize:'cover',
+      backgroundRepeat: 'no-repeat',
+      opacity: .9,
+    };
     return (
-      <div>
+      <div style={style}>
+
         <Row>
-          <Col size="md-6">
+        <Col xs={2}></Col>
+          <Col xs={8}>
             <div >
               <h1 id="title">what's</h1>
               <h1 id="title">local</h1>
@@ -133,6 +147,7 @@ class Login extends Component {
               </form>
             </Card>
           </Col>
+          <Col xs={2}></Col>
         </Row>
       </div>
     );

@@ -15,6 +15,12 @@
   color: white;
   text-align: center;
 }
+.BrandRow{
+  z-index: 9;
+}
+.FormRow{
+  z-index: 9;
+}
 
 #subtitle {
   font-family: "Playfair Display", serif;
@@ -23,6 +29,7 @@
   color: white;
   /* color: #49a0b5; */
   text-align: center;
+  
 }
 
 label {
@@ -54,3 +61,8 @@ form {
 #userType {
   height: 35px;
 }
+/* .signup{
+  background-color: rgba(255, 255, 255, .8);
+  color: black;
+} */
+

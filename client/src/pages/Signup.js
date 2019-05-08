@@ -1,4 +1,6 @@
-import React, { Component } from "react";
+
+import React, { Component, backgroundImage } from "react";
+
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -15,6 +17,11 @@ import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 import "./Signup.css";
 import Brand from "../components/Brand";
+
+import Background from "../assets/images/asphalt.jpg";
+// import BackgroundImage from "../components/BackgroundImage"
+
+
 
 
 class SignUp extends Component {
@@ -63,13 +70,24 @@ class SignUp extends Component {
 
   render() {
     const { errors } = this.state;
+
+    const style ={
+      minWidth: "100vw",
+      minHeight: "100vh",
+      backgroundImage: `url(${Background})`,
+      backgroundSize:'cover',
+      backgroundRepeat: 'no-repeat'
+    };
     return (
-      <div>
+      <div
+         style={style}>
+        {/* <BackgroundImage> */}
         <Container>
-        <Row>
+        <Row className= "BrandRow">
           <Brand/>
         </Row>
-        <Row>
+        <Row className="FormRow">
+
           <Col size="md-6">
 
             {/* <div class="jumbotron jumbotron-fluid whats-local-jumbo"> */}
