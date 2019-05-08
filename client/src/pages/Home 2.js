@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../load.css";
-import Carousel from "../components/Carousel";
+import ControlledCarousel from "../components/ControlledCarousel";
 
 // import Login from "./components/Login";
 
@@ -8,7 +8,7 @@ class Home extends Component {
   render() {
     return (
       <div className="App">
-        <Carousel />
+        <ControlledCarousel />
       </div>
     );
   }
