@@ -37,8 +37,7 @@
     "heroku-postbuild": "npm run build"
   },
    "engines": {
-    "npm": "5.7.1",
-    "node": "9.5.0"
+    "node": "11.13.0"
   },
   "eslintConfig": {
     "extends": "react-app"
