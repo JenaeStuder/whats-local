@@ -166,11 +166,7 @@ class Profile extends Component {
 
               {/* </Row> */}
               </Jumbotron>
-<<<<<<< HEAD
               </Row>
-=======
-            </Row>
->>>>>>> d87082ae55a7f8650cfa97e4c312f378377c5e8a
             <br />
             <Row className="ProfileMedia">
               <div>
@@ -224,11 +220,7 @@ class Profile extends Component {
                 <Col xs={1} />
               </div>
             </Row>
-<<<<<<< HEAD
             {/* </Row> */}
-=======
-
->>>>>>> d87082ae55a7f8650cfa97e4c312f378377c5e8a
           <br />
           <br />
           </Container>

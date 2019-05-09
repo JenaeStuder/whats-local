@@ -142,7 +142,7 @@ class MainPage extends Component {
                     </Container>
                 </Container>
 
-
+</div>
             </div>
         )
     }

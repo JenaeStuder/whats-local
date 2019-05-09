@@ -73,14 +73,14 @@ class normalUser extends Component {
             {favArray.forEach((element) => {console.log(element);
             })} */}
             <Favorites />
-          
+          </Container>
           <Col size="md-12" id="navbar">
             <Navbar />
           </Col>
         </div>
-      
-    );
+      </div>
+    )
   }
-}
+};
 
 export default normalUser;
