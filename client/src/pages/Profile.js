@@ -134,7 +134,7 @@ class Profile extends Component {
                           </Row>
                         </Col>
                       </Row>
-                    </Col>
+                    {/* </Col> */}
 
 
 

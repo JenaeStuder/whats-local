@@ -58,7 +58,7 @@ class MainPage extends Component {
           .catch(err => console.log(err));
       };
 
-    render() {
+   
        render() {
 
     const style ={
@@ -143,6 +143,7 @@ class MainPage extends Component {
                 </Container>
 
 
+            </div>
             </div>
         )
     }

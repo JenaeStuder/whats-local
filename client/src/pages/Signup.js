@@ -35,9 +35,9 @@ class SignUp extends Component {
       password: "",
       password2: "",
       zipCode: "",
-      socialMediaHandles: "",
-      favoriteArtist: "",
-      bio: "",
+      // socialMediaHandles: "",
+      // favoriteArtist: "",
+      // bio: "",
       userType: "",
       errors: {}
     };
@@ -65,9 +65,9 @@ class SignUp extends Component {
       password: this.state.password,
       password2: this.state.password2,
       zipCode: this.state.zipCode,
-      socialMediaHandles: this.state.socialMediaHandles,
-      favoriteArtist: this.state.favoriteArtist,
-      bio: this.state.bio,
+      // socialMediaHandles: this.state.socialMediaHandles,
+      // favoriteArtist: this.state.favoriteArtist,
+      // bio: this.state.bio,
       userType: this.state.userType
     };
     console.log(newUser);

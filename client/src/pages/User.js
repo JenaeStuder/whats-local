@@ -39,8 +39,8 @@ class normalUser extends Component {
       backgroundRepeat: 'no-repeat'
     };
     return (
-      <div
-         style={style}>
+
+      <div style={style}>
         
           <div className="row no-gutters">
           
@@ -73,14 +73,15 @@ class normalUser extends Component {
             {favArray.forEach((element) => {console.log(element);
             })} */}
             <Favorites />
-          
+          </Container>
           <Col size="md-12" id="navbar">
             <Navbar />
           </Col>
         </div>
-      
-    );
+       
+</div>      
+    )
   }
-}
+};
 
 export default normalUser;
