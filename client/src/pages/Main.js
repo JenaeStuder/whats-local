@@ -12,6 +12,9 @@ import Button from "../components/Button";
 import API from "../utils/API";
 import jwt_decode from "jwt-decode";
 // import UserUpdates from "../componentsUserUpdates";
+import Loader from "../components/Loader";
+
+import Background from "../assets/images/brick-wall.jpg";
 
 import Brand from "../components/Brand";
 
@@ -56,8 +59,23 @@ class MainPage extends Component {
       };
 
     render() {
-        return (
-            <div className="MainPage">
+       render() {
+
+    const style ={
+      minWidth: "100vw",
+      minHeight: "100vh",
+      backgroundImage: `url(${Background})`,
+      backgroundSize:'cover',
+      backgroundRepeat: 'no-repeat',
+      margin: 0,
+    };
+    return (
+      <div className="MainPage"
+      style={style}
+      >
+
+        
+        <div className="row no-gutters">
 
                 <Container>
                     <Row>
@@ -128,6 +146,8 @@ class MainPage extends Component {
             </div>
         )
     }
+
+
 }
 
 export default MainPage;

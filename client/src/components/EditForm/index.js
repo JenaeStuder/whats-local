@@ -3,6 +3,8 @@ import Input from "../Input";
 import FileUpload from "../FileUpload";
 import Select from "../Select";
 import Button from "../Button";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import "./style.css";
 
 // Using the datalist element we can create autofill suggestions based on the props.breeds array
@@ -84,7 +86,11 @@ class EditForm extends Component {
           value={this.state.zipcode}
           onChange={this.handleInputChange}
         />
+        <Row>
+        <Col md={4} sm={3}></Col>
+        <Col md={4} sm={5}>
         <p id="subtitle">Change profile picture</p>
+        
         <FileUpload
           id="profilepic"
           labeltext="Add Profile Picture:"
@@ -92,13 +98,23 @@ class EditForm extends Component {
           placeholder="Upload Profile Picture"
           onChange={this.handleInputChange}
         />
+        </Col>
+        <Col md={4} sm={4}></Col>
+        </Row>
+        <Row>
+        <Col md={4} sm={3}></Col>
+        <Col md={4} sm={5}>
+        <p id="subtitle">Upload your art</p>
         <FileUpload 
           id="addedMedia"
           labeltext="Add Media"
           name="content"
           placeholder="Content Upload"
-          onChange={this.handleInputChange}
+
         />
+         </Col>
+        <Col md={4} sm={4}></Col>
+        </Row>
         {/* <Select
           id="usertype"
           name="usertype"
@@ -109,7 +125,7 @@ class EditForm extends Component {
           options={["Yes", "No"]}
         /> */}
         <Button
-          className="btn btn-info btn-lg btn-block"
+          className="btn btn-lg btn-block"
           id="edit"
           type="submit"
           //onClick=""

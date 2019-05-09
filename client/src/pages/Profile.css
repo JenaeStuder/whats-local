@@ -36,10 +36,15 @@ font-family: 'Abel', sans-serif; */
     /* background-color:rgb(225, 225, 225); */
     /* background-color: rgb(75,67, 85); */
     background-color: rgb(255, 255, 255, .5);
-    /* border-radius: 2%;
-    box-shadow: 10px 10px 5px grey */
+
+    border-radius: 2%;
+    /* box-shadow: 10px 10px 5px grey */
+
     /* box-shadow: 10px 10px 5px rgb(193, 177, 175, .5); */
     
+}
+.row.no-gutters{
+    margin:0px;
 }
 .bio-border-wrap{
     
@@ -71,6 +76,9 @@ h5{
     font-size:30px;
 
 }
+.Update-Row{
+    border-top: 1px ridge lightslategray;
+}
 #info-border-wrap{
     
     /* max-width: 80%;
@@ -81,9 +89,11 @@ h5{
     /* background: linear-gradient(-10deg, rgb(74, 80, 107), rgb(140, 90, 94)); */
      /* background: linear-gradient(-10deg, #49a0b5,#82d9ee); */
     /* padding: 3px; */
-    /* background-color: white;
-    box-shadow: 10px 10px 5px grey;
-    border-radius: 5%; */
+
+    /* background-color: white; */
+    /* box-shadow: 10px 10px 5px grey; */
+    border-radius: 5%;
+
   }
   .Updates-border-wrap{
     
