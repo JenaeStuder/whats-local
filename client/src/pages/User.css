@@ -3,11 +3,21 @@ button {
 }
 
 #profileName {
-  font-size: 2rem;
+    font-size: 25px;
+    /* text-shadow: -2px -2px 1px #49a0b5, -2px -2px 1px #49a0b5, -2px -2px 1px #49a0b5, -2px -2px 1px #49a0b5; */
+    text-align: center;
+    color: white;
 }
 
-.pic {
-  position: center;
+#profileImage {
+    position: center;
+    width: 25vh;
+    height: 25vh;
+    border-radius: 50%;
+    border: 3px solid #49a0b5;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #navbar {
@@ -19,13 +29,17 @@ button {
 }
 
 #header {
-  margin-top: 2vh;
-  margin-bottom: 20px;
-  border-bottom: 1px ridge lightslategray;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #49a0b5;
 }
 
-#profileName {
-  float: right;
+#primaryUserRow {
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+#secondaryUserRow {
+    margin-left: 1vw;
 }
 
 .search-row {

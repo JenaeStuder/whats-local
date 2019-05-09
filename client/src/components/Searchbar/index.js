@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from 'react-router';
+import { Route, Redirect } from 'react-router-dom';
 import API from "../../utils/API";
 // import { Autocomplete } from 'studio-auto-complete';
 
@@ -15,48 +15,58 @@ class Searchbar extends Component {
     super(props);
     this.state = {
       results: [],
-      searchName: '',
+      term: '',
     };
-    // this.submit = this.submit.on(this);
-    // this.changeTerm = this.changeTerm.on(this);
+    this.submit = this.submit.bind(this);
+    this.changeTerm = this.changeTerm.bind(this);
   }
 
+  changeTerm(event) {
+    this.setState({term: event.target.value});
+  }
   // componentWillReceiveProps() {
   //     this.props.history.push("/results"); // push user to dashboard when they login
   // }
-  redirect(){
-    window.location.href="/results";
-  }
-  onChange = e => {
-    this.setState({ [e.target.id]: e.target.value });
-  };
+  // redirect(){
+  //   window.location.href="/results";
+  // }
+  // onChange = e => {
+  //   this.setState({ [e.target.id]: e.target.value });
+  // };
 
-  onSubmit = e => {
+  submit = e => {
     e.preventDefault();
-    // 
-    const searchName = this.state.searchName;
     API.getProfile("5cbfc709d05c151404c087cd")
-    .then(res => {
-      console.log(res);
+    .then(response => {
+      let data = {
+        results: response.data,
+      };
+      this.setState(data);
+      console.log(data);
+      this.props.history.push(`/results`);
+    })
+    .catch(error => console.log(error));
+  }
 
-      this.setState({
-        firstName: res.data.firstName,
-        lastName: res.data.lastName,
-        socialMediaHandles: res.data.socialMediaHandles,
-        bio: res.data.bio,
-        profilePicture: res.data.profilePicture,
-        mediaClips: res.data.media,
-        userName: res.data.username,
-        upcoming: ""
-      });
+
+      // this.setState({
+      //   firstName: res.data.firstName,
+      //   lastName: res.data.lastName,
+      //   socialMediaHandles: res.data.socialMediaHandles,
+      //   bio: res.data.bio,
+      //   profilePicture: res.data.profilePicture,
+      //   mediaClips: res.data.media,
+      //   userName: res.data.username,
+      //   upcoming: ""
+      // });
       // this.props.history.push(`/results/${searchName}`);
       // this.redirect();
       // <Redirect to={{
       //       pathname: '/results',
       //       state: { results: this.state.results }
       //     }}/>
-    })
-    .catch(err => console.log(err));
+
+    // .catch(err => console.log(err));
     // API.searchArtist({
     //   searchName: this.state.searchName
     // })
@@ -65,45 +75,37 @@ class Searchbar extends Component {
     //     state: { results: this.state.results }
     //   }}/>)
     //   .catch(err => console.log(err));
-    console.log("clicked");
-  }
+    // console.log("clicked");
+  
 
   render() {
     return (
       <div>
-        {/* <Autocomplete
-          className="example__autocomplete"
-          shouldClearOnExecution={true}
-          items={[{ key: "john", name: "John" }, { key: "doe", name: "Doe" }]}
-          placeholder={`Search by name`}
-          labelAttribute="name"
-          searchAttribute="name"
-          > */}
-        <form noValidate onSubmit={this.onSubmit}>
+        <form noValidate onSubmit={this.submit}>
           <div className="input-group">
-          <input
-            onChange={this.onChange}
-            type="text"
-            id="searchName"
-            value={this.state.searchName}
-            className="form-control"
-            placeholder="Search your area..."
-          />
-          <span className="input-group-btn">
-            <button className="btn btn-light" type="submit">
-              <i className="fa fa-search fa-fw" />
-            </button>
-          </span>
-        </div>
+            <input
+              onChange={this.changeTerm}
+              type="text"
+              // id="searchName"
+              // value={this.state.searchName}
+              className="form-control"
+              placeholder="Search your area..."
+            />
+            <span className="input-group-btn">
+              <button className="btn btn-light" type="submit">
+                <i className="fa fa-search fa-fw"/>
+              </button>
+            </span>
+          </div>
         </form>
-
-        {this.state.userName &&
-          <Redirect to={{pathname: '/results',
-          state: { results: this.state.results }}}/>
-        }
-
+        {/* {this.state.results.length > 0 &&
+          <Redirect to={{
+            pathname: '/results',
+            state: { results: this.state.results }
+          }}/>
+        } */}
       </div >
-    )
+    );
   }
 }
 

@@ -7,14 +7,21 @@ import Searchbar from "../components/Searchbar";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Favorites from "../components/Favorites";
-import waves from "../images/vertical-waves.png";
-import "./User.css";
 import Brand from "../components/Brand";
+
+import "./User.css";
+//import BackgroundImage from "../components/BackgroundImage";
+//import Favorites from "../components/favorites";
+import Create from "../components/Create";
+import Suggestions from "../components/Suggestions";
+import API from "../utils/API";
 import Background from "../assets/images/blur-car-lights.jpg";
+
 
 //import Favorites from "../components/favorites";
 
 class normalUser extends Component {
+
   state = {
     firstName: "Vincent",
     lastName: "van Gogh",
@@ -49,6 +56,7 @@ class normalUser extends Component {
           <div className="user">
           <Container>
 
+
             <Row>
               <Col size="md-12" id="header">
                 <Header />
@@ -65,12 +73,12 @@ class normalUser extends Component {
             {favArray.forEach((element) => {console.log(element);
             })} */}
             <Favorites />
-          </Container>
+          
           <Col size="md-12" id="navbar">
             <Navbar />
           </Col>
         </div>
-      </div>
+      
     );
   }
 }
