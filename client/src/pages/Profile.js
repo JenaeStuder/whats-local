@@ -103,8 +103,8 @@ class Profile extends Component {
 
                   <Row>
                     {/* Row that contains the profile picture, Artist name, social media, bio, and updates. */}
-
-                      <Row>
+<Col md={12}>
+      <Row>
                         <Col xs={12} md={6} className="PicColumn">
                           <img className="PicColumn" src={this.state.profilePicture}></img>
                           {/* <ProfilePicture src={this.state.profilePicture} /> */}
@@ -169,7 +169,7 @@ class Profile extends Component {
 
               {/* </Row> */}
               </Jumbotron>
-</Row>
+            </Row>
             <br />
             <Row className="ProfileMedia">
               <div>
