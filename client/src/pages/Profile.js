@@ -169,6 +169,7 @@ class Profile extends Component {
 
               {/* </Row> */}
               </Jumbotron>
+
             <br />
             <Row className="ProfileMedia">
               <div>

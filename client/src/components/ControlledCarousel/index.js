@@ -60,6 +60,55 @@ class ControlledCarousel extends React.Component {
             alt="Third slide"
           />
         </Carousel.Item>
+        <Carousel.Item className="woodworker">
+          <img
+            className="d-block w-100"
+            src={require("../../images/woodworker.jpg")}
+            alt="Fifth slide"
+          />
+        </Carousel.Item>
+        <Carousel.Item className="model">
+          <img
+            className="d-block w-100"
+            src={require("../../images/model.jpg")}
+            alt="Fifth slide"
+          />
+        </Carousel.Item>
+        <Carousel.Item className="acrylic">
+          <img
+            className="d-block w-100"
+            src={require("../../images/acrylic.jpg")}
+            alt="Fifth slide"
+          />
+        </Carousel.Item>
+        <Carousel.Item className="dj">
+          <img
+            className="d-block w-100"
+            src={require("../../images/dj.jpg")}
+            alt="Fourth slide"
+          />
+        </Carousel.Item>
+        <Carousel.Item className="skater">
+          <img
+            className="d-block w-100"
+            src={require("../../images/skater.jpg")}
+            alt="Fifth slide"
+          />
+        </Carousel.Item>
+        <Carousel.Item className="drawer">
+          <img
+            className="d-block w-100"
+            src={require("../../images/drawer.jpg")}
+            alt="Fourth slide"
+          />
+        </Carousel.Item>
+        <Carousel.Item className="tattoo">
+          <img
+            className="d-block w-100"
+            src={require("../../images/tattoo.jpg")}
+            alt="Fifth slide"
+          />
+        </Carousel.Item>
         <Carousel.Item className="neon">
           <img
             className="d-block w-100"
@@ -67,18 +116,18 @@ class ControlledCarousel extends React.Component {
             alt="Fourth slide"
           />
         </Carousel.Item>
+        <Carousel.Item className="photographer">
+          <img
+            className="d-block w-100"
+            src={require("../../images/photographer.jpg")}
+            alt="Fifth slide"
+          />
+        </Carousel.Item>
         <Carousel.Item className="plant">
           <img
             className="d-block w-100"
             src={require("../../images/plant.jpg")}
             alt="Fourth slide"
-          />
-        </Carousel.Item>
-        <Carousel.Item className="gradient">
-          <img
-            className="d-block w-100"
-            src={require("../../images/gradient.jpg")}
-            alt="Fifth slide"
           />
         </Carousel.Item>
       </Carousel>
