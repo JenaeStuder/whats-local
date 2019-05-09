@@ -169,6 +169,7 @@ class Profile extends Component {
 
               {/* </Row> */}
               </Jumbotron>
+</Row>
             <br />
             <Row className="ProfileMedia">
               <div>
@@ -222,7 +223,7 @@ class Profile extends Component {
                 <Col xs={1} />
               </div>
             </Row>
-            </Row>
+
           <br />
           <br />
           </Container>
