@@ -1,18 +1,30 @@
 #content {
-  border: 1px solid rgb(73, 160, 181, 0.5);
-  height: 100%;
-  margin-top: 10px;
+    border: 1px solid rgb(73,160,181, 0.5);
+    height: 100%;
 }
 
-#card-header {
-  color: rgb(73, 160, 181);
-  font-family: "Abel", sans-serif;
-  font-size: 25px;
+#userPic {
+    width: 5em;
+    height: 5em;
+    float: left;
+    margin-right: 1em;
 }
 
-#card-text {
-  color: darkslategrey;
-  font-family: "Abel", sans-serif;
+#favoriteArtistName {
+    float: left;
+    font-family: "Abel", serif;
+    font-size: 25px;
+    padding: 4% 0 0 9%;
+}
+
+#favoriteArtist {
+    border: transparent;
+}
+
+#favoriteArtistHeader {
+    text-align: center;
+    font-family: "Helvetica Neue", sans-serif;
+    color: #49a0b5;
 }
 
 .list-group-item {

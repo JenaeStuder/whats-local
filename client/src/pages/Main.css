@@ -8,6 +8,22 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+
+#mainPageNav {
+    margin-top: 3vh;
+}
+
+#mainPageNavItem {
+    color: white;
+}
+
+#mainPageLogout {
+    text-shadow: none;
+}
+
+
 #nav{
     margin-top: 0;
 }
+

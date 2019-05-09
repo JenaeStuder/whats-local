@@ -10,13 +10,12 @@ function TitleBackground() {
       <Login />
       <div className="jumbotron jumbotron-fluid" id="title-jumbo">
         <div className="container">
-          <Row>
-            <Col xs={12}>
-
-              <h1 className="display-3">whats local</h1>
-            </Col>
+        <Row>
+          <Col xs={12} id="mainPageTitle">
+          <h1 className="display-3">what's local</h1>
+          </Col>
           </Row>
-          <Row>
+          <Row id="mainPageSubtitle">
             <Col xs={12}>
 
               <h6 className="lead">connect | local | art</h6>
