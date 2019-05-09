@@ -38,8 +38,9 @@
   float: right;
   opacity: 0.7;
 }
-.carousel .gradient {
+.carousel .skater {
   opacity: 0.8;
+  width: 130%;
 }
 .carousel .drawing {
   opacity: 0.95;
@@ -48,13 +49,42 @@
   opacity: 0.75;
 }
 .carousel .plant {
-  opacity: 0.75;
 }
 .carousel .neon {
   width: 165%;
-  opacity: 0.8;
+  opacity: 0.85;
   float: right;
   top: 0;
+}
+.carousel .woodworker {
+  opacity: 0.8;
+  width: 110%;
+}
+.carousel .dj {
+  opacity: 0.8;
+  width: 130%;
+}
+.carousel .acrylic {
+  opacity: 0.8;
+  width: 120%;
+}
+.carousel .drawer {
+  width: 140%;
+  float: right;
+  opacity: 0.75;
+}
+.carousel .tattoo {
+  width: 150%;
+}
+
+.carousel .photographer {
+  width: 120%;
+  opacity: 0.95;
+}
+
+.carousel .model {
+  width: 145%;
+  opacity: 0.75;
 }
 
 #title-jumbo {
@@ -71,11 +101,11 @@
   /* position: relative; */
   top: 15vh;
 }
-#search{
+#search {
   width: 50%;
   /* background-color: #ffffcc; */
   opacity: 0.5;
-  margin-top:1vh;
+  margin-top: 1vh;
   color: darkslategrey;
 }
 
