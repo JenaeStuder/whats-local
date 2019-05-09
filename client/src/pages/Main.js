@@ -10,6 +10,7 @@ import Navbar from "../components/Navbar";
 import Suggestions from "../components/Suggestions";
 import Button from "../components/Button";
 import API from "../utils/API";
+import jwt_decode from "jwt-decode";
 // import UserUpdates from "../componentsUserUpdates";
 
 import Brand from "../components/Brand";
@@ -17,28 +18,42 @@ import Brand from "../components/Brand";
 class MainPage extends Component {
 
     state = {
-
-        loading: "true",
+        userName: "",
+        firstName: "",
+        lastName: "",
+        socialMediaHandles: "",
+        bio: "",
+        profilePicture: "",
+        mediaClips: [],
+        upcoming: "",
+        loading: "false",
+        user_id: jwt_decode(localStorage.jwtToken.split(" ")[1]).id
 
     };
     componentDidMount() {
+        console.log(this.state.user_id);
+        console.log(this.state);
         this.loadProfile();
     }
 
-    loadProfile = (user_id) => {
-        API.getProfile(user_id).then(res => {
+    loadProfile = () => {
+        API.getProfile(this.state.user_id)
+          .then(res => {
             console.log(res);
-
+    
             this.setState({
-                firstName: res.firstName,
-                lastName: res.lastName,
-                socialMediaHandles: res.socialMediaHandles,
-                profilePicture: res.profilePicture,
-                mediaClips: res.media,
-            })
-        }
-        ).catch(err => console.log(err));
-    };
+              firstName: res.data.firstName,
+              lastName: res.data.lastName,
+              socialMediaHandles: res.data.socialMediaHandles,
+              bio: res.data.bio,
+              profilePicture: res.data.profilePicture,
+              mediaClips: res.data.media,
+              userName: res.data.username,
+              upcoming: ""
+            });
+          })
+          .catch(err => console.log(err));
+      };
 
     render() {
         return (

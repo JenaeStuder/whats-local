@@ -50,7 +50,7 @@ class Profile extends Component {
           bio: res.data.bio,
           profilePicture: res.data.profilePicture,
           mediaClips: res.data.media,
-          userName: res.data.username,
+          userName: res.data.userName,
           upcoming: ""
         });
       })
@@ -95,7 +95,7 @@ class Profile extends Component {
                               <Col xs={10}>
                                 <h5 id="nameSection">
                                   {this.state.firstName}
-                                  &nbsp;
+                                  <br></br>
                                   {this.state.lastName}
                                 </h5>
                               </Col>

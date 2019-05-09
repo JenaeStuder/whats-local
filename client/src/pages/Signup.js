@@ -28,6 +28,9 @@ class SignUp extends Component {
       password: "",
       password2: "",
       zipCode: "",
+      socialMediaHandles: "",
+      favoriteArtist: "",
+      bio: "",
       userType: "",
       errors: {}
     };
@@ -55,6 +58,9 @@ class SignUp extends Component {
       password: this.state.password,
       password2: this.state.password2,
       zipCode: this.state.zipCode,
+      socialMediaHandles: this.state.socialMediaHandles,
+      favoriteArtist: this.state.favoriteArtist,
+      bio: this.state.bio,
       userType: this.state.userType
     };
     console.log(newUser);
@@ -179,6 +185,41 @@ class SignUp extends Component {
                   />
                   <span className="red-text">{errors.zipCode}</span>
                 </div>
+                {/* <div className="form-group">
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.socialMediaHandles}
+                    id="socialMediaHandles"
+                    placeholder="Social Media Handles"
+                    type="text"
+                    className={classnames("form-control", {
+                      invalid: errors.socialMediaHandles
+                    })}
+                  />
+                  <span className="red-text">{errors.socialMediaHandles}</span>
+                </div>
+                <div className="form-group">
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.favoriteArtist}
+                    id="favoriteArtist"
+                    placeholder="Favorite Artist"
+                    type="text"
+                    className={classnames("form-control")}
+                  />
+                  <span className="red-text">{errors.favoriteArtist}</span>
+                </div> */}
+                {/* <div className="form-group">
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.bio}
+                    id="bio"
+                    placeholder="Short Bio"
+                    type="text"
+                    className={classnames("form-control")}
+                  />
+                
+                </div> */}
                 <div className="form-group">
                   <label htmlFor="userType">Are You an Artist?</label>
                   <select
