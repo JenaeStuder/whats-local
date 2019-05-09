@@ -38,6 +38,7 @@ class Profile extends Component {
   };
   componentDidMount() {
     console.log(this.state.user_id);
+    console.log(this.state);
     this.loadProfile();
   }
 
@@ -54,7 +55,7 @@ class Profile extends Component {
           bio: res.data.bio,
           profilePicture: res.data.profilePicture,
           mediaClips: res.data.media,
-          userName: res.data.username,
+          userName: res.data.userName,
           upcoming: ""
         });
       })
@@ -93,6 +94,7 @@ class Profile extends Component {
         <br />
 
         <div>
+
           <Container>
             <Row>
               <Jumbotron className="ProfileInfo">
@@ -101,7 +103,7 @@ class Profile extends Component {
 
                   <Row>
                     {/* Row that contains the profile picture, Artist name, social media, bio, and updates. */}
-                    <Col md={12}>
+
                       <Row>
                         <Col xs={12} md={6} className="PicColumn">
                           <img className="PicColumn" src={this.state.profilePicture}></img>

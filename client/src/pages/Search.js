@@ -36,10 +36,13 @@ function Search() {
     <div
        style={style}>
       <Container>
-        <div class="jumbotron jumbotron-fluid search-jumbo">
-          <h1 class="display-4">Search by</h1>
-        </div>
-        <SearchJumbo />
+      <div class="jumbotron jumbotron-fluid search-jumbo">
+        <h1 class="display-3">SEARCH BY:</h1>
+      </div>
+      <SearchJumbo />
+      <br></br>
+      <br></br>
+      <br></br>
       </Container>
       <Navbar />
     </div>

@@ -48,6 +48,7 @@ bower_components
 .env.development.local
 .env.test.local
 .env.production.local
+.env 
 
 # Optional npm cache directory
 .npm

@@ -1,12 +1,32 @@
 /* body {
   background: url("https://i.imgur.com/UMnw0tW.jpg");
 
-  background-position:center center;
-min-width: 100vw;
-  min-height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-} */
-#nav {
-  margin-top: 0;
+
+    /* background:url('https://i.imgur.com/UMnw0tW.jpg'); */
+
+    /* background-position:center center; */
+    min-width: 100vw;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
+
+#mainPageNav {
+    margin-top: 3vh;
+}
+
+#mainPageNavItem {
+    color: white;
+}
+
+#mainPageLogout {
+    text-shadow: none;
+}
+
+
+#nav{
+    margin-top: 0;
+
+}
+
