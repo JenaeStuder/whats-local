@@ -7,7 +7,9 @@
 
 #userSuggestName {
     float: left;
-    margin-top: 1em;
+    font-family: "Abel", serif;
+    font-size: 25px;
+    padding: 4% 0 0 9%;
 }
 
 #suggestedUser {
@@ -16,4 +18,10 @@
 
 #suggestionsHeader {
     text-align: center;
+    font-family: "Helvetica Neue", sans-serif;
+    color: #49a0b5;
+}
+
+#suggestionsCard {
+    background-color: rgb(225, 225, 225, .5);
 }

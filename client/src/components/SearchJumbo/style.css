@@ -12,7 +12,7 @@
     -2px -2px 1px black;
 }
 
-.card {
+#searchCard {
   background-color: transparent;
   border: transparent;
   color: white;

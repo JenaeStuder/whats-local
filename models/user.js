@@ -44,7 +44,7 @@ const UserSchema = new Schema({
   },
   profilePicture: {type: String},
   media: [{type: String}],
-  favoriteArtits: {type: String},
+  favoriteArtist: {type: String},
   bio: {
     type: String
   },

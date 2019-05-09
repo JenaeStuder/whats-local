@@ -15,6 +15,14 @@
   font-size: 5em;
 }
 
+#mainPageSubtitle {
+  margin-bottom: 5em;
+}
+
+#mainPageTitle {
+  padding: 5px;
+  
+}
 /* .carousel {
   z-index: 1;
 } */
@@ -71,8 +79,8 @@
   color: darkslategrey;
 }
 
-#search .form-control {
-  background: #ffffcc;
+#search-jumbo .form-control {
+  background: white;
   opacity: 0.5;
 }
 
@@ -85,7 +93,8 @@
   font-weight: bold;
   background: rgba(255, 255, 255, 0.25);
 }
-h1 {
+.display-3{
+  
   font-family: "urbanjungle";
 }
 .display-3 {

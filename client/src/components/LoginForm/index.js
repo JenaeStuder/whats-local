@@ -32,13 +32,9 @@ function LoginForm(props) {
       />
 
       <label>Don't have an Account? </label>
-      <Button
-        className="btn btn-dark btn-lg btn-block"
-        id="signup"
-        type="submit"
-        //onClick=""
-        title="Signup"
-      />
+      <a className="btn btn-dark btn-lg btn-block" href="/signup">
+        Signup
+      </a>
       <div class="g-signin2" data-onsuccess="onSignIn" />
     </form>
   );

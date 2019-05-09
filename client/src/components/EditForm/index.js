@@ -96,6 +96,7 @@ class EditForm extends Component {
           labeltext="Add Profile Picture:"
           name="profilepic"
           placeholder="Upload Profile Picture"
+          onChange={this.handleInputChange}
         />
         </Col>
         <Col md={4} sm={4}></Col>
@@ -109,7 +110,7 @@ class EditForm extends Component {
           labeltext="Add Media"
           name="content"
           placeholder="Content Upload"
-          
+
         />
          </Col>
         <Col md={4} sm={4}></Col>

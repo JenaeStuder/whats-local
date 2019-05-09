@@ -12,8 +12,8 @@ import "./style.css";
 function Create(props) {
     return (
         <div>
-            <Card>
-                <Card.Header>Create Post</Card.Header>
+            <Card id="createPostCard">
+                <Card.Header id="postHeader">Create Post</Card.Header>
                 <Card.Body>
                     <Row>
                         <Col md={3}>
@@ -34,11 +34,11 @@ function Create(props) {
                             />
                         </Col>
                         <Col md={6}>
-                            <Button className="btn btn-primary"
-                                id="post"
+                            <Button className="btn btn-info"
+                                id="Post"
                                 type="submit"
                                 //onClick=""
-                                title="post">Post
+                                title="Post">
                             </Button>
                         </Col>
                     </Row>

@@ -20,7 +20,9 @@ router.route("/media/op/:id")
     .delete(localController.removeStorageItem)
 router.route("/profile/:id")
     .get(localController.findById)
-    .put(localController.updatePic)
+    .post(localController.updatePic)
+router.route("/api/artists/:id")
+    .get(localController.findById)
 module.exports = router;
 
 //localController.addStorageItem
