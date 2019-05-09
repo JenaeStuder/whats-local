@@ -133,9 +133,6 @@ class Profile extends Component {
                         </Col>
                       </Row>
                     </Col>
-
-
-
                     <Col xs={1} />
                     <Col
                       sm={10}
@@ -161,12 +158,13 @@ class Profile extends Component {
                   </Row>
                     
                   </Col>
-
+               
               {/* </Col>
                 <Col xs={1} /> */}
 
               {/* </Row> */}
               </Jumbotron>
+              </Row>
             <br />
             <Row className="ProfileMedia">
               <div>
@@ -220,7 +218,7 @@ class Profile extends Component {
                 <Col xs={1} />
               </div>
             </Row>
-            </Row>
+            {/* </Row> */}
           <br />
           <br />
           </Container>
